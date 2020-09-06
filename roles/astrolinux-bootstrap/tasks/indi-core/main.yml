@@ -42,7 +42,7 @@
 
 - name: Setup indi-core build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ indi_core_src }}"
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ indi_core_src }}"
     chdir: "{{ indi_core_build }}"
 
 

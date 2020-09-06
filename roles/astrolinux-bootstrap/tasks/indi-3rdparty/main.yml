@@ -69,7 +69,7 @@
 ### Build all libs
 - name: Setup indi-3rdparty libs build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ indi_3rdparty_src }}"
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ indi_3rdparty_src }}"
     chdir: "{{ indi_3rdparty_libs_build }}"
   when:
     - indi_3rdparty_build_libs| length == 0
@@ -107,7 +107,7 @@
 ### Build all drivers
 - name: Setup indi-3rdparty drivers build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ indi_3rdparty_src }}"
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ indi_3rdparty_src }}"
     chdir: "{{ indi_3rdparty_drivers_build }}"
   when:
     - indi_3rdparty_build_drivers | length == 0

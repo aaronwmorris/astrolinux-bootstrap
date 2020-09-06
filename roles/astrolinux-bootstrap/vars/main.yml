@@ -1,2 +1,3 @@
 ---
 # vars file for astrolinux-bootstrap
+cmake_bin: cmake

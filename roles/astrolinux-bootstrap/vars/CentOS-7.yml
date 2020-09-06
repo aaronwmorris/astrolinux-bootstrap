@@ -1,6 +1,9 @@
 ---
 ansible_python_interpreter: python2
+cmake_bin: cmake3
 indi_packages:
+  - git
+  - cmake3
   - libnova
   - libnova-devel
   - libusb
@@ -12,18 +15,23 @@ indi_packages:
   - gmock
   - gmock-devel
   - zlib-static
-  - libusb-devel
+  - libusbx
+  - libusbx-devel
   - libcurl-devel
   - gsl-devel
   - cfitsio-devel
-  - stbi-devel
   - libjpeg-turbo-devel
   - fftw3-devel 
+  - '@Development tools'
 indi_3rdparty_packages:
+  - git
+  - cmake3
+  - '@Development tools'
 kstars_packages:
+  - git
   - cfitsio-devel
   - eigen3-devel
-  - cmake
+  - cmake3
   - extra-cmake-modules.noarch
   - kf5-kconfig-devel
   - kf5-kdbusaddons-devel
@@ -48,9 +56,10 @@ kstars_packages:
   - wcslib-devel
   - xplanet
   - zlib-devel
+  - '@Development tools'
 phd2_packages:
   - git
-  - cmake
+  - cmake3
   - pkgconfig
   - wxGTK3-devel
   - libindi-devel
@@ -59,3 +68,4 @@ phd2_packages:
   - zlib-devel
   - libusb-devel
   - libcurl-devel
+  - '@Development tools'

@@ -42,7 +42,7 @@
 
 - name: Setup phd2 build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} {{ phd2_src }}"
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} {{ phd2_src }}"
     chdir: "{{ phd2_build }}"
 
 

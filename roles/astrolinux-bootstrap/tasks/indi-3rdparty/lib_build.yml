@@ -20,7 +20,7 @@
 
 - name: "Setup indi-3rdparty {{ local_lib }} build"
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ local_indi_3rdparty_lib_src }}"
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ local_indi_3rdparty_lib_src }}"
     chdir: "{{ local_indi_3rdparty_lib_build }}"
 
 

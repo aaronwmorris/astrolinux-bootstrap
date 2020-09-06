@@ -43,7 +43,7 @@
 
 - name: Setup kstars build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ kstars_src }}"
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ kstars_src }}"
     chdir: "{{ kstars_build }}"
 
 
