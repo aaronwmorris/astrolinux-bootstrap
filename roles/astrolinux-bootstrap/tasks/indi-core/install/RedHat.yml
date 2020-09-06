@@ -1,12 +1,6 @@
 ---
 
 
-- name: Update repositories cache
-  become: yes
-  apt:
-    update_cache: yes
-
-
 - name: Install indi development packages
   become: yes
   package:
