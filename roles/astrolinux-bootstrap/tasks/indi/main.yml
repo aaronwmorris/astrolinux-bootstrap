@@ -1,0 +1,30 @@
+---
+
+- include: "indi/install/main.yml"
+
+
+- name: Create indi-core build folder
+  file:
+    path: "{{ projects_folder }}/build/indi"
+    state: directory
+
+
+- name: Git checkout of indi
+  git:
+    repo: https://github.com/indilib/indi.git
+    dest: "{{ projects_folder }}/src/indi"
+    depth: 1
+ 
+
+- name: Build indi
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Debug {{ projects_folder }}/src/indi"
+    chdir: "{{ projects_folder }}/build/indi"
+
+
+- name: Install indi
+  command:
+    cmd: make install
+    chdir: "{{ projects_folder }}/build/indi"
+  become: yes
+

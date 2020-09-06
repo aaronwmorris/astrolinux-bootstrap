@@ -1,0 +1,3 @@
+---
+# defaults file for astrolinux-bootstrap
+projects_folder: "{{ lookup('env','HOME') }}/Projects"
