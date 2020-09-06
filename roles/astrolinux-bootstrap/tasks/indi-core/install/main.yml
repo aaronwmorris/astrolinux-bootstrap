@@ -1,0 +1,4 @@
+---
+
+- include: "indi-core/install/{{ ansible_facts['os_family'] }}.yml"
+

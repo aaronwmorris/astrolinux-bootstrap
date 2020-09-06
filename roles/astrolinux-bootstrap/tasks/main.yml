@@ -27,7 +27,7 @@
 
 
 
-- include: "indi/main.yml"
+- include: "indi-core/main.yml"
   tags: indi_core
 
 
