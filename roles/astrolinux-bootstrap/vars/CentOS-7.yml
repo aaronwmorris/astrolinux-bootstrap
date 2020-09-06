@@ -1,0 +1,61 @@
+---
+ansible_python_interpreter: python2
+indi_packages:
+  - libnova
+  - libnova-devel
+  - libusb
+  - libusb-devel
+  - cfitsio-devel
+  - cfitsio-static
+  - gtest
+  - gtest-devel
+  - gmock
+  - gmock-devel
+  - zlib-static
+  - libusb-devel
+  - libcurl-devel
+  - gsl-devel
+  - cfitsio-devel
+  - stbi-devel
+  - libjpeg-turbo-devel
+  - fftw3-devel 
+indi_3rdparty_packages:
+kstars_packages:
+  - cfitsio-devel
+  - eigen3-devel
+  - cmake
+  - extra-cmake-modules.noarch
+  - kf5-kconfig-devel
+  - kf5-kdbusaddons-devel
+  - kf5-kdoctools-devel
+  - kf5-kguiaddons-devel
+  - kf5-ki18n-devel
+  - kf5-kiconthemes-devel
+  - kf5-kinit-devel
+  - kf5-kio-devel
+  - kf5-kjobwidgets-devel
+  - kf5-knewstuff-devel
+  - kf5-kplotting-devel
+  - kf5-ktexteditor-devel
+  - kf5-kwidgetsaddons-devel
+  - kf5-kwindowsystem-devel
+  - kf5-kxmlgui-devel
+  - libindi-devel
+  - libindi-static
+  - qt5-qtdeclarative-devel
+  - qt5-qtmultimedia-devel
+  - qt5-qtsvg-devel
+  - wcslib-devel
+  - xplanet
+  - zlib-devel
+phd2_packages:
+  - git
+  - cmake
+  - pkgconfig
+  - wxGTK3-devel
+  - libindi-devel
+  - libindi-static
+  - libnova-devel
+  - zlib-devel
+  - libusb-devel
+  - libcurl-devel
