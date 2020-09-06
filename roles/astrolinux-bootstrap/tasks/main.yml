@@ -34,3 +34,7 @@
 - include: "indi-3rdparty/main.yml"
   tags: indi_3rdparty
 
+
+- include: "kstars/main.yml"
+  tags: kstars
+

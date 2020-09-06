@@ -1,0 +1,43 @@
+---
+
+- include: "kstars/install/main.yml"
+
+
+
+- name: Remove existing kstars build folder
+  file:
+    path: "{{ projects_folder }}/build/kstars"
+    state: absent
+
+
+- name: Create kstars build folder
+  file:
+    path: "{{ projects_folder }}/build/kstars"
+    state: directory
+
+
+- name: Git checkout of kstars
+  git:
+    repo: https://invent.kde.org/education/kstars.git
+    dest: "{{ projects_folder }}/src/kstars"
+    depth: 1
+ 
+
+- name: Setup kstars build
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/kstars"
+    chdir: "{{ projects_folder }}/build/kstars"
+
+
+- name: Build kstars
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ projects_folder }}/build/kstars"
+
+
+- name: Install kstars
+  command:
+    cmd: make install
+    chdir: "{{ projects_folder }}/build/kstars"
+  become: yes
+
