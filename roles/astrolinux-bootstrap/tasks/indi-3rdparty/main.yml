@@ -3,45 +3,63 @@
 - include: "indi-3rdparty/install/main.yml"
 
 
+- set_fact:
+    indi_3rdparty_src: "{{ projects_folder }}/src/indi-3rdparty"
+    indi_3rdparty_libs_build: "{{ projects_folder }}/build/indi-3rdparty_libs"
+    indi_3rdparty_drivers_build: "{{ projects_folder }}/build/indi-3rdparty_drivers"
+
+
+- debug:
+    msg:
+      - "INDI 3rdparty src folder: {{ indi_3rdparty_src }}"
+      - "INDI 3rdparty libs build folder: {{ indi_3rdparty_libs_build }}"
+      - "INDI 3rdparty drivers build folder: {{ indi_3rdparty_drivers_build }}"
+
+
 - name: Remove existing indi-3rdparty libs build folder
   file:
-    path: "{{ projects_folder }}/build/indi-3rdparty-libs"
+    path: "{{ indi_3rdparty_libs_build }}"
     state: absent
 
 
 - name: Remove existing indi-3rdparty drivers build folder
   file:
-    path: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+    path: "{{ indi_3rdparty_drivers_build }}"
     state: absent
 
 
 
 - name: Create indi-3rdparty libs build folder
   file:
-    path: "{{ projects_folder }}/build/indi-3rdparty-libs"
+    path: "{{ indi_3rdparty_libs_build }}"
     state: directory
 
 
 - name: Create indi-3rdparty drivers build folder
   file:
-    path: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+    path: "{{ indi_3rdparty_drivers_build }}"
     state: directory
 
 
+- debug:
+    msg:
+      - "INDI 3rdparty git repo: {{ indi_3rdparty_git_repo }}"
+      - "INDI 3rdparty git tag: {{ indi_3rdparty_git_version }}"
 
 
 - name: Git checkout of indi-3rdparty
   git:
     repo: "{{ indi_3rdparty_git_repo }}"
-    dest: "{{ projects_folder }}/src/indi-3rdparty"
+    dest: "{{ indi_3rdparty_src }}"
     depth: 1
+    version: "{{ indi_3rdparty_git_version }}"
  
 
 
 - name: Setup indi-3rdparty libs build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ projects_folder }}/src/indi-3rdparty"
-    chdir: "{{ projects_folder }}/build/indi-3rdparty-libs"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ indi_3rdparty_src }}"
+    chdir: "{{ indi_3rdparty_libs_build }}"
   tags:
     indi_3rdparty_libs
 
@@ -49,7 +67,7 @@
 - name: Build indi-3rdparty libs
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
-    chdir: "{{ projects_folder }}/build/indi-3rdparty-libs"
+    chdir: "{{ indi_3rdparty_libs_build }}"
   tags:
     indi_3rdparty_libs
 
@@ -57,7 +75,7 @@
 - name: Install indi-3rdparty libs
   command:
     cmd: make install
-    chdir: "{{ projects_folder }}/build/indi-3rdparty-libs"
+    chdir: "{{ indi_3rdparty_libs_build }}"
   become: yes
   tags:
     indi_3rdparty_libs
@@ -68,6 +86,8 @@
 #- include: driver_build.yml
 #  vars:
 #    local_driver: "{{ item }}"
+#    local_indi_3rdparty_driver_src: "{{ indi_3rdparty_src }}/{{ item }}"
+#    local_indi_3rdparty_driver_build: "{{ indi_3rdparty_drivers_build }}_{{ item}}"
 #  with_items:
 #    - indi-asi
 #    - indi-eqmod
@@ -75,8 +95,8 @@
 
 - name: Setup indi-3rdparty drivers build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-3rdparty"
-    chdir: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ indi_3rdparty_src }}"
+    chdir: "{{ indi_3rdparty_drivers_build }}"
   tags:
     indi_3rdparty_drivers
 
@@ -84,7 +104,7 @@
 - name: Build indi-3rdparty drivers
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
-    chdir: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+    chdir: "{{ indi_3rdparty_drivers_build }}"
   tags:
     indi_3rdparty_drivers
 
@@ -92,7 +112,7 @@
 - name: Install indi-3rdparty drivers
   command:
     cmd: make install
-    chdir: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+    chdir: "{{ indi_3rdparty_drivers_build }}"
   become: yes
   tags:
     indi_3rdparty_drivers

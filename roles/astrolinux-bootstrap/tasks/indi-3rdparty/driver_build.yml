@@ -1,34 +1,38 @@
 ---
 
+- debug:
+    msg:
+      - "INDI 3rdparty {{ local_driver }} driver src folder: {{ local_indi_3rdparty_driver_src }}"
+      - "INDI 3rdparty {{ local_driver }} driver build folder: {{ local_indi_3rdparty_driver_build }}"
 
 
 - name: "Remove existing indi-3rdparty {{ local_driver }} build folder"
   file:
-    path: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+    path: "{{ local_indi_3rdparty_driver_build }}"
     state: absent
 
 
 - name: "Create indi-3rdparty {{ local_driver }} build folder"
   file:
-    path: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+    path: "{{ local_indi_3rdparty_driver_build }}"
     state: directory
 
 
 - name: "Setup indi-3rdparty {{ local_driver }} build"
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-3rdparty/{{ local_driver }}"
-    chdir: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ local_indi_3rdparty_driver_src }}"
+    chdir: "{{ local_indi_3rdparty_driver_build }}"
 
 
 - name: "Build indi-3rdparty {{ local_driver }}"
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
-    chdir: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+    chdir: "{{ local_indi_3rdparty_driver_build }}"
 
 
 - name: "Install indi-3rdparty {{ local_driver }}"
   command:
     cmd: make install
-    chdir: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+    chdir: "{{ local_indi_3rdparty_driver_build }}"
   become: yes
 

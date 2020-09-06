@@ -3,41 +3,58 @@
 - include: "phd2/install/main.yml"
 
 
+- set_fact:
+    phd2_src: "{{ projects_folder }}/src/phd2"
+    phd2_build: "{{ projects_folder }}/build/phd2"
+
+
+- debug:
+    msg:
+      - "PHD2 src folder: {{ phd2_src }}"
+      - "PHD2 build folder: {{ phd2_build }}"
+
 
 - name: Remove existing phd2 build folder
   file:
-    path: "{{ projects_folder }}/build/phd2"
+    path: "{{ phd2_build }}"
     state: absent
 
 
 - name: Create phd2 build folder
   file:
-    path: "{{ projects_folder }}/build/phd2"
+    path: "{{ phd2_build }}"
     state: directory
+
+
+- debug:
+    msg:
+      - "PHD2 git repo: {{ phd2_git_repo }}"
+      - "PHD2 git tag: {{ phd2_git_version }}"
 
 
 - name: Git checkout of phd2
   git:
     repo: "{{ phd2_git_repo }}"
-    dest: "{{ projects_folder }}/src/phd2"
+    dest: "{{ phd2_src }}"
     depth: 1
+    version: "{{ phd2_git_version }}"
  
 
 - name: Setup phd2 build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} {{ projects_folder }}/src/phd2"
-    chdir: "{{ projects_folder }}/build/phd2"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} {{ phd2_src }}"
+    chdir: "{{ phd2_build }}"
 
 
 - name: Build phd2
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
-    chdir: "{{ projects_folder }}/build/phd2"
+    chdir: "{{ phd2_build }}"
 
 
 - name: Install phd2
   command:
     cmd: make install
-    chdir: "{{ projects_folder }}/build/phd2"
+    chdir: "{{ phd2_build }}"
   become: yes
 

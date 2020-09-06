@@ -3,41 +3,59 @@
 - include: "kstars/install/main.yml"
 
 
+- set_fact:
+    kstars_src: "{{ projects_folder }}/src/kstars"
+    kstars_build: "{{ projects_folder }}/build/kstars"
+
+
+- debug:
+    msg:
+      - "KStars src folder: {{ kstars_src }}"
+      - "KStars build folder: {{ kstars_build }}"
+
 
 - name: Remove existing kstars build folder
   file:
-    path: "{{ projects_folder }}/build/kstars"
+    path: "{{ kstars_build }}"
     state: absent
 
 
 - name: Create kstars build folder
   file:
-    path: "{{ projects_folder }}/build/kstars"
+    path: "{{ kstars_build }}"
     state: directory
+
+
+- debug:
+    msg:
+      - "KStars git repo: {{ kstars_git_repo }}"
+      - "KStars git tag: {{ kstars_git_version }}"
 
 
 - name: Git checkout of kstars
   git:
     repo: "{{ kstars_git_repo }}"
-    dest: "{{ projects_folder }}/src/kstars"
+    dest: "{{ kstars_src }}"
     depth: 1
+    version: "{{ kstars_git_version }}"
+    #force: yes
  
 
 - name: Setup kstars build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/kstars"
-    chdir: "{{ projects_folder }}/build/kstars"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ kstars_src }}"
+    chdir: "{{ kstars_build }}"
 
 
 - name: Build kstars
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
-    chdir: "{{ projects_folder }}/build/kstars"
+    chdir: "{{ kstars_build }}"
 
 
 - name: Install kstars
   command:
     cmd: make install
-    chdir: "{{ projects_folder }}/build/kstars"
+    chdir: "{{ kstars_build }}"
   become: yes
 

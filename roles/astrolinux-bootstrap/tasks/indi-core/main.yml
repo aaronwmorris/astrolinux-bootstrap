@@ -3,41 +3,58 @@
 - include: "indi-core/install/main.yml"
 
 
+- set_fact:
+    indi_core_src: "{{ projects_folder }}/src/indi-core"
+    indi_core_build: "{{ projects_folder }}/build/indi-core"
+
+
+- debug:
+    msg:
+      - "INDI core src folder: {{ indi_core_src }}"
+      - "INDI core build folder: {{ indi_core_build }}"
+
 
 - name: Remove existing indi-core build folder
   file:
-    path: "{{ projects_folder }}/build/indi-core"
+    path: "{{ indi_core_build }}"
     state: absent
 
 
 - name: Create indi-core build folder
   file:
-    path: "{{ projects_folder }}/build/indi-core"
+    path: "{{ indi_core_build }}"
     state: directory
+
+
+- debug:
+    msg:
+      - "INDI core git repo: {{ indi_core_git_repo }}"
+      - "INDI core git tag: {{ indi_core_git_version }}"
 
 
 - name: Git checkout of indi-core
   git:
     repo: "{{ indi_core_git_repo }}"
-    dest: "{{ projects_folder }}/src/indi-core"
+    dest: "{{ indi_core_src }}"
     depth: 1
+    version: "{{ indi_core_git_version }}"
  
 
 - name: Setup indi-core build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-core"
-    chdir: "{{ projects_folder }}/build/indi-core"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ indi_core_src }}"
+    chdir: "{{ indi_core_build }}"
 
 
 - name: Build indi-core
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
-    chdir: "{{ projects_folder }}/build/indi-core"
+    chdir: "{{ indi_core_build }}"
 
 
 - name: Install indi-core
   command:
     cmd: make install
-    chdir: "{{ projects_folder }}/build/indi-core"
+    chdir: "{{ indi_core_build }}"
   become: yes
 

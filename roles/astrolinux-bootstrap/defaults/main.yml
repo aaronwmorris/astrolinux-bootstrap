@@ -3,6 +3,10 @@
 projects_folder: "{{ lookup('env','HOME') }}/Projects"
 install_prefix: /usr/local
 indi_core_git_repo: https://github.com/indilib/indi.git
+indi_core_git_version: v1.8.6
 indi_3rdparty_git_repo: https://github.com/indilib/indi-3rdparty.git
+indi_3rdparty_git_version: v1.8.6
 kstars_git_repo: https://invent.kde.org/education/kstars.git
+kstars_git_version: 3.4.3
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
+phd2_git_version: v2.6.9
