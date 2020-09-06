@@ -1,0 +1,4 @@
+---
+
+- include: "phd2/install/{{ ansible_facts['os_family'] }}.yml"
+

@@ -1,0 +1,43 @@
+---
+
+- include: "phd2/install/main.yml"
+
+
+
+- name: Remove existing phd2 build folder
+  file:
+    path: "{{ projects_folder }}/build/phd2"
+    state: absent
+
+
+- name: Create phd2 build folder
+  file:
+    path: "{{ projects_folder }}/build/phd2"
+    state: directory
+
+
+- name: Git checkout of phd2
+  git:
+    repo: https://github.com/OpenPHDGuiding/phd2.git
+    dest: "{{ projects_folder }}/src/phd2"
+    depth: 1
+ 
+
+- name: Setup phd2 build
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local {{ projects_folder }}/src/phd2"
+    chdir: "{{ projects_folder }}/build/phd2"
+
+
+- name: Build phd2
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ projects_folder }}/build/phd2"
+
+
+- name: Install phd2
+  command:
+    cmd: make install
+    chdir: "{{ projects_folder }}/build/phd2"
+  become: yes
+

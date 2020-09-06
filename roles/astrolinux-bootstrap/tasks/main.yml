@@ -38,3 +38,8 @@
 - include: "kstars/main.yml"
   tags: kstars
 
+
+- include: "phd2/main.yml"
+  tags: phd2
+
+
