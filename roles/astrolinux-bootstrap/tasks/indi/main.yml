@@ -3,7 +3,14 @@
 - include: "indi/install/main.yml"
 
 
-- name: Create indi-core build folder
+
+- name: Remove existing indi build folder
+  file:
+    path: "{{ projects_folder }}/build/indi"
+    state: absent
+
+
+- name: Create indi build folder
   file:
     path: "{{ projects_folder }}/build/indi"
     state: directory
@@ -16,9 +23,15 @@
     depth: 1
  
 
+- name: Setup indi build
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi"
+    chdir: "{{ projects_folder }}/build/indi"
+
+
 - name: Build indi
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Debug {{ projects_folder }}/src/indi"
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
     chdir: "{{ projects_folder }}/build/indi"
 
 
