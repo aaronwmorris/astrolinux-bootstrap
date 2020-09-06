@@ -25,7 +25,7 @@
 
 - name: Setup phd2 build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local {{ projects_folder }}/src/phd2"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} {{ projects_folder }}/src/phd2"
     chdir: "{{ projects_folder }}/build/phd2"
 
 

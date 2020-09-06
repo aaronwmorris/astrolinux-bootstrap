@@ -25,7 +25,7 @@
 
 - name: Setup indi-core build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-core"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-core"
     chdir: "{{ projects_folder }}/build/indi-core"
 
 

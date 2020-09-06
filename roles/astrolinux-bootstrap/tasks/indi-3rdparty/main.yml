@@ -40,7 +40,7 @@
 
 - name: Setup indi-3rdparty libs build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ projects_folder }}/src/indi-3rdparty"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ projects_folder }}/src/indi-3rdparty"
     chdir: "{{ projects_folder }}/build/indi-3rdparty-libs"
   tags:
     indi_3rdparty_libs
@@ -75,7 +75,7 @@
 
 - name: Setup indi-3rdparty drivers build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-3rdparty"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-3rdparty"
     chdir: "{{ projects_folder }}/build/indi-3rdparty-drivers"
   tags:
     indi_3rdparty_drivers

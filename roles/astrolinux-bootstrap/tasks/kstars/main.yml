@@ -25,7 +25,7 @@
 
 - name: Setup kstars build
   command:
-    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/kstars"
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/kstars"
     chdir: "{{ projects_folder }}/build/kstars"
 
 
