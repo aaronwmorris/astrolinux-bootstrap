@@ -28,7 +28,6 @@
     state: absent
 
 
-
 - name: Create indi-3rdparty libs build folder
   file:
     path: "{{ indi_3rdparty_libs_build }}"
@@ -53,7 +52,6 @@
     dest: "{{ indi_3rdparty_src }}"
     depth: 1
     version: "{{ indi_3rdparty_git_version }}"
- 
 
 
 - name: Setup indi-3rdparty libs build
@@ -81,22 +79,24 @@
     indi_3rdparty_libs
 
 
+### Build individual 3rdparty drivers
+- include: driver_build.yml
+  vars:
+    local_driver: "{{ item }}"
+    local_indi_3rdparty_driver_src: "{{ indi_3rdparty_src }}/{{ item }}"
+    local_indi_3rdparty_driver_build: "{{ indi_3rdparty_drivers_build }}_{{ item}}"
+  with_items: "{{ indi_3rdparty_build_drivers }}"
+  when:
+    - indi_3rdparty_build_drivers | length < 0
 
-### Fix me
-#- include: driver_build.yml
-#  vars:
-#    local_driver: "{{ item }}"
-#    local_indi_3rdparty_driver_src: "{{ indi_3rdparty_src }}/{{ item }}"
-#    local_indi_3rdparty_driver_build: "{{ indi_3rdparty_drivers_build }}_{{ item}}"
-#  with_items:
-#    - indi-asi
-#    - indi-eqmod
 
-
+### Build all drivers
 - name: Setup indi-3rdparty drivers build
   command:
     cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ indi_3rdparty_src }}"
     chdir: "{{ indi_3rdparty_drivers_build }}"
+  when:
+    - indi_3rdparty_build_drivers | length == 0
   tags:
     indi_3rdparty_drivers
 
@@ -105,6 +105,8 @@
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
     chdir: "{{ indi_3rdparty_drivers_build }}"
+  when:
+    - indi_3rdparty_build_drivers | length == 0
   tags:
     indi_3rdparty_drivers
 
@@ -114,6 +116,8 @@
     cmd: make install
     chdir: "{{ indi_3rdparty_drivers_build }}"
   become: yes
+  when:
+    - indi_3rdparty_build_drivers | length == 0
   tags:
     indi_3rdparty_drivers
 
