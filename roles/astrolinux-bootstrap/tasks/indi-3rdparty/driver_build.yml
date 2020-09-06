@@ -1,0 +1,34 @@
+---
+
+
+
+- name: "Remove existing indi-3rdparty {{ local_driver }} build folder"
+  file:
+    path: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+    state: absent
+
+
+- name: "Create indi-3rdparty {{ local_driver }} build folder"
+  file:
+    path: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+    state: directory
+
+
+- name: "Setup indi-3rdparty {{ local_driver }} build"
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-3rdparty/{{ local_driver }}"
+    chdir: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+
+
+- name: "Build indi-3rdparty {{ local_driver }}"
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+
+
+- name: "Install indi-3rdparty {{ local_driver }}"
+  command:
+    cmd: make install
+    chdir: "{{ projects_folder }}/build/indi-3rdparty_{{ local_driver }}"
+  become: yes
+

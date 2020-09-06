@@ -1,0 +1,4 @@
+---
+
+- include: "indi-3rdparty/install/{{ ansible_facts['os_family'] }}.yml"
+

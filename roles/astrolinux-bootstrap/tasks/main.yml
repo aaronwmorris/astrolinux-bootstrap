@@ -5,12 +5,16 @@
 
 - name: Include OS Distribution Family vars
   include_vars: "{{ ansible_facts['distribution'] }}-{{ ansible_facts['distribution_major_version'] }}.yml"
+  tags:
+    - always
 
 
 - name: Create Projects build folder
   file:
     path: "{{ projects_folder }}/build"
     state: directory
+  tags:
+    - always
 
 
 
@@ -18,8 +22,15 @@
   file:
     path: "{{ projects_folder }}/src"
     state: directory
+  tags:
+    - always
 
 
 
 - include: "indi/main.yml"
+  tags: indi_core
+
+
+- include: "indi-3rdparty/main.yml"
+  tags: indi_3rdparty
 

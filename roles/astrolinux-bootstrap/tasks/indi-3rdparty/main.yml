@@ -1,0 +1,100 @@
+---
+
+- include: "indi-3rdparty/install/main.yml"
+
+
+- name: Remove existing indi-3rdparty libs build folder
+  file:
+    path: "{{ projects_folder }}/build/indi-3rdparty-libs"
+    state: absent
+
+
+- name: Remove existing indi-3rdparty drivers build folder
+  file:
+    path: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+    state: absent
+
+
+
+- name: Create indi-3rdparty libs build folder
+  file:
+    path: "{{ projects_folder }}/build/indi-3rdparty-libs"
+    state: directory
+
+
+- name: Create indi-3rdparty drivers build folder
+  file:
+    path: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+    state: directory
+
+
+
+
+- name: Git checkout of indi-3rdparty
+  git:
+    repo: https://github.com/indilib/indi-3rdparty.git
+    dest: "{{ projects_folder }}/src/indi-3rdparty"
+    depth: 1
+ 
+
+
+- name: Setup indi-3rdparty libs build
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ projects_folder }}/src/indi-3rdparty"
+    chdir: "{{ projects_folder }}/build/indi-3rdparty-libs"
+  tags:
+    indi_3rdparty_libs
+
+
+- name: Build indi-3rdparty libs
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ projects_folder }}/build/indi-3rdparty-libs"
+  tags:
+    indi_3rdparty_libs
+
+
+- name: Install indi-3rdparty libs
+  command:
+    cmd: make install
+    chdir: "{{ projects_folder }}/build/indi-3rdparty-libs"
+  become: yes
+  tags:
+    indi_3rdparty_libs
+
+
+
+### Fix me
+#- include: driver_build.yml
+#  vars:
+#    local_driver: "{{ item }}"
+#  with_items:
+#    - indi-asi
+#    - indi-eqmod
+
+
+- name: Setup indi-3rdparty drivers build
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release {{ projects_folder }}/src/indi-3rdparty"
+    chdir: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+  tags:
+    indi_3rdparty_drivers
+
+
+- name: Build indi-3rdparty drivers
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+  tags:
+    indi_3rdparty_drivers
+
+
+- name: Install indi-3rdparty drivers
+  command:
+    cmd: make install
+    chdir: "{{ projects_folder }}/build/indi-3rdparty-drivers"
+  become: yes
+  tags:
+    indi_3rdparty_drivers
+
+
