@@ -59,3 +59,11 @@
     chdir: "{{ kstars_build }}"
   become: yes
 
+
+- name: Cleanup kstars build folder
+  file:
+    path: "{{ kstars_build }}"
+    state: absent
+  tags:
+    - cleanup
+

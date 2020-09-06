@@ -58,3 +58,11 @@
     chdir: "{{ phd2_build }}"
   become: yes
 
+
+- name: Cleanup phd2 build folder
+  file:
+    path: "{{ phd2_build }}"
+    state: absent
+  tags:
+    - cleanup
+

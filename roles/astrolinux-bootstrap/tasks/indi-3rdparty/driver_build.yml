@@ -36,3 +36,11 @@
     chdir: "{{ local_indi_3rdparty_driver_build }}"
   become: yes
 
+
+- name: "Cleanup indi-3rdparty {{ local_driver }} build folder"
+  file:
+    path: "{{ local_indi_3rdparty_driver_build }}"
+    state: absent
+  tags:
+    - cleanup
+

@@ -58,3 +58,11 @@
     chdir: "{{ indi_core_build }}"
   become: yes
 
+
+- name: Cleanup indi-core build folder
+  file:
+    path: "{{ indi_core_build }}"
+    state: absent
+  tags:
+    - cleanup
+

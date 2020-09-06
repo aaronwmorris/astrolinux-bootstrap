@@ -118,3 +118,18 @@
     indi_3rdparty_drivers
 
 
+- name: Cleanup indi-3rdparty libs build folder
+  file:
+    path: "{{ indi_3rdparty_libs_build }}"
+    state: absent
+  tags:
+    - cleanup
+
+
+- name: Cleanup indi-3rdparty drivers build folder
+  file:
+    path: "{{ indi_3rdparty_drivers_build }}"
+    state: absent
+  tags:
+    - cleanup
+
