@@ -32,7 +32,7 @@
 
 - name: Git checkout of indi-3rdparty
   git:
-    repo: https://github.com/indilib/indi-3rdparty.git
+    repo: "{{ indi_3rdparty_git_repo }}"
     dest: "{{ projects_folder }}/src/indi-3rdparty"
     depth: 1
  

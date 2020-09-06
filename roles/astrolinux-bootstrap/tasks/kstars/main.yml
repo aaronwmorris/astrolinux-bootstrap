@@ -18,7 +18,7 @@
 
 - name: Git checkout of kstars
   git:
-    repo: https://invent.kde.org/education/kstars.git
+    repo: "{{ kstars_git_repo }}"
     dest: "{{ projects_folder }}/src/kstars"
     depth: 1
  

@@ -18,7 +18,7 @@
 
 - name: Git checkout of indi-core
   git:
-    repo: https://github.com/indilib/indi.git
+    repo: "{{ indi_core_git_repo }}"
     dest: "{{ projects_folder }}/src/indi-core"
     depth: 1
  
