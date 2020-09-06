@@ -13,6 +13,7 @@ indi_packages:
   - libcurl4-gnutls-dev
   - libtheora-dev
   - libfftw3-dev
+  - pkg-config
 indi_3rdparty_packages:
   - libnova-dev
   - libcfitsio-dev
@@ -38,6 +39,7 @@ indi_3rdparty_packages:
   - libftdi1-dev
   - libavcodec-dev
   - libavdevice-dev
+  - pkg-config
 kstars_packages:
   - build-essential
   - cmake
@@ -68,6 +70,7 @@ kstars_packages:
   - qt5keychain-dev
   - libsecret-1-dev
   - breeze-icon-theme
+  - pkg-config
 phd2_packages:
   - build-essential
   - git

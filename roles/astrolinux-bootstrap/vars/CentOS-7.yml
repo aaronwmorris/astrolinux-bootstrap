@@ -22,10 +22,12 @@ indi_packages:
   - cfitsio-devel
   - libjpeg-turbo-devel
   - fftw3-devel 
+  - pkgconfig
   - '@Development tools'
 indi_3rdparty_packages:
   - git
   - cmake3
+  - pkgconfig
   - '@Development tools'
 kstars_packages:
   - git
@@ -54,6 +56,7 @@ kstars_packages:
   - wcslib-devel
   - xplanet
   - zlib-devel
+  - pkgconfig
   - '@Development tools'
 phd2_packages:
   - git
