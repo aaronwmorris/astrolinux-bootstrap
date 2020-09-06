@@ -55,7 +55,8 @@
 
 
 ### Build individual 3rdparty libs
-- include: indi-3rdparty/lib_build.yml
+- name: Include 3rdparty lib build
+  include_tasks: indi-3rdparty/lib_build.yml
   vars:
     local_lib: "{{ item }}"
     local_indi_3rdparty_lib_src: "{{ indi_3rdparty_src }}/{{ item }}"
@@ -72,8 +73,6 @@
     chdir: "{{ indi_3rdparty_libs_build }}"
   when:
     - indi_3rdparty_build_libs| length == 0
-  tags:
-    indi_3rdparty_libs
 
 
 - name: Build indi-3rdparty libs
@@ -82,8 +81,6 @@
     chdir: "{{ indi_3rdparty_libs_build }}"
   when:
     - indi_3rdparty_build_libs| length == 0
-  tags:
-    indi_3rdparty_libs
 
 
 - name: Install indi-3rdparty libs
@@ -93,12 +90,11 @@
   become: yes
   when:
     - indi_3rdparty_build_libs| length == 0
-  tags:
-    indi_3rdparty_libs
 
 
 ### Build individual 3rdparty drivers
-- include: indi-3rdparty/driver_build.yml
+- name: Include 3rdparty driver build
+  include_tasks: indi-3rdparty/driver_build.yml
   vars:
     local_driver: "{{ item }}"
     local_indi_3rdparty_driver_src: "{{ indi_3rdparty_src }}/{{ item }}"
@@ -115,8 +111,6 @@
     chdir: "{{ indi_3rdparty_drivers_build }}"
   when:
     - indi_3rdparty_build_drivers | length == 0
-  tags:
-    indi_3rdparty_drivers
 
 
 - name: Build indi-3rdparty drivers
@@ -125,8 +119,6 @@
     chdir: "{{ indi_3rdparty_drivers_build }}"
   when:
     - indi_3rdparty_build_drivers | length == 0
-  tags:
-    indi_3rdparty_drivers
 
 
 - name: Install indi-3rdparty drivers
@@ -136,8 +128,6 @@
   become: yes
   when:
     - indi_3rdparty_build_drivers | length == 0
-  tags:
-    indi_3rdparty_drivers
 
 
 - name: Cleanup indi-3rdparty libs build folder
