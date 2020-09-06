@@ -1,0 +1,46 @@
+---
+
+- debug:
+    msg:
+      - "INDI 3rdparty {{ local_lib }} lib src folder: {{ local_indi_3rdparty_lib_src }}"
+      - "INDI 3rdparty {{ local_lib }} lib build folder: {{ local_indi_3rdparty_lib_build }}"
+
+
+- name: "Remove existing indi-3rdparty {{ local_lib }} build folder"
+  file:
+    path: "{{ local_indi_3rdparty_lib_build }}"
+    state: absent
+
+
+- name: "Create indi-3rdparty {{ local_lib }} build folder"
+  file:
+    path: "{{ local_indi_3rdparty_lib_build }}"
+    state: directory
+
+
+- name: "Setup indi-3rdparty {{ local_lib }} build"
+  command:
+    cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release {{ local_indi_3rdparty_lib_src }}"
+    chdir: "{{ local_indi_3rdparty_lib_build }}"
+
+
+- name: "Build indi-3rdparty {{ local_lib }}"
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ local_indi_3rdparty_lib_build }}"
+
+
+- name: "Install indi-3rdparty {{ local_lib }}"
+  command:
+    cmd: make install
+    chdir: "{{ local_indi_3rdparty_lib_build }}"
+  become: yes
+
+
+- name: "Cleanup indi-3rdparty {{ local_lib }} build folder"
+  file:
+    path: "{{ local_indi_3rdparty_lib_build }}"
+    state: absent
+  tags:
+    - cleanup
+
