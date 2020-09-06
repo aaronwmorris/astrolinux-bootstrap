@@ -54,10 +54,24 @@
     version: "{{ indi_3rdparty_git_version }}"
 
 
+### Build individual 3rdparty libs
+- include: indi-3rdparty/lib_build.yml
+  vars:
+    local_lib: "{{ item }}"
+    local_indi_3rdparty_lib_src: "{{ indi_3rdparty_src }}/{{ item }}"
+    local_indi_3rdparty_lib_build: "{{ indi_3rdparty_libs_build }}_{{ item }}"
+  with_items: "{{ indi_3rdparty_build_libs }}"
+  when:
+    - indi_3rdparty_build_libs| length < 0
+
+
+### Build all libs
 - name: Setup indi-3rdparty libs build
   command:
     cmd: "cmake -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBS=1 {{ indi_3rdparty_src }}"
     chdir: "{{ indi_3rdparty_libs_build }}"
+  when:
+    - indi_3rdparty_build_libs| length == 0
   tags:
     indi_3rdparty_libs
 
@@ -66,6 +80,8 @@
   command:
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
     chdir: "{{ indi_3rdparty_libs_build }}"
+  when:
+    - indi_3rdparty_build_libs| length == 0
   tags:
     indi_3rdparty_libs
 
@@ -75,16 +91,18 @@
     cmd: make install
     chdir: "{{ indi_3rdparty_libs_build }}"
   become: yes
+  when:
+    - indi_3rdparty_build_libs| length == 0
   tags:
     indi_3rdparty_libs
 
 
 ### Build individual 3rdparty drivers
-- include: driver_build.yml
+- include: indi-3rdparty/driver_build.yml
   vars:
     local_driver: "{{ item }}"
     local_indi_3rdparty_driver_src: "{{ indi_3rdparty_src }}/{{ item }}"
-    local_indi_3rdparty_driver_build: "{{ indi_3rdparty_drivers_build }}_{{ item}}"
+    local_indi_3rdparty_driver_build: "{{ indi_3rdparty_drivers_build }}_{{ item }}"
   with_items: "{{ indi_3rdparty_build_drivers }}"
   when:
     - indi_3rdparty_build_drivers | length < 0
