@@ -1,5 +1,7 @@
 ---
 
+- include: "xrdp/install/main.yml"
+
 
 - name: Enable xrdp
   service:

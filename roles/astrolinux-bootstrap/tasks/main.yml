@@ -17,7 +17,6 @@
     - always
 
 
-
 - name: Create Projects src folder
   file:
     path: "{{ projects_folder }}/src"
@@ -26,24 +25,27 @@
     - always
 
 
-
 - include: "indi-core/main.yml"
   tags: indi_core
 
 
 - include: "indi-3rdparty/main.yml"
-  tags: indi_3rdparty
+  tags:
+    - indi_3rdparty
 
 
 - include: "kstars/main.yml"
-  tags: kstars
+  tags:
+    - kstars
 
 
 - include: "phd2/main.yml"
-  tags: phd2
+  tags:
+    - phd2
 
 
 - include: "xrdp/main.yml"
   become: yes
-  tags: xrdp
+  tags:
+    - xrdp
 
