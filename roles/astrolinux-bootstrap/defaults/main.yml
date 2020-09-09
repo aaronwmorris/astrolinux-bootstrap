@@ -12,6 +12,7 @@ kstars_git_repo: https://invent.kde.org/education/kstars.git
 kstars_git_version: 3.4.3
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
 phd2_git_version: v2.6.9
+xrdp_desktop: xfce
 xrdp_cert: /etc/xrdp/xrdp_selfsigned.crt
 xrdp_privkey: /etc/xrdp/xrdp_selfsigned.key
 xrdp_csr: /etc/xrdp/xrdp_selfsigned.csr

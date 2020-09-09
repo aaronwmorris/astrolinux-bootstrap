@@ -90,3 +90,8 @@ xrdp_packages:
   - python3-cryptography
   - vnc4server
   - tightvncserver
+xrdp_desktops:
+  xfce:
+    packages:
+      - xfce4
+    start: startxfce4

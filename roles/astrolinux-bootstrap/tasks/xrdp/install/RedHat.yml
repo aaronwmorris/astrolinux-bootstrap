@@ -17,3 +17,10 @@
     name: "{{ xrdp_packages }}"
     state: present
 
+
+- name: Install xrdp desktop environment
+  become: yes
+  package:
+    name: "{{ xrdp_desktops[xrdp_desktop]['packages'] }}"
+    state: present
+

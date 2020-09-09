@@ -73,3 +73,8 @@ xrdp_packages:
   - xorgrdp
   - tigervnc-server
   - python2-cryptography
+xrdp_desktops:
+  xfce:
+    packages:
+      - "@Xfce"
+    start: startxfce4

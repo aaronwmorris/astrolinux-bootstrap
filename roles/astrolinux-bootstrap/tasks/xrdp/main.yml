@@ -88,4 +88,11 @@
   notify: Restart xrdp
 
 
+- name: Setup user .Xclients
+  become: no
+  template:
+    src: xrdp/Xclients.tmpl
+    dest: "{{ lookup('env','HOME') }}/.Xclients"
+    mode: '0700'
+  notify: Restart xrdp
 
