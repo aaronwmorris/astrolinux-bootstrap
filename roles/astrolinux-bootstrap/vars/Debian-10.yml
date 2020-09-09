@@ -88,6 +88,7 @@ xrdp_packages:
   - xrdp
   - xorgxrdp
   - python3-cryptography
+  - python3-openssl
 xrdp_desktops:
   xfce:
     packages:
