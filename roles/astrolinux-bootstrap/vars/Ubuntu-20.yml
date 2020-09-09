@@ -84,3 +84,8 @@ phd2_packages:
   - zlib1g-dev
   - libx11-dev
   - libcurl4-gnutls-dev
+xrdp_packages:
+  - xrdp
+  - xorgxrdp
+  - tightvncserver
+  - python3-cryptography

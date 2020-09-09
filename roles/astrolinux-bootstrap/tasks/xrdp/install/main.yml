@@ -1,0 +1,4 @@
+---
+
+- include: "xrdp/install/{{ ansible_facts['os_family'] }}.yml"
+

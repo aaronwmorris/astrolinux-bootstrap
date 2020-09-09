@@ -68,3 +68,8 @@ phd2_packages:
   - libusb-devel
   - libcurl-devel
   - '@Development tools'
+xrdp_packages:
+  - xrdp
+  - xorgrdp
+  - tigervnc-server
+  - python2-cryptography

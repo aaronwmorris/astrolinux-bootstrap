@@ -1,2 +1,9 @@
 ---
 # handlers file for astrolinux-bootstrap
+
+- name: Restart xrdp
+  become: yes
+  service:
+    name: xrdp
+    state: restarted
+

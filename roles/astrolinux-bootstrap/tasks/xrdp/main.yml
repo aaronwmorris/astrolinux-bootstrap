@@ -1,0 +1,91 @@
+---
+
+
+- name: Enable xrdp
+  service:
+    name: xrdp
+    enabled: yes
+  notify: Restart xrdp
+
+
+- name: Generate an OpenSSL private key.
+  openssl_privatekey:
+    path: "{{ xrdp_privkey }}"
+  notify: Restart xrdp
+
+
+- name: Generate an OpenSSL CSR
+  openssl_csr:
+    path: "{{ xrdp_csr }}"
+    privatekey_path: "{{ xrdp_privkey }}"
+    common_name: xrdp
+  notify: Restart xrdp
+
+
+- name: Generate a Self Signed OpenSSL certificate
+  openssl_certificate:
+    path: "{{ xrdp_cert }}"
+    privatekey_path: "{{ xrdp_privkey }}"
+    csr_path: "{{ xrdp_csr }}"
+    provider: selfsigned
+  notify: Restart xrdp
+
+
+- name: Change private key ownership (Debian family)
+  file:
+    path: "{{ xrdp_privkey }}"
+    owner: root
+    group: xrdp
+    mode: '0640'
+  when: ansible_facts['os_family'] == 'Debian'
+
+
+- name: Xrdp certificate config
+  lineinfile:
+    path: /etc/xrdp/xrdp.ini
+    regexp: '^certificate'
+    line: "certificate={{ xrdp_cert }}"
+  notify: Restart xrdp
+
+
+- name: Xrdp certificate key config
+  lineinfile:
+    path: /etc/xrdp/xrdp.ini
+    regexp: '^key_file'
+    line: "key_file={{ xrdp_privkey }}"
+  notify: Restart xrdp
+
+
+- name: Xrdp TLS config
+  lineinfile:
+    path: /etc/xrdp/xrdp.ini
+    regexp: '^security_layer'
+    line: 'security_layer=tls'
+  notify: Restart xrdp
+
+
+- name: Xrdp TLS level
+  lineinfile:
+    path: /etc/xrdp/xrdp.ini
+    regexp: '^ssl_protocols'
+    line: 'ssl_protocols=TLSv1.2, TLSv1.3'
+  notify: Restart xrdp
+
+
+- name: Xrdp TLS level
+  lineinfile:
+    path: /etc/xrdp/xrdp.ini
+    regexp: '^#*tls_ciphers'
+    line: 'tls_ciphers=HIGH'
+  notify: Restart xrdp
+
+
+- name: Xrdp crypt_level
+  lineinfile:
+    path: /etc/xrdp/xrdp.ini
+    regexp: '^crypt_level'
+    line: 'crypt_level=high'
+  notify: Restart xrdp
+
+
+

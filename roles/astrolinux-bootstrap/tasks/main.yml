@@ -43,3 +43,7 @@
   tags: phd2
 
 
+- include: "xrdp/main.yml"
+  become: yes
+  tags: xrdp
+
