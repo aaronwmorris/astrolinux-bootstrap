@@ -78,3 +78,9 @@ xrdp_desktops:
     packages:
       - "@Xfce"
     start: startxfce4
+lin_guider_packages:
+  - bzip2
+  - tar
+  - fxload
+  - '@Development tools'
+  - libusb

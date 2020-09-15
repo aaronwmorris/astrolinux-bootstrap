@@ -1,0 +1,96 @@
+---
+
+- include: "lin_guider/install/main.yml"
+
+
+- set_fact:
+    #lin_guider_src: "{{ projects_folder }}/src/lin_guider"
+    lin_guider_build: "{{ projects_folder }}/build/lin_guider"
+
+
+- debug:
+    msg:
+      #- "lin_guider src folder: {{ lin_guider_src }}"
+      - "lin_guider build folder: {{ lin_guider_build }}"
+
+
+- name: Remove existing lin_guider build folder
+  file:
+    path: "{{ lin_guider_build }}"
+    state: absent
+
+
+- name: Create lin_guider build folder
+  file:
+    path: "{{ lin_guider_build }}"
+    state: directory
+
+
+- name: create temporary file
+  tempfile:
+    state: file
+  register: lin_guider_tmpfile_1
+
+
+- debug:
+    msg:
+      - "lin_guider url: {{ lin_guider_url }}"
+      - "lin_guider download: {{ lin_guider_tmpfile_1.path }}"
+
+
+- name: Download lin_guider source
+  get_url:
+    url: "{{ lin_guider_url }}"
+    dest: "{{ lin_guider_tmpfile_1.path }}"
+
+
+
+- name: Extract lin_guider source
+  unarchive:
+    src: "{{ lin_guider_tmpfile_1.path }}"
+    dest: "{{ lin_guider_build }}"
+
+
+- debug:
+    msg:
+      - "lin_guider folder: {{ lin_guider_build }}/lin_guider_pack/lin_guider"
+
+
+- name: Setup lin_guider build
+  command:
+    cmd: "bash configure"
+    chdir: "{{ lin_guider_build }}/lin_guider_pack/lin_guider"
+
+
+- name: Build lin_guider
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ lin_guider_build }}/lin_guider_pack/lin_guider"
+
+
+- name: Install lin_guider
+  copy:
+    src: "{{ lin_guider_build }}/lin_guider_pack/lin_guider/build/release/lin_guider"
+    dest: "{{ install_prefix }}/bin/"
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+
+- name: Cleanup lin_guider build folder
+  file:
+    path: "{{ lin_guider_build }}"
+    state: absent
+  tags:
+    - cleanup
+
+
+- name: Delete lin_guider download
+  file:
+    path: "{{ lin_guider_tmpfile_1.path }}"
+    state: absent
+  tags:
+    - cleanup
+
+

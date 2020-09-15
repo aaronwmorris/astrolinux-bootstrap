@@ -44,6 +44,11 @@
     - phd2
 
 
+- include: "lin_guider/main.yml"
+  tags:
+    - lin_guider
+
+
 - include: "xrdp/main.yml"
   become: yes
   tags:

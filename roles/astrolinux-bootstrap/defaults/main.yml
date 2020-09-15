@@ -16,3 +16,4 @@ xrdp_desktop: xfce
 xrdp_cert: /etc/xrdp/xrdp_selfsigned.crt
 xrdp_privkey: /etc/xrdp/xrdp_selfsigned.key
 xrdp_csr: /etc/xrdp/xrdp_selfsigned.csr
+lin_guider_url: https://downloads.sourceforge.net/project/linguider/5.0.0/lin_guider-5.0.0.tar.bz2

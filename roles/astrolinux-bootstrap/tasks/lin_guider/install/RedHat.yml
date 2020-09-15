@@ -1,0 +1,9 @@
+---
+
+
+- name: Install lin_guider development packages
+  become: yes
+  package:
+    name: "{{ lin_guider_packages }}"
+    state: present
+

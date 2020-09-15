@@ -1,0 +1,4 @@
+---
+
+- include: "lin_guider/install/{{ ansible_facts['os_family'] }}.yml"
+
