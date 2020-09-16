@@ -73,6 +73,20 @@ kstars_packages:
   - libsecret-1-dev
   - breeze-icon-theme
   - pkg-config
+astrometrydotnet_packages:
+  - build-essential
+  - libcairo2-dev
+  - libnetpbm10-dev
+  - netpbm
+  - libpng-dev
+  - libjpeg-dev
+  - python-numpy
+  - python-pyfits
+  - python-dev
+  - zlib1g-dev
+  - libbz2-dev
+  - swig
+  - libcfitsio-dev
 phd2_packages:
   - build-essential
   - git

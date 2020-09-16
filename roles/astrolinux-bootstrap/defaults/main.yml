@@ -3,15 +3,17 @@
 projects_folder: "{{ lookup('env','HOME') }}/Projects"
 install_prefix: /usr/local
 indi_core_git_repo: https://github.com/indilib/indi.git
-indi_core_git_version: v1.8.6
+indi_core_git_version: 'v1.8.6'
 indi_3rdparty_git_repo: https://github.com/indilib/indi-3rdparty.git
-indi_3rdparty_git_version: v1.8.6
+indi_3rdparty_git_version: 'v1.8.6'
 indi_3rdparty_build_libs: []
 indi_3rdparty_build_drivers: []
 kstars_git_repo: https://invent.kde.org/education/kstars.git
-kstars_git_version: 3.4.3
+kstars_git_version: '3.4.3'
+astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net
+astrometrydotnet_git_version: '0.82'
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
-phd2_git_version: v2.6.9
+phd2_git_version: 'v2.6.9'
 xrdp_desktop: xfce
 xrdp_cert: /etc/xrdp/xrdp_selfsigned.crt
 xrdp_privkey: /etc/xrdp/xrdp_selfsigned.key

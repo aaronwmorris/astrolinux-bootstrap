@@ -1,0 +1,4 @@
+---
+
+- include: "astrometry.net/install/{{ ansible_facts['os_family'] }}.yml"
+

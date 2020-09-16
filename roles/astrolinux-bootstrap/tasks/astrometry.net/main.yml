@@ -1,0 +1,82 @@
+---
+
+- include: "astrometry.net/install/main.yml"
+
+
+- set_fact:
+    #astrometrydotnet_src: "{{ projects_folder }}/src/astrometry.net"
+    astrometrydotnet_build: "{{ projects_folder }}/build/astrometry.net"
+    astrometrydotnet_install: "{{ install_prefix }}/astrometry"
+
+
+- debug:
+    msg:
+      #- "astrometry.net src folder: {{ astrometrydotnet_src }}"
+      - "astrometry.net build folder: {{ astrometrydotnet_build }}"
+
+
+- name: Remove existing astrometry.net build folder
+  file:
+    path: "{{ astrometrydotnet_build }}"
+    state: absent
+
+
+- name: Create astrometry.net build folder
+  file:
+    path: "{{ astrometrydotnet_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "astrometry.net git repo: {{ astrometrydotnet_git_repo }}"
+      - "astrometry.net git tag: {{ astrometrydotnet_git_version }}"
+
+
+- name: Git checkout of astrometry.net
+  git:
+    repo: "{{ astrometrydotnet_git_repo }}"
+    dest: "{{ astrometrydotnet_build }}"
+    depth: 1
+    version: "{{ astrometrydotnet_git_version }}"
+    #force: yes
+
+
+- name: Build astrometry.net base
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ astrometrydotnet_build }}"
+
+
+- name: Build astrometry.net py
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} py"
+    chdir: "{{ astrometrydotnet_build }}"
+
+
+- name: Build astrometry.net extra
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} extra"
+    chdir: "{{ astrometrydotnet_build }}"
+
+
+- debug:
+    msg: "astrometry install directory: {{ astrometrydotnet_install }}"
+
+
+- name: Install astrometry.net
+  command:
+    cmd: make install
+    chdir: "{{ astrometrydotnet_build }}"
+  environment:
+    INSTALL_DIR: "{{ astrometrydotnet_install }}"
+  become: yes
+
+
+- name: Cleanup astrometry.net build folder
+  file:
+    path: "{{ astrometrydotnet_build }}"
+    state: absent
+  tags:
+    - cleanup
+

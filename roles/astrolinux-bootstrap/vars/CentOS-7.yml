@@ -59,6 +59,8 @@ kstars_packages:
   - zlib-devel
   - pkgconfig
   - '@Development tools'
+astrometrydotnet_packages:
+  - '@Development tools'
 phd2_packages:
   - git
   - cmake3

@@ -1,0 +1,9 @@
+---
+
+
+- name: Install astrometry.net development packages
+  become: yes
+  package:
+    name: "{{ astrometrydotnet_packages }}"
+    state: present
+

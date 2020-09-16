@@ -39,6 +39,11 @@
     - kstars
 
 
+- include: "astrometry.net/main.yml"
+  tags:
+    - astrometry.net
+
+
 - include: "phd2/main.yml"
   tags:
     - phd2
