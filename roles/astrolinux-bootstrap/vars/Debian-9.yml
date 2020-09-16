@@ -1,5 +1,7 @@
 ---
 ansible_python_interpreter: python3
+group_membership:
+  - dialout
 indi_packages:
   - libnova-dev 
   - libcfitsio-dev

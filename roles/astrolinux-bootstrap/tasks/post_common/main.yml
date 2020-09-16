@@ -1,0 +1,17 @@
+---
+
+- name: Add user to groups for device access
+  user:
+    name: "{{ ansible_user }}"
+    groups: "{{ group_membership }}"
+    append: yes
+  become: yes
+  register: group_membership_result
+
+
+- debug:
+    msg:
+      - "You should reboot your device to ensure your user has the correct group membership to access devices"
+  when:
+    group_membership_result.changed
+

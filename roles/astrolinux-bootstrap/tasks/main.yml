@@ -54,3 +54,8 @@
   tags:
     - xrdp
 
+
+- include: "post_common/main.yml"
+  tags:
+    - common
+
