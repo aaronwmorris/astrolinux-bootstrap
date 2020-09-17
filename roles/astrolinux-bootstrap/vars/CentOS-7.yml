@@ -25,13 +25,15 @@ indi_packages:
   - fftw3-devel 
   - pkgconfig
   - '@Development tools'
-  - python-pip
-  - python-virtualenv
 indi_3rdparty_packages:
   - git
   - cmake3
   - pkgconfig
   - '@Development tools'
+indiweb_packages:
+  - '@Development tools'
+  - python-pip
+  - python-virtualenv
 indihub_packages:
   - '@Development tools'
   - gcc-go

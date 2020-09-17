@@ -1,0 +1,9 @@
+---
+
+
+- name: Install indiweb development packages
+  become: yes
+  package:
+    name: "{{ indiweb_packages }}"
+    state: present
+

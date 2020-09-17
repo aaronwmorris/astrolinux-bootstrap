@@ -16,8 +16,6 @@ indi_packages:
   - libtheora-dev
   - libfftw3-dev
   - pkg-config
-  - python3-pip
-  - python3-virtualenv
 indi_3rdparty_packages:
   - libnova-dev
   - libcfitsio-dev
@@ -44,6 +42,10 @@ indi_3rdparty_packages:
   - libavcodec-dev
   - libavdevice-dev
   - pkg-config
+indiweb_packages:
+  - build-essential
+  - python3-pip
+  - python3-virtualenv
 indihub_packages:
   - build-essential
   - gccgo-go

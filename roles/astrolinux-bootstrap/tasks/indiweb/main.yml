@@ -1,5 +1,14 @@
 ---
 
+- include: "indiweb/install/main.yml"
+
+
+- set_fact:
+    indi_web_virtualenv: "{{ virtualenv_folder }}/indiweb"
+  tags:
+    - always
+
+
 - debug:
     msg:
       - "INDI web virtualenv folder: {{ indi_web_virtualenv }}"
@@ -8,7 +17,7 @@
 - name: Create indiweb virtualenv folder
   file:
     path: "{{ indi_web_virtualenv }}"
-    mode: '0750'
+    mode: '0755'
     state: directory
 
 
