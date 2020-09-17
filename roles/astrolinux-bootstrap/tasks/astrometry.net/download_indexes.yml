@@ -16,3 +16,18 @@
   become: yes
   with_items: "{{ astrometry_data }}"
 
+
+#- name: Download astrometry.net extra data index files
+#  get_url:
+#    url: "{{ astrometrydotnet_index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
+#    dest: "{{ astrometrydotnet_install }}/share/{{ item.filename }}"
+#    owner: root
+#    group: root
+#    mode: '0644'
+#    checksum: "{{ item.checksum }}"
+#    force: no
+#  become: yes
+#  with_items: "{{ astrometry_data_extra }}"
+#  tags:
+#    - never
+

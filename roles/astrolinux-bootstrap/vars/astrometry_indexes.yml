@@ -384,3 +384,196 @@ astrometry_data:
     checksum: md5:6ab2c7948f24d15e794e1000853b5cd2
   - filename: index-4202-00.fits
     checksum: md5:ef5a71bd24b382bb357cdac0b0ce8654
+astrometry_data_extra:
+  - filename: index-4200-00.fits
+    checksum: md5:6cb5f043ee6613306c21d6aec5c6d041
+  - filename: index-4200-01.fits
+    checksum: md5:b9811253b031695857ac77f23f86f1cd
+  - filename: index-4200-02.fits
+    checksum: md5:6881847b8a452332bb71438825e21945
+  - filename: index-4200-03.fits
+    checksum: md5:2a877b598ba04649ac22d5a576f887f0
+  - filename: index-4200-04.fits
+    checksum: md5:3d87dec3eebc66c72cbbf5841961eede
+  - filename: index-4200-05.fits
+    checksum: md5:c783cb39fe463145a27e3a2559d28232
+  - filename: index-4200-06.fits
+    checksum: md5:6d1158dba67e7d78bcf5ac780d342775
+  - filename: index-4200-07.fits
+    checksum: md5:d30823fe9e77064fc3158dec0640e799
+  - filename: index-4200-08.fits
+    checksum: md5:42f4b0d1a2edfe53f521848da02ebe3c
+  - filename: index-4200-09.fits
+    checksum: md5:92f55f6ff52828549c25b0d5716edb05
+  - filename: index-4200-10.fits
+    checksum: md5:60cb7b10f69e92764f924738b4efaf59
+  - filename: index-4200-11.fits
+    checksum: md5:822f02f7544260734f5230f69e640b07
+  - filename: index-4200-12.fits
+    checksum: md5:f34e76e370b558f8e6841b3d571694ea
+  - filename: index-4200-13.fits
+    checksum: md5:8adc6b8ecba07696ccffc351915f9e24
+  - filename: index-4200-14.fits
+    checksum: md5:ce55508bd136bfe18e8ec89e1bc476ae
+  - filename: index-4200-15.fits
+    checksum: md5:1684cf6c8c491f73ed381d544628c593
+  - filename: index-4200-16.fits
+    checksum: md5:32b93fcfcdcf57024df30686a579ccc0
+  - filename: index-4200-17.fits
+    checksum: md5:239a50a04886f011b648aaee9af5c097
+  - filename: index-4200-18.fits
+    checksum: md5:2e7ba028db0356b4f16af0690e821343
+  - filename: index-4200-19.fits
+    checksum: md5:a46c0e114c988553b6e48f0942ed2a8e
+  - filename: index-4200-20.fits
+    checksum: md5:9a7371de137b80ee61852bac499f9d2a
+  - filename: index-4200-21.fits
+    checksum: md5:beb763b3395b367e98bb8ab19ab58e6e
+  - filename: index-4200-22.fits
+    checksum: md5:5c2ab7de3bf3d91ac94cefbf8ce015dc
+  - filename: index-4200-23.fits
+    checksum: md5:5804c9785d10160e16a62127b7d6dbee
+  - filename: index-4200-24.fits
+    checksum: md5:61c74ad4d23db9048d4090aca78455b6
+  - filename: index-4200-25.fits
+    checksum: md5:bafc9b11dfc3a8bd7540296d8b7cf539
+  - filename: index-4200-26.fits
+    checksum: md5:f0efd6044a19329503b77b739b7f9010
+  - filename: index-4200-27.fits
+    checksum: md5:5576061cddadf098af0e51ea50d30b11
+  - filename: index-4200-28.fits
+    checksum: md5:065e39cc533a7703eb3096501fa5b633
+  - filename: index-4200-29.fits
+    checksum: md5:4391137f1ee5d30409e5725f7b4c0829
+  - filename: index-4200-30.fits
+    checksum: md5:631bd3d9e1d77a96af58d8a5214f5e0f
+  - filename: index-4200-31.fits
+    checksum: md5:3b977bed6474f87b927df014d6ac8bfd
+  - filename: index-4200-32.fits
+    checksum: md5:9471a132fcc8b67d259f003ea955f624
+  - filename: index-4200-33.fits
+    checksum: md5:cb672376ca5244000fa863345d97d0ab
+  - filename: index-4200-34.fits
+    checksum: md5:043ea32c27a649804f6576c8fd2da80c
+  - filename: index-4200-35.fits
+    checksum: md5:5079f6a83ace96c0202e9b4202681c96
+  - filename: index-4200-36.fits
+    checksum: md5:07c07152af04e69a48a80d57a38c6598
+  - filename: index-4200-37.fits
+    checksum: md5:71812b573536af5f3062b6694af09f05
+  - filename: index-4200-38.fits
+    checksum: md5:890f9bbd7e5055cf2e4b656dabb0b528
+  - filename: index-4200-39.fits
+    checksum: md5:2c0472c2f040d992bcb87f4a9787233c
+  - filename: index-4200-40.fits
+    checksum: md5:9f8e7422847000485927580bb8115af3
+  - filename: index-4200-41.fits
+    checksum: md5:0c7c8190e320902f434be201846d5bc0
+  - filename: index-4200-42.fits
+    checksum: md5:7f896e88cfb8e06e3c99644cea94ec57
+  - filename: index-4200-43.fits
+    checksum: md5:a26d3b2e720a518cd98a8f77750737cd
+  - filename: index-4200-44.fits
+    checksum: md5:a6976c91403cef33743fcc61e3353f95
+  - filename: index-4200-45.fits
+    checksum: md5:76bb151d8232f659447eaf7c19ffc847
+  - filename: index-4200-46.fits
+    checksum: md5:4d51cced4fb3662f00b430169c85d997
+  - filename: index-4200-47.fits
+    checksum: md5:6d331a73600211d06d3b09567baf5477
+  - filename: index-4201-00.fits
+    checksum: md5:cb4ed800dba60ad4246f41581b7275b8
+  - filename: index-4201-01.fits
+    checksum: md5:9f3b93aab0488b0f8734d6d7ef9d4fe6
+  - filename: index-4201-02.fits
+    checksum: md5:d7341aabdc989239114bb62e0083d55f
+  - filename: index-4201-03.fits
+    checksum: md5:199b57413fffd1ddcbfce168b7fe006d
+  - filename: index-4201-04.fits
+    checksum: md5:8c8be944661b238e41a00076d8c23ef5
+  - filename: index-4201-05.fits
+    checksum: md5:0187c2749481a529531c466358c3a6ca
+  - filename: index-4201-06.fits
+    checksum: md5:5c568fe64f452930f44a56075dbf96d6
+  - filename: index-4201-07.fits
+    checksum: md5:aaaa25dd6ac51ea6ca4bd56f90d2c1b9
+  - filename: index-4201-08.fits
+    checksum: md5:b7e07d1d3849eb853e1e0abd071b5521
+  - filename: index-4201-09.fits
+    checksum: md5:6363a94df0c3bdab7b46eab98d14405f
+  - filename: index-4201-10.fits
+    checksum: md5:221261254bbd93807b03c7fafff8eaf4
+  - filename: index-4201-11.fits
+    checksum: md5:cdb6a9cf3bd3be47a3b77658e63cd405
+  - filename: index-4201-12.fits
+    checksum: md5:1514faf71a26d54889d5845d547d15eb
+  - filename: index-4201-13.fits
+    checksum: md5:8e936ebc92effb7b6724abb7a1115f48
+  - filename: index-4201-14.fits
+    checksum: md5:a31572593e163930549e2fd9e2936291
+  - filename: index-4201-15.fits
+    checksum: md5:5e1e4a8b2b379c6e2fecc6b31bbf9642
+  - filename: index-4201-16.fits
+    checksum: md5:e824338a6235127fd9e395bc5da811b2
+  - filename: index-4201-17.fits
+    checksum: md5:d334202ffdc29d0d6d90c323e4e7076e
+  - filename: index-4201-18.fits
+    checksum: md5:7724f1669db540c1568faa097327ab3c
+  - filename: index-4201-19.fits
+    checksum: md5:79ad8ef1595eb93ddf6a65eb73456338
+  - filename: index-4201-20.fits
+    checksum: md5:f5473bca967d8f7c1f23ee8a2878864d
+  - filename: index-4201-21.fits
+    checksum: md5:83bb2d947d7e68c51ac09e8c4e31ef0b
+  - filename: index-4201-22.fits
+    checksum: md5:1c817ad1eb47b51b92e3f900d1f094b9
+  - filename: index-4201-23.fits
+    checksum: md5:23e97ce76a442126043dd09ef32846b3
+  - filename: index-4201-24.fits
+    checksum: md5:99be21b691c0894c086c1104ad7967ee
+  - filename: index-4201-25.fits
+    checksum: md5:71dc3850c8fcc2f35e82e3ff9c6b644f
+  - filename: index-4201-26.fits
+    checksum: md5:16e2a0e74dc78202bc2e2f5355f14c0f
+  - filename: index-4201-27.fits
+    checksum: md5:289d04f7ad6f59bff305f60878ebf5f1
+  - filename: index-4201-28.fits
+    checksum: md5:224a9c64480eca951fd11be3df9a5c54
+  - filename: index-4201-29.fits
+    checksum: md5:c0b893c5542805f01a9abbe887ba493b
+  - filename: index-4201-30.fits
+    checksum: md5:b91968825beae86d236d6298fb1d0ed4
+  - filename: index-4201-31.fits
+    checksum: md5:27a47eb0f6a957fe78bdfe94d23fcce7
+  - filename: index-4201-32.fits
+    checksum: md5:f5d1162381b5ecc7a1e5508eecad37e6
+  - filename: index-4201-33.fits
+    checksum: md5:9506dc51319a976724bbc0b94e2b5d03
+  - filename: index-4201-34.fits
+    checksum: md5:83e7b59cb6592ad798fa92d334198e2b
+  - filename: index-4201-35.fits
+    checksum: md5:85b58acf01f0f86f7c04c5ebc1ac0569
+  - filename: index-4201-36.fits
+    checksum: md5:4017a7993c673c1ec5edbd2e2669e0ee
+  - filename: index-4201-37.fits
+    checksum: md5:a1d392f083fddd6c3aff719820c18344
+  - filename: index-4201-38.fits
+    checksum: md5:d8fae11435932becdef34a531523538b
+  - filename: index-4201-39.fits
+    checksum: md5:6fb5a1030d174121d4db3483ef6274d3
+  - filename: index-4201-40.fits
+    checksum: md5:3bad0938c724ca522527a36c513951ce
+  - filename: index-4201-41.fits
+    checksum: md5:778d0417b039e9c2033335b8012fde1a
+  - filename: index-4201-42.fits
+    checksum: md5:9ddb1085e40fc7127aa8c4db79ebd211
+  - filename: index-4201-43.fits
+    checksum: md5:a6b42262dce1e0f38e92e987210eb88b
+  - filename: index-4201-44.fits
+    checksum: md5:5f900854625e8385b3e237d164563838
+  - filename: index-4201-45.fits
+    checksum: md5:87d52b55cd68044a7d85f3c9064962b6
+  - filename: index-4201-46.fits
+    checksum: md5:2d666889264831b206c511c7b3967ed0
+  - filename: index-4201-47.fits
+    checksum: md5:6f9aaf37657097b76a803aac3fd71243
