@@ -6,6 +6,8 @@
 - set_fact:
     phd2_src: "{{ projects_folder }}/src/phd2"
     phd2_build: "{{ projects_folder }}/build/phd2"
+  tags:
+    - always
 
 
 - debug:

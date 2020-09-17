@@ -6,6 +6,8 @@
 - set_fact:
     indi_core_src: "{{ projects_folder }}/src/indi-core"
     indi_core_build: "{{ projects_folder }}/build/indi-core"
+  tags:
+    - always
 
 
 - debug:

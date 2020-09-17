@@ -6,6 +6,8 @@
 - set_fact:
     kstars_src: "{{ projects_folder }}/src/kstars"
     kstars_build: "{{ projects_folder }}/build/kstars"
+  tags:
+    - always
 
 
 - debug:
