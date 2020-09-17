@@ -16,6 +16,8 @@ indi_packages:
   - libtheora-dev
   - libfftw3-dev
   - pkg-config
+  - python3-pip
+  - python3-virtualenv
 indi_3rdparty_packages:
   - libnova-dev
   - libcfitsio-dev

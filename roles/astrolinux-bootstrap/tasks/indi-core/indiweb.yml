@@ -1,0 +1,19 @@
+---
+
+- debug:
+    msg:
+      - "INDI web virtualenv folder: {{ indi_web_virtualenv }}"
+
+
+- name: Create indiweb virtualenv folder
+  file:
+    path: "{{ indi_web_virtualenv }}"
+    mode: '0750'
+    state: directory
+
+
+- name: Create indiweb virtualenv
+  pip:
+    name: indiweb
+    virtualenv: "{{ indi_web_virtualenv }}"
+

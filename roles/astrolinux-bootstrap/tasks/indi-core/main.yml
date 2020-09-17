@@ -6,6 +6,7 @@
 - set_fact:
     indi_core_src: "{{ projects_folder }}/src/indi-core"
     indi_core_build: "{{ projects_folder }}/build/indi-core"
+    indi_web_virtualenv: "{{ virtualenv_folder }}/indiweb"
   tags:
     - always
 
@@ -67,4 +68,9 @@
     state: absent
   tags:
     - cleanup
+
+
+- include: "indi-core/indiweb.yml"
+  tags:
+    - indiweb
 

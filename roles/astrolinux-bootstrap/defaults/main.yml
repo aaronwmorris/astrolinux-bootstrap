@@ -1,6 +1,7 @@
 ---
 # defaults file for astrolinux-bootstrap
 projects_folder: "{{ lookup('env','HOME') }}/Projects"
+virtualenv_folder: "{{ projects_folder }}/virtualenv"
 install_prefix: /usr/local
 indi_core_git_repo: https://github.com/indilib/indi.git
 indi_core_git_version: 'v1.8.6'
