@@ -15,7 +15,8 @@ kstars_git_repo: https://invent.kde.org/education/kstars.git
 kstars_git_version: '3.4.3'
 astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net
 astrometrydotnet_git_version: '0.82'
-astrometrydotnet_index_url: http://broiler.astrometry.net/~dstn/4200/
+astrometrydotnet_4100index_url: http://broiler.astrometry.net/~dstn/4100/
+astrometrydotnet_4200index_url: http://broiler.astrometry.net/~dstn/4200/
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
 phd2_git_version: 'v2.6.9'
 xrdp_desktop: xfce

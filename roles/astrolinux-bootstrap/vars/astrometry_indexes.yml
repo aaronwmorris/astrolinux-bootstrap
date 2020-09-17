@@ -1,5 +1,5 @@
 ---
-astrometry_data:
+astrometry_4200_data:
   - filename: index-4219.fits
     checksum: md5:4346ea1a93d9c39bdc07de8abdde4915
   - filename: index-4218.fits
@@ -384,7 +384,7 @@ astrometry_data:
     checksum: md5:6ab2c7948f24d15e794e1000853b5cd2
   - filename: index-4202-00.fits
     checksum: md5:ef5a71bd24b382bb357cdac0b0ce8654
-astrometry_data_extra:
+astrometry_4200_data_extra:
   - filename: index-4200-00.fits
     checksum: md5:6cb5f043ee6613306c21d6aec5c6d041
   - filename: index-4200-01.fits
@@ -577,3 +577,30 @@ astrometry_data_extra:
     checksum: md5:2d666889264831b206c511c7b3967ed0
   - filename: index-4201-47.fits
     checksum: md5:6f9aaf37657097b76a803aac3fd71243
+astrometry_4100_data:
+  - filename: index-4107.fits
+    checksum: md5:f963cdd3bae5aa985d2245464ef444d6
+  - filename: index-4108.fits
+    checksum: md5:e6a3a643fa06cbbdf1dee478e4d84a32
+  - filename: index-4109.fits
+    checksum: md5:9a65a52ce04e3e75af950e5866f81b1b
+  - filename: index-4110.fits
+    checksum: md5:d9aeb509b107d3bf8f79346329f1c0e3
+  - filename: index-4111.fits
+    checksum: md5:cd7c149671d92a430bbe64c046ffcac3
+  - filename: index-4112.fits
+    checksum: md5:76568e3703f492121a1affca7368f3c2
+  - filename: index-4113.fits
+    checksum: md5:d36a7d5f06b0443f7951751733b1b088
+  - filename: index-4114.fits
+    checksum: md5:0afbed8177b0e101dfc8925c5c077005
+  - filename: index-4115.fits
+    checksum: md5:0db912aba86fa97159add4a65833ec10
+  - filename: index-4116.fits
+    checksum: md5:b70cb06f819144de4c659524a735f4f3
+  - filename: index-4117.fits
+    checksum: md5:ccf0ef3e8faac6feb0f5fb74d88a3152
+  - filename: index-4118.fits
+    checksum: md5:a99b85c89f16e6d1ab6dbc19d9ac1d1a
+  - filename: index-4119.fits
+    checksum: md5:25c404b35a08558a1404d3f6145abf1c

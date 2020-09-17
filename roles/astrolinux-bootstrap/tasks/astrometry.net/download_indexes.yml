@@ -4,9 +4,9 @@
   include_vars: astrometry_indexes.yml
 
 
-- name: Download astrometry.net data index files
+- name: Download astrometry.net 4100 data index files
   get_url:
-    url: "{{ astrometrydotnet_index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
+    url: "{{ astrometrydotnet_4100index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
     dest: "{{ astrometrydotnet_install }}/share/{{ item.filename }}"
     owner: root
     group: root
@@ -14,12 +14,26 @@
     checksum: "{{ item.checksum }}"
     force: no
   become: yes
-  with_items: "{{ astrometry_data }}"
+  with_items: "{{ astrometry_4100_data }}"
+
+
+
+- name: Download astrometry.net 4200 data index files
+  get_url:
+    url: "{{ astrometrydotnet_4200index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
+    dest: "{{ astrometrydotnet_install }}/share/{{ item.filename }}"
+    owner: root
+    group: root
+    mode: '0644'
+    checksum: "{{ item.checksum }}"
+    force: no
+  become: yes
+  with_items: "{{ astrometry_4200_data }}"
 
 
 #- name: Download astrometry.net extra data index files
 #  get_url:
-#    url: "{{ astrometrydotnet_index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
+#    url: "{{ astrometrydotnet_4200index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
 #    dest: "{{ astrometrydotnet_install }}/share/{{ item.filename }}"
 #    owner: root
 #    group: root
@@ -27,7 +41,7 @@
 #    checksum: "{{ item.checksum }}"
 #    force: no
 #  become: yes
-#  with_items: "{{ astrometry_data_extra }}"
+#  with_items: "{{ astrometry_4200_data_extra }}"
 #  tags:
 #    - never
 
