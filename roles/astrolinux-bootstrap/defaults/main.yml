@@ -9,6 +9,8 @@ indi_3rdparty_git_repo: https://github.com/indilib/indi-3rdparty.git
 indi_3rdparty_git_version: 'v1.8.6'
 indi_3rdparty_build_libs: []
 indi_3rdparty_build_drivers: []
+indihub_git_repo: https://github.com/indihub-space/agent
+indihub_git_version: 'v1.0.6'
 kstars_git_repo: https://invent.kde.org/education/kstars.git
 kstars_git_version: '3.4.3'
 astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net

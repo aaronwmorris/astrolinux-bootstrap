@@ -1,0 +1,84 @@
+---
+
+- include: "indihub/install/main.yml"
+
+
+- set_fact:
+    #indihub_src: "{{ projects_folder }}/src/indihub"
+    indihub_build: "{{ projects_folder }}/build/indihub"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "indihub src folder: {{ indihub_src }}"
+      - "indihub build folder: {{ indihub_build }}"
+
+
+- name: Remove existing indihub build folder
+  file:
+    path: "{{ indihub_build }}"
+    state: absent
+
+
+- name: Create indihub build folder
+  file:
+    path: "{{ indihub_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "indihub git repo: {{ indihub_git_repo }}"
+      - "indihub git tag: {{ indihub_git_version }}"
+
+
+- name: Git checkout of indihub
+  git:
+    repo: "{{ indihub_git_repo }}"
+    dest: "{{ indihub_build }}"
+    depth: 1
+    version: "{{ indihub_git_version }}"
+    #force: yes
+ 
+
+- name: Build indihub (x86_64)
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} build-linux64"
+    chdir: "{{ indihub_build }}"
+  when:
+    - ansible_facts['ansible_architecture'] == 'x86_64'
+
+
+- name: Build indihub (x86_64)
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} build-linux64"
+    chdir: "{{ indihub_build }}"
+  when:
+    - ansible_facts['ansible_architecture'] == 'x86_64'
+
+
+- name: Install indihub (x86_64)
+  copy:
+    src: "{{ indihub_build }}/bin/indihub-agent-linux64/indihub-agent"
+    dest: "{{ install_prefix }}/bin/"
+    owner: root
+    group: root
+    mode: '0755'
+    remote_src: yes
+  become: yes
+  when:
+    - ansible_facts['ansible_architecture'] == 'x86_64'
+
+
+### fixme ###
+# tasks for raspberry pi/arm
+
+- name: Cleanup indihub build folder
+  file:
+    path: "{{ indihub_build }}"
+    state: absent
+  tags:
+    - cleanup
+

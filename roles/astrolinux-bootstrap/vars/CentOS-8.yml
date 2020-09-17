@@ -32,6 +32,9 @@ indi_3rdparty_packages:
   - cmake3
   - pkgconfig
   - '@Development tools'
+indihub_packages:
+  - '@Development tools'
+  - gcc-go
 kstars_packages:
   - git
   - cfitsio-devel

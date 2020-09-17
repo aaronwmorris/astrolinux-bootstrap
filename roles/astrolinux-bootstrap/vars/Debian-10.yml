@@ -44,6 +44,9 @@ indi_3rdparty_packages:
   - libavcodec-dev
   - libavdevice-dev
   - pkg-config
+indihub_packages:
+  - build-essential
+  - gccgo-go
 kstars_packages:
   - build-essential
   - cmake

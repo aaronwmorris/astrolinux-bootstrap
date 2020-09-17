@@ -34,6 +34,11 @@
     - indi_3rdparty
 
 
+- include: "indihub/main.yml"
+  tags:
+    - indihub
+
+
 - include: "kstars/main.yml"
   tags:
     - kstars
