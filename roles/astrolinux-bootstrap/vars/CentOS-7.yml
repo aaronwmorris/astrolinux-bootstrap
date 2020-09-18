@@ -70,6 +70,9 @@ kstars_packages:
 astrometrydotnet_packages:
   - '@Development tools'
   - python3-devel
+  - cfitsio-devel
+  - cfitsio-static
+  - cfitsio-devel
 phd2_packages:
   - git
   - cmake3
