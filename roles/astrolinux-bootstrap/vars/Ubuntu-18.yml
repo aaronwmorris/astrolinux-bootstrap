@@ -45,6 +45,7 @@ indi_3rdparty_packages:
 indiweb_packages:
   - build-essential
   - python3-pip
+  - virtualenv
   - python3-virtualenv
 indihub_packages:
   - build-essential
