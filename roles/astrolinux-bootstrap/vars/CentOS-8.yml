@@ -76,7 +76,9 @@ phd2_packages:
   - wxGTK3-devel
   - libnova-devel
   - zlib-devel
-  - libusb-devel
+  - libusb
+  - libusbx
+  - libusbx-devel
   - libcurl-devel
   - '@Development tools'
 xrdp_packages:
@@ -95,3 +97,7 @@ lin_guider_packages:
   - fxload
   - '@Development tools'
   - libusb
+  - qt5-qtbase
+  - qt5-qtbase-devel
+  - libusbx
+  - libusbx-devel
