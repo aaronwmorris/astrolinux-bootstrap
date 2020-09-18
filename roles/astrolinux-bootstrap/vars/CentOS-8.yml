@@ -75,7 +75,7 @@ phd2_packages:
   - cmake3
   - pkgconfig
   - wxGTK3-devel
-  - libnova-devel
+  #- libnova-devel
   - zlib-devel
   - libusb
   - libusbx
