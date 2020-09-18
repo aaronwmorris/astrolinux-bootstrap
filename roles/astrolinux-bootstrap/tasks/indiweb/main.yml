@@ -4,27 +4,30 @@
 
 
 - set_fact:
-    indi_web_virtualenv: "{{ virtualenv_folder }}/indiweb"
+    indiweb_virtualenv: "{{ virtualenv_folder }}/indiweb"
+    indiweb_virtualenv: "{{ virtualenv_folder }}/indiweb"
   tags:
     - always
 
 
 - debug:
     msg:
-      - "INDI web virtualenv folder: {{ indi_web_virtualenv }}"
+      - "INDI web virtualenv folder: {{ indiweb_virtualenv }}"
 
 
 - name: Create indiweb virtualenv folder
   file:
-    path: "{{ indi_web_virtualenv }}"
+    path: "{{ indiweb_virtualenv }}"
     mode: '0755'
     state: directory
 
 
 - name: Create indiweb virtualenv
   pip:
-    name: indiweb
-    virtualenv: "{{ indi_web_virtualenv }}"
+    #name: indiweb
+    name: "git+{{ indiweb_git_repo }}"
+    virtualenv: "{{ indiweb_virtualenv }}"
+    state: forcereinstall
 
 
 - name: Install indiwebmanager service
