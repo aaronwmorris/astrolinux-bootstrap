@@ -36,7 +36,7 @@ indiweb_packages:
   - python3-virtualenv
 indihub_packages:
   - '@Development tools'
-  - gcc-go
+  - golang
 kstars_packages:
   - git
   - cfitsio-devel

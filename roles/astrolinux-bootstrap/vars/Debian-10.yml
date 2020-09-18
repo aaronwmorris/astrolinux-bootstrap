@@ -48,7 +48,7 @@ indiweb_packages:
   - python3-virtualenv
 indihub_packages:
   - build-essential
-  - gccgo-go
+  - golang
 kstars_packages:
   - build-essential
   - cmake
