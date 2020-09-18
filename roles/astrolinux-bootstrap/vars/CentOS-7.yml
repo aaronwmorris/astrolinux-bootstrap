@@ -10,6 +10,7 @@ indi_packages:
   - libnova-devel
   - libusb
   - libusb-devel
+  - cfitsio
   - cfitsio-devel
   - cfitsio-static
   - gtest
@@ -21,7 +22,7 @@ indi_packages:
   - libusbx-devel
   - libcurl-devel
   - gsl-devel
-  - cfitsio-devel
+  - libjpeg-turbo
   - libjpeg-turbo-devel
   - fftw3-devel 
   - pkgconfig
@@ -40,6 +41,8 @@ indihub_packages:
   - golang
 kstars_packages:
   - git
+  - cfitsio
+  - cfitsio-static
   - cfitsio-devel
   - eigen3-devel
   - cmake3
@@ -70,9 +73,13 @@ kstars_packages:
 astrometrydotnet_packages:
   - '@Development tools'
   - python3-devel
-  - cfitsio-devel
+  - python3-numpy
+  - cfitsio
   - cfitsio-static
   - cfitsio-devel
+  - libjpeg-turbo
+  - libjpeg-turbo-devel
+  - swig
 phd2_packages:
   - git
   - cmake3
