@@ -88,12 +88,13 @@ astrometrydotnet_packages:
   - libpng-dev
   - libjpeg-dev
   - python-numpy
-  - python-pyfits
+  - astropy-utils
   - python-dev
   - zlib1g-dev
   - libbz2-dev
   - swig
   - libcfitsio-dev
+  - python3-dev
 phd2_packages:
   - build-essential
   - git

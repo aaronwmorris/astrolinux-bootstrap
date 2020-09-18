@@ -68,6 +68,7 @@ kstars_packages:
   - '@Development tools'
 astrometrydotnet_packages:
   - '@Development tools'
+  - python3-devel
 phd2_packages:
   - git
   - cmake3
