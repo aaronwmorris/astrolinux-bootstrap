@@ -1,0 +1,15 @@
+[Unit]
+Description=INDI Web Manager
+After=multi-user.target
+
+[Service]
+Type=idle
+# MUST SET YOUR USERNAME HERE.
+User={{ ansible_user }}
+ExecStart={{ indi_web_virtualenv }}/bin/indi-web -v
+Restart=always
+RestartSec=5
+Environment=INDI_DATA_DIR={{ install_prefix }}/share/indi
+
+[Install]
+WantedBy=multi-user.target
