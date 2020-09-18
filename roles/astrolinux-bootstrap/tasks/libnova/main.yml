@@ -1,0 +1,75 @@
+---
+
+- set_fact:
+    #libnova_src: "{{ projects_folder }}/src/libnova"
+    libnova_build: "{{ projects_folder }}/build/libnova"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "libnova src folder: {{ libnova_src }}"
+      - "libnova build folder: {{ libnova_build }}"
+
+
+- name: Remove existing libnova build folder
+  file:
+    path: "{{ libnova_build }}"
+    state: absent
+
+
+- name: Create libnova build folder
+  file:
+    path: "{{ libnova_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "libnova git repo: {{ libnova_git_repo }}"
+      - "libnova git tag: {{ libnova_git_version }}"
+
+
+- name: Git checkout of libnova
+  git:
+    repo: "{{ libnova_git_repo }}"
+    dest: "{{ libnova_build }}"
+    depth: 1
+    version: "{{ libnova_git_version }}"
+    #force: yes
+ 
+
+- name: Setup libnova build
+  command:
+    cmd: "./autogen.sh"
+    chdir: "{{ libnova_build }}"
+
+
+- name: Configure libnova build
+  command:
+    cmd: "./configure --prefix={{ install_prefix }}"
+    chdir: "{{ libnova_build }}"
+
+
+- name: Build libnova
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ libnova_build }}"
+
+
+- name: Install libnova
+  command:
+    cmd: "make install"
+    chdir: "{{ libnova_build }}"
+  become: yes
+
+
+- name: Cleanup libnova build folder
+  file:
+    path: "{{ libnova_build }}"
+    state: absent
+  tags:
+    - cleanup
+
+

@@ -2,6 +2,11 @@
 # tasks file for astrolinux-bootstrap
 
 
+- debug:
+    msg: "Detected: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_major_version'] }}"
+  tags:
+    - always
+
 
 - name: Include OS Distribution Family vars
   include_vars: "{{ ansible_facts['distribution'] }}-{{ ansible_facts['distribution_major_version'] }}.yml"
