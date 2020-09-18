@@ -60,7 +60,13 @@
 
 - name: Setup lin_guider build
   command:
-    cmd: "bash configure"
+    cmd: "{{ qmake_bin }} CONFIG+=release"
+    chdir: "{{ lin_guider_build }}/lin_guider_pack/lin_guider"
+
+
+- name: Check lin_guider build
+  command:
+    cmd: "bash check_config.sh"
     chdir: "{{ lin_guider_build }}/lin_guider_pack/lin_guider"
 
 

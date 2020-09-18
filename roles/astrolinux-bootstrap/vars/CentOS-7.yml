@@ -1,6 +1,7 @@
 ---
 ansible_python_interpreter: python2
 cmake_bin: cmake3
+qmake_bin: qmake-qt5
 group_membership: []
 indi_packages:
   - git
