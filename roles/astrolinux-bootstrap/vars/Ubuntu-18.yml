@@ -122,3 +122,4 @@ lin_guider_packages:
   - tar
   - fxload
   - build-essential
+  - qt5-default

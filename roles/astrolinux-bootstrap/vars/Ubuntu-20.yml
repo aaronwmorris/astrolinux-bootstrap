@@ -123,3 +123,4 @@ lin_guider_packages:
   - fxload
   - build-essential
   - libusb-1.0-0-dev
+  - qt5-default
