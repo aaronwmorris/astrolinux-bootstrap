@@ -36,6 +36,7 @@ indi_3rdparty_packages:
   - LibRaw-devel
   - libgphoto2-devel
   - libtiff-devel
+  - gpsd-devel
 indiweb_packages:
   - '@Development tools'
   - python3-pip
@@ -116,3 +117,7 @@ lin_guider_packages:
   - qt5-qtbase-devel
   - libusbx
   - libusbx-devel
+libdc1394_packages:
+  - m4
+  - SDL-devel
+  - libraw1394-devel

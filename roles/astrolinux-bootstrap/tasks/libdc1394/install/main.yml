@@ -1,0 +1,4 @@
+---
+
+- include: "libdc1394/install/{{ ansible_facts['os_family'] }}.yml"
+

@@ -3,6 +3,13 @@
 - include: "indi-3rdparty/install/main.yml"
 
 
+### CentOS 8 does not include libdc1394-devel
+- include: "libdc1394/main.yml"
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+    - ansible_facts['distribution_major_version'] == '8'
+
+
 - set_fact:
     indi_3rdparty_src: "{{ projects_folder }}/src/indi-3rdparty"
     indi_3rdparty_libs_build: "{{ projects_folder }}/build/indi-3rdparty_libs"

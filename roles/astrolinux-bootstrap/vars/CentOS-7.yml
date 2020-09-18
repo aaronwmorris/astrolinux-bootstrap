@@ -36,6 +36,7 @@ indi_3rdparty_packages:
   - LibRaw-devel
   - libgphoto2-devel
   - libtiff-devel
+  - gpsd-devel
 indiweb_packages:
   - '@Development tools'
   - python-pip

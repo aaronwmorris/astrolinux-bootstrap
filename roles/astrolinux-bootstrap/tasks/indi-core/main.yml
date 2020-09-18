@@ -3,6 +3,7 @@
 - include: "indi-core/install/main.yml"
 
 
+### CentOS 8 does not include libnova
 - include: "libnova/main.yml"
   when:
     - ansible_facts['distribution'] == 'CentOS'

@@ -1,0 +1,10 @@
+---
+
+
+- name: Install libdc1394 development packages
+  package:
+    name: "{{ libdc1394_packages }}"
+    state: present
+    enablerepo: PowerTools
+  become: yes
+
