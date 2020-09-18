@@ -48,7 +48,7 @@
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }} build-linux64"
     chdir: "{{ indihub_build }}"
   when:
-    - ansible_facts['ansible_architecture'] == 'x86_64'
+    - ansible_facts['architecture'] == 'x86_64'
 
 
 - name: Build indihub (x86_64)
@@ -56,7 +56,7 @@
     cmd: "make -j {{ ansible_facts['processor_vcpus'] }} build-linux64"
     chdir: "{{ indihub_build }}"
   when:
-    - ansible_facts['ansible_architecture'] == 'x86_64'
+    - ansible_facts['architecture'] == 'x86_64'
 
 
 - name: Install indihub (x86_64)
@@ -69,7 +69,7 @@
     remote_src: yes
   become: yes
   when:
-    - ansible_facts['ansible_architecture'] == 'x86_64'
+    - ansible_facts['architecture'] == 'x86_64'
 
 
 ### fixme ###
