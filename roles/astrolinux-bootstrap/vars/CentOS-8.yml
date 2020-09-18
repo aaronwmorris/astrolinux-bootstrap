@@ -32,6 +32,10 @@ indi_3rdparty_packages:
   - cmake3
   - pkgconfig
   - '@Development tools'
+  - libftdi-devel
+  - LibRaw-devel
+  - libgphoto2-devel
+  - libtiff-devel
 indiweb_packages:
   - '@Development tools'
   - python3-pip
