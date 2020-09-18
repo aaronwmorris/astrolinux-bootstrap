@@ -96,3 +96,5 @@ lin_guider_packages:
   - '@Development tools'
   - libusb
   - libusb-devel
+  - qt5-qtbase
+  - qt5-qtbase-devel
