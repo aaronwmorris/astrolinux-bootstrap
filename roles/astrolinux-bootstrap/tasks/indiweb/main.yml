@@ -5,7 +5,6 @@
 
 - set_fact:
     indiweb_virtualenv: "{{ virtualenv_folder }}/indiweb"
-    indiweb_virtualenv: "{{ virtualenv_folder }}/indiweb"
   tags:
     - always
 
