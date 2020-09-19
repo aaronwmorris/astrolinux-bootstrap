@@ -138,3 +138,4 @@ xplanet_packages:
   - libpng-devel
   - freetype-devel
   - svn
+  - pango-devel
