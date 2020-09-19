@@ -49,14 +49,14 @@
     - indihub
 
 
-- include: "kstars/main.yml"
-  tags:
-    - kstars
-
-
 - include: "astrometry.net/main.yml"
   tags:
     - astrometry.net
+
+
+- include: "kstars/main.yml"
+  tags:
+    - kstars
 
 
 - include: "phd2/main.yml"
