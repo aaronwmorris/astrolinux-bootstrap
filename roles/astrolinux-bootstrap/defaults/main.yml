@@ -31,3 +31,4 @@ libnova_git_repo: https://git.code.sf.net/p/libnova/libnova
 libnova_git_version: 'HEAD'
 libdc1394_git_repo: https://git.code.sf.net/p/libdc1394/code
 libdc1394_git_version: 'HEAD'
+xplanet_svn_repo: svn://svn.code.sf.net/p/xplanet/code/trunk

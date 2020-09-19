@@ -3,6 +3,13 @@
 - include: "kstars/install/main.yml"
 
 
+### CentOS 8 does not include xplanet
+- include: "xplanet/main.yml"
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+    - ansible_facts['distribution_major_version'] == '8'
+
+
 - set_fact:
     kstars_src: "{{ projects_folder }}/src/kstars"
     kstars_build: "{{ projects_folder }}/build/kstars"

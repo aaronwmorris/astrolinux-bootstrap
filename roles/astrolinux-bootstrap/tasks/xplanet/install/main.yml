@@ -1,0 +1,4 @@
+---
+
+- include: "xplanet/install/{{ ansible_facts['os_family'] }}.yml"
+

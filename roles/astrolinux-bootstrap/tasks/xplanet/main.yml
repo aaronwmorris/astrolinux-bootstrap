@@ -1,0 +1,61 @@
+---
+
+- include: "xplanet/install/main.yml"
+
+
+- set_fact:
+    #xplanet_src: "{{ projects_folder }}/src/xplanet"
+    xplanet_build: "{{ projects_folder }}/build/xplanet"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "xplanet src folder: {{ xplanet_src }}"
+      - "xplanet build folder: {{ xplanet_build }}"
+
+
+- name: Remove existing xplanet build folder
+  file:
+    path: "{{ xplanet_build }}"
+    state: absent
+
+
+- debug:
+    msg:
+      - "xplanet svn repo: {{ xplanet_svn_repo }}"
+
+
+- name: Checkout xplanet source
+  subversion:
+    repo: "{{ xplanet_svn_repo }}"
+    dest: "{{ xplanet_build }}"
+
+
+- name: Setup xplanet build
+  command:
+    cmd: "./configure --prefix={{ install_prefix }}"
+    chdir: "{{ xplanet_build }}"
+
+
+- name: Build xplanet
+  command:
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    chdir: "{{ xplanet_build }}"
+
+
+- name: Install xplanet
+  command:
+    cmd: "make install"
+    chdir: "{{ xplanet_build }}"
+  become: yes
+
+
+- name: Cleanup xplanet build folder
+  file:
+    path: "{{ xplanet_build }}"
+    state: absent
+  tags:
+    - cleanup
+

@@ -67,9 +67,15 @@ kstars_packages:
   - kf5-kwidgetsaddons-devel
   - kf5-kwindowsystem-devel
   - kf5-kxmlgui-devel
+  - kf5-knotifications-devel
+  - kf5-kcrash-devel
+  - kf5-knotifyconfig-devel
   - qt5-qtdeclarative-devel
   - qt5-qtmultimedia-devel
   - qt5-qtsvg-devel
+  - qt5-qtwebsockets-devel
+  - qt5-qtdatavis3d-devel
+  - qtkeychain-qt5-devel
   - wcslib-devel
   - xplanet
   - zlib-devel

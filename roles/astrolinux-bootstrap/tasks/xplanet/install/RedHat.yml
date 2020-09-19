@@ -1,0 +1,9 @@
+---
+
+
+- name: Install xplanet development packages
+  become: yes
+  package:
+    name: "{{ xplanet_packages }}"
+    state: present
+
