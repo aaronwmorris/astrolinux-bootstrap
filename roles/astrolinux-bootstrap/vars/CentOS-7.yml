@@ -103,7 +103,7 @@ phd2_packages:
   - '@Development tools'
 xrdp_packages:
   - xrdp
-  - xorgrdp
+  - xorgxrdp
   - tigervnc-server
   - python2-cryptography
 xrdp_desktops:
