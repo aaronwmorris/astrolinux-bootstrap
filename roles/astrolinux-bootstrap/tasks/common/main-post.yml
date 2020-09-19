@@ -1,0 +1,35 @@
+---
+
+- include: "common/install/main.yml"
+
+
+- name: Add user to groups for device access
+  user:
+    name: "{{ ansible_user }}"
+    groups: "{{ group_membership }}"
+    append: yes
+  become: yes
+  register: group_membership_result
+
+
+- debug:
+    msg:
+      - "You should reboot your device to ensure your user has the correct group membership to access devices"
+  when:
+    - group_membership_result.changed
+
+
+- name: Disable SELinux (RedHat)
+  selinux:
+    state: disabled
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
+  register: disable_selinux_result
+
+
+- debug:
+    msg:
+      - "Please reboot your device to disable SELinux"
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
+    - disable_selinux_result.changed

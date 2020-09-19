@@ -4,6 +4,8 @@ cmake_bin: cmake3
 qmake_bin: qmake-qt5
 group_membership:
   - dialout
+common_package:
+  - python-libselinux
 indi_packages:
   - git
   - cmake3

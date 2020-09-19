@@ -75,7 +75,7 @@
     - xrdp
 
 
-- include: "post_common/main.yml"
+- include: "common/main_post.yml"
   tags:
     - common
 
