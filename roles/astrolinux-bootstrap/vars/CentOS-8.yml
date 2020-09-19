@@ -4,7 +4,7 @@ cmake_bin: cmake
 qmake_bin: qmake-qt5
 group_membership:
   - dialout
-common_package:
+common_packages:
   - python3-libselinux
 indi_packages:
   - git
