@@ -44,6 +44,7 @@
   systemd:
     name: indiwebmanager.service
     state: restarted
+    enabled: yes
     daemon_reload: yes
   become: true
 
