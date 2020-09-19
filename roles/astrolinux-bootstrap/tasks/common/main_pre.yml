@@ -1,0 +1,64 @@
+---
+
+- include: "common/install/main.yml"
+
+
+- name: Populate service facts
+  service_facts:
+
+
+#- debug:
+#    var: ansible_facts.services
+
+
+- name: Setup additional library paths (RedHat)
+  copy:
+    src: ld.so.conf.d/local.conf
+    dest: /etc/ld.so.conf.d/local.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
+
+
+- name: Reload ldconfig (RedHat)
+  command:
+    cmd: "ldconfig"
+  become: true
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
+
+
+- name: Firewall rules (firewalld)
+  firewalld:
+    port: "{{ item }}"
+    permanent: yes
+    immediate: yes
+    state: enabled
+  with_items:
+    - 3389/tcp
+    - 8624/tcp
+  become: yes
+  when:
+    - ansible_facts.services['firewalld.service'] is defined
+    - ansible_facts.services['firewalld.service']['state'] == 'running'
+    #- ansible_facts.services['firewalld.service']['status'] == 'enabled'
+
+
+- name: Firewall rules (ufw)
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    log: yes
+  with_items:
+    - 3389/tcp
+    - 8624/tcp
+  become: yes
+  when:
+    - ansible_facts.services['ufw.service'] is defined
+    - ansible_facts.services['ufw.service']['state'] == 'running'
+    #- ansible_facts.services['ufw.service']['status'] == 'enabled'
+
+

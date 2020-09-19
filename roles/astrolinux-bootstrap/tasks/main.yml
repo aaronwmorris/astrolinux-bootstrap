@@ -30,6 +30,11 @@
     - always
 
 
+- include: "common/main_pre.yml"
+  tags:
+    - common
+
+
 - include: "indi-core/main.yml"
   tags: indi_core
 
