@@ -2,3 +2,7 @@
 # vars file for astrolinux-bootstrap
 cmake_bin: cmake
 qmake_bin: qmake
+indihub_arch:
+  x86_64:
+    build_target: build-linux64
+    folder: indihub-agent-linux64

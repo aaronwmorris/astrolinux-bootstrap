@@ -43,37 +43,22 @@
     #force: yes
  
 
-- name: Build indihub (x86_64)
+- name: Build indihub
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} build-linux64"
+    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} {{ indihub_arch[ansible_facts['architecture']]['build_target'] }}"
     chdir: "{{ indihub_build }}"
-  when:
-    - ansible_facts['architecture'] == 'x86_64'
 
 
-- name: Build indihub (x86_64)
-  command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} build-linux64"
-    chdir: "{{ indihub_build }}"
-  when:
-    - ansible_facts['architecture'] == 'x86_64'
-
-
-- name: Install indihub (x86_64)
+- name: Install indihub
   copy:
-    src: "{{ indihub_build }}/bin/indihub-agent-linux64/indihub-agent"
+    src: "{{ indihub_build }}/bin/{{ indihub_arch[ansible_facts['architecture']]['folder'] }}/indihub-agent"
     dest: "{{ install_prefix }}/bin/"
     owner: root
     group: root
     mode: '0755'
     remote_src: yes
   become: yes
-  when:
-    - ansible_facts['architecture'] == 'x86_64'
 
-
-### fixme ###
-# tasks for raspberry pi/arm
 
 - name: Cleanup indihub build folder
   file:
