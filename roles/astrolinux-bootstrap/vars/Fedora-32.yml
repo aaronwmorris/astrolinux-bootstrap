@@ -1,0 +1,129 @@
+---
+ansible_python_interpreter: python3
+qmake_bin: qmake-qt5
+group_membership:
+  - dialout
+common_packages:
+  - python3-libselinux
+indi_packages:
+  - git
+  - cmake3
+  - libnova
+  - libnova-devel
+  - libusb
+  - libusb-devel
+  - cfitsio
+  - cfitsio-devel
+  - cfitsio-static
+  - gtest
+  - gtest-devel
+  - gmock
+  - gmock-devel
+  - zlib-devel
+  - zlib-static
+  - libusbx
+  - libusbx-devel
+  - libcurl-devel
+  - gsl-devel
+  - libjpeg-turbo
+  - libjpeg-turbo-devel
+  - fftw3-devel 
+  - pkgconfig
+  - '@Development tools'
+indi_3rdparty_packages:
+  - git
+  - cmake3
+  - pkgconfig
+  - '@Development tools'
+  - libftdi-devel
+  - LibRaw-devel
+  - libgphoto2-devel
+  - libtiff-devel
+  - gpsd-devel
+  - libdc1394-devel
+indiweb_packages:
+  - '@Development tools'
+  - python3-devel
+  - python3-pip
+  - python3-virtualenv
+indihub_packages:
+  - '@Development tools'
+  - golang
+kstars_packages:
+  - git
+  - cfitsio
+  - cfitsio-static
+  - cfitsio-devel
+  - eigen3-devel
+  - cmake3
+  - extra-cmake-modules.noarch
+  - kf5-kconfig-devel
+  - kf5-kdbusaddons-devel
+  - kf5-kdoctools-devel
+  - kf5-kguiaddons-devel
+  - kf5-ki18n-devel
+  - kf5-kiconthemes-devel
+  - kf5-kinit-devel
+  - kf5-kio-devel
+  - kf5-kjobwidgets-devel
+  - kf5-knewstuff-devel
+  - kf5-kplotting-devel
+  - kf5-ktexteditor-devel
+  - kf5-kwidgetsaddons-devel
+  - kf5-kwindowsystem-devel
+  - kf5-kxmlgui-devel
+  - kf5-knotifications-devel
+  - kf5-kcrash-devel
+  - kf5-knotifyconfig-devel
+  - qt5-qtdeclarative-devel
+  - qt5-qtmultimedia-devel
+  - qt5-qtsvg-devel
+  - qt5-qtwebsockets-devel
+  - qt5-qtdatavis3d-devel
+  - qt5-qtquickcontrols
+  - qtkeychain-qt5-devel
+  - wcslib-devel
+  - xplanet
+  - zlib-devel
+  - pkgconfig
+  - '@Development tools'
+astrometrydotnet_packages:
+  - '@Development tools'
+  - python3-devel
+  - python3-numpy
+  - cfitsio
+  - cfitsio-static
+  - cfitsio-devel
+  - libjpeg-turbo
+  - libjpeg-turbo-devel
+  - swig
+  - cairo-devel
+phd2_packages:
+  - git
+  - cmake3
+  - pkgconfig
+  - wxGTK3-devel
+  - libnova-devel
+  - zlib-devel
+  - libusb-devel
+  - libcurl-devel
+  - '@Development tools'
+xrdp_packages:
+  - xrdp
+  - xorgxrdp
+  - tigervnc-server
+  - python3-cryptography
+xrdp_desktops:
+  xfce:
+    packages:
+      - "@Xfce"
+    start: startxfce4
+lin_guider_packages:
+  - bzip2
+  - tar
+  - fxload
+  - '@Development tools'
+  - libusb
+  - libusb-devel
+  - qt5-qtbase
+  - qt5-qtbase-devel
