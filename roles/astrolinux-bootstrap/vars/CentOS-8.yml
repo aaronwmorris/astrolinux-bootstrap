@@ -94,6 +94,7 @@ astrometrydotnet_packages:
   - libjpeg-turbo
   - libjpeg-turbo-devel
   - swig
+  - cairo-devel
 phd2_packages:
   - git
   - cmake3
