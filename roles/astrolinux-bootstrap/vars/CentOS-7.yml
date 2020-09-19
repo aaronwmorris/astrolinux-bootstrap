@@ -76,6 +76,7 @@ kstars_packages:
   - qt5-qtsvg-devel
   - qt5-qtwebsockets-devel
   - qt5-qtdatavis3d-devel
+  - qt5-qtquickcontrols
   - qtkeychain-qt5-devel
   - wcslib-devel
   - xplanet
