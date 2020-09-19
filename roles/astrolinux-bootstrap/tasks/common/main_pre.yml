@@ -50,15 +50,18 @@
 - name: Firewall rules (ufw)
   ufw:
     rule: allow
-    port: "{{ item }}"
+    port: "{{ item.port }}"
+    proto: "{{ item.proto }}"
     log: yes
-  with_items:
-    - 3389/tcp
-    - 8624/tcp
+  with_list:
+    - port: 3389
+      proto: tcp
+    - port: 8624
+      proto: tcp
   become: yes
   when:
     - ansible_facts.services['ufw.service'] is defined
-    - ansible_facts.services['ufw.service']['state'] == 'running'
+    #- ansible_facts.services['ufw.service']['state'] == 'running'
     #- ansible_facts.services['ufw.service']['status'] == 'enabled'
 
 
