@@ -19,6 +19,7 @@ indi_packages:
   #- gmock
   #- gmock-devel
   #- zlib-static
+  - zlib-devel
   - libusbx
   - libusbx-devel
   - libcurl-devel

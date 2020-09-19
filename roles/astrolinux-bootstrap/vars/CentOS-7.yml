@@ -18,6 +18,7 @@ indi_packages:
   - gtest-devel
   - gmock
   - gmock-devel
+  - zlib-devel
   - zlib-static
   - libusbx
   - libusbx-devel
