@@ -81,6 +81,8 @@ kstars_packages:
   - libsecret-1-dev
   - breeze-icon-theme
   - pkg-config
+  - qml-module-qtquick-controls
+  - qml-module-qtquick-layouts
 astrometrydotnet_packages:
   - build-essential
   - libcairo2-dev
