@@ -2,8 +2,9 @@
 
 
 - name: Install kstars development packages
-  become: yes
   package:
     name: "{{ kstars_packages }}"
     state: present
+    enablerepo: PowerTools
+  become: yes
 
