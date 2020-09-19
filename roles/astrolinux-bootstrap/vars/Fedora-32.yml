@@ -118,6 +118,10 @@ xrdp_desktops:
     packages:
       - "@Xfce"
     start: startxfce4
+  kde:
+    packages:
+      - "@KDE"
+    start: startplasma-x11
 lin_guider_packages:
   - bzip2
   - tar
