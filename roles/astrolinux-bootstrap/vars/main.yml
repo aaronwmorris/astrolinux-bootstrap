@@ -6,3 +6,16 @@ indihub_arch:
   x86_64:
     build_target: build-linux64
     folder: indihub-agent-linux64
+firewall_ports:
+  - name: xrdp
+    port: 3389
+    proto: tcp
+  - name: indi
+    port: 7624
+    proto: tcp
+  - name: indiwebmanager
+    port: 8624
+    proto: tcp
+  - name: indihub agent
+    port: 2020
+    proto: tcp
