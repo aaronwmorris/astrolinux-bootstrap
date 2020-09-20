@@ -27,6 +27,10 @@ xrdp_cert: /etc/xrdp/xrdp_selfsigned.crt
 xrdp_privkey: /etc/xrdp/xrdp_selfsigned.key
 xrdp_csr: /etc/xrdp/xrdp_selfsigned.csr
 lin_guider_url: https://downloads.sourceforge.net/project/linguider/5.0.0/lin_guider-5.0.0.tar.bz2
+libpasastro_git_repo: https://github.com/pchev/libpasastro.git
+libpasastro_git_version: 'v1.3.0'
+ccdciel_git_repo: https://github.com/pchev/ccdciel.git
+ccdciel_git_version: 'v0.9.72'
 # Misc for CentOS 8
 libnova_git_repo: https://git.code.sf.net/p/libnova/libnova
 libnova_git_version: 'HEAD'

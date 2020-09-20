@@ -133,6 +133,10 @@ lin_guider_packages:
   - qt5-qtbase-devel
   - libusbx
   - libusbx-devel
+libpasastro_packages:
+  - '@Development tools'
+ccdciel_packages:
+  - '@Development tools'
 libdc1394_packages:
   - m4
   - SDL-devel

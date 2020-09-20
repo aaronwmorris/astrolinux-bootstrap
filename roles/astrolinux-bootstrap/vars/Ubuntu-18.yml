@@ -128,3 +128,7 @@ lin_guider_packages:
   - fxload
   - build-essential
   - qt5-default
+libpasastro_packages:
+  - build-essential
+ccdciel_packages:
+  - build-essential

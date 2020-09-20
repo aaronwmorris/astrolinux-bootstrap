@@ -1,0 +1,71 @@
+---
+
+- include: "libpasastro/install/main.yml"
+
+
+- set_fact:
+    #libpasastro_src: "{{ projects_folder }}/src/libpasastro"
+    libpasastro_build: "{{ projects_folder }}/build/libpasastro"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "libpasastro src folder: {{ libpasastro_src }}"
+      - "libpasastro build folder: {{ libpasastro_build }}"
+
+
+- name: Remove existing libpasastro build folder
+  file:
+    path: "{{ libpasastro_build }}"
+    state: absent
+
+
+- name: Create libpasastro build folder
+  file:
+    path: "{{ libpasastro_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "libpasastro git repo: {{ libpasastro_git_repo }}"
+      - "libpasastro git tag: {{ libpasastro_git_version }}"
+
+
+- name: Git checkout of libpasastro
+  git:
+    repo: "{{ libpasastro_git_repo }}"
+    dest: "{{ libpasastro_build }}"
+    depth: 1
+    version: "{{ libpasastro_git_version }}"
+    #force: yes
+ 
+
+- name: Setup libpasastro build
+  command:
+    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['build_target'] }} OS_TARGET=linux clean"
+    chdir: "{{ libpasastro_build }}"
+
+
+- name: Build libpasastro
+  command:
+    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['build_target'] }} OS_TARGET=linux -j {{ parallel_processes }}"
+    chdir: "{{ libpasastro_build }}"
+
+
+- name: Install libpasastro
+  command:
+    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['build_target'] }} OS_TARGET=linux PREFIX={{ install_prefix }} install"
+    chdir: "{{ libpasastro_build }}"
+  become: yes
+
+
+- name: Cleanup libpasastro build folder
+  file:
+    path: "{{ libpasastro_build }}"
+    state: absent
+  tags:
+    - cleanup
+

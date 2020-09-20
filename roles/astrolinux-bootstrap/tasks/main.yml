@@ -74,6 +74,11 @@
     - lin_guider
 
 
+- include: "libpasastro/main.yml"
+  tags:
+    - libpasastro
+
+
 - include: "xrdp/main.yml"
   become: yes
   tags:

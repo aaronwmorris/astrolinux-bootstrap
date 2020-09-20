@@ -1,0 +1,9 @@
+---
+
+
+- name: Install libpasastro development packages
+  package:
+    name: "{{ libpasastro_packages }}"
+    state: present
+  become: yes
+

@@ -129,3 +129,7 @@ lin_guider_packages:
   - build-essential
   - libusb-1.0-0-dev
   - qt5-default
+libpasastro_packages:
+  - build-essential
+ccdciel_packages:
+  - build-essential

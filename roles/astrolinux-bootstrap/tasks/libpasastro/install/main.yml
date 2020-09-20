@@ -1,0 +1,4 @@
+---
+
+- include: "libpasastro/install/{{ ansible_facts['os_family'] }}.yml"
+

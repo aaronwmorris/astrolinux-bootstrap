@@ -9,6 +9,11 @@ indihub_arch:
   armv7l:
     build_target: build-raspberrypi
     folder: indihub-agent-raspberrypi
+libpasastro_arch:
+  x86_64:
+    build_target: x86_64
+  armv7l:
+    build_target: armv7l
 firewall_ports:
   - name: xrdp
     port: 3389

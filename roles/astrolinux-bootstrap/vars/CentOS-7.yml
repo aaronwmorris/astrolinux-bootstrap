@@ -126,3 +126,7 @@ lin_guider_packages:
   - libusb-devel
   - qt5-qtbase
   - qt5-qtbase-devel
+libpasastro_packages:
+  - '@Development tools'
+ccdciel_packages:
+  - '@Development tools'
