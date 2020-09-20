@@ -3,7 +3,7 @@
 
 
 - debug:
-    msg: "Detected: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_major_version'] }}"
+    msg: "Detected: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_major_version'] }} ({{ ansible_facts['architecture'] }})"
   tags:
     - always
 
