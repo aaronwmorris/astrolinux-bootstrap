@@ -46,19 +46,22 @@
 
 - name: Build astrometry.net base
   command:
-    cmd: "make -j {{ parallel_processes }}"
+    #cmd: "make -j {{ parallel_processes }}"
+    cmd: "make"
     chdir: "{{ astrometrydotnet_build }}"
 
 
 - name: Build astrometry.net py
   command:
-    cmd: "make -j {{ parallel_processes }} py"
+    #cmd: "make -j {{ parallel_processes }} py"
+    cmd: "make"
     chdir: "{{ astrometrydotnet_build }}"
 
 
 - name: Build astrometry.net extra
   command:
-    cmd: "make -j {{ parallel_processes }} extra"
+    #cmd: "make -j {{ parallel_processes }} extra"
+    cmd: "make"
     chdir: "{{ astrometrydotnet_build }}"
 
 
