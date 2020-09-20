@@ -1,0 +1,9 @@
+---
+
+
+- name: Install ccdciel development packages
+  package:
+    name: "{{ ccdciel_packages }}"
+    state: present
+  become: yes
+

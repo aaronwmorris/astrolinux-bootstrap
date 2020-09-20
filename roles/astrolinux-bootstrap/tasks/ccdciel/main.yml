@@ -1,0 +1,77 @@
+---
+
+- include: "ccdciel/install/main.yml"
+
+
+- set_fact:
+    #ccdciel_src: "{{ projects_folder }}/src/ccdciel"
+    ccdciel_build: "{{ projects_folder }}/build/ccdciel"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "ccdciel src folder: {{ ccdciel_src }}"
+      - "ccdciel build folder: {{ ccdciel_build }}"
+
+
+- name: Remove existing ccdciel build folder
+  file:
+    path: "{{ ccdciel_build }}"
+    state: absent
+
+
+- name: Create ccdciel build folder
+  file:
+    path: "{{ ccdciel_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "ccdciel git repo: {{ ccdciel_git_repo }}"
+      - "ccdciel git tag: {{ ccdciel_git_version }}"
+
+
+- name: Git checkout of ccdciel
+  git:
+    repo: "{{ ccdciel_git_repo }}"
+    dest: "{{ ccdciel_build }}"
+    depth: 1
+    version: "{{ ccdciel_git_version }}"
+    #force: yes
+ 
+
+- name: Configure ccdciel build
+  command:
+    cmd: "./configure prefix={{ install_prefix }} target={{ ccdciel_arch[ansible_facts['architecture']]['config_target'] }}"
+    chdir: "{{ ccdciel_build }}"
+
+
+- name: Clean ccdciel
+  command:
+    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux clean"
+    chdir: "{{ ccdciel_build }}"
+
+
+- name: Build ccdciel
+  command:
+    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux -j {{ parallel_processes }}"
+    chdir: "{{ ccdciel_build }}"
+
+
+- name: Install ccdciel
+  command:
+    cmd: "make install"
+    chdir: "{{ ccdciel_build }}"
+  become: yes
+
+
+- name: Cleanup ccdciel build folder
+  file:
+    path: "{{ ccdciel_build }}"
+    state: absent
+  tags:
+    - cleanup
+

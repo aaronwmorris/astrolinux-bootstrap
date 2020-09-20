@@ -79,6 +79,11 @@
     - libpasastro
 
 
+- include: "ccdciel/main.yml"
+  tags:
+    - ccdciel
+
+
 - include: "xrdp/main.yml"
   become: yes
   tags:

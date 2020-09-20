@@ -45,19 +45,19 @@
 
 - name: Setup libpasastro build
   command:
-    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['build_target'] }} OS_TARGET=linux clean"
+    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux clean"
     chdir: "{{ libpasastro_build }}"
 
 
 - name: Build libpasastro
   command:
-    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['build_target'] }} OS_TARGET=linux -j {{ parallel_processes }}"
+    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux -j {{ parallel_processes }}"
     chdir: "{{ libpasastro_build }}"
 
 
 - name: Install libpasastro
   command:
-    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['build_target'] }} OS_TARGET=linux PREFIX={{ install_prefix }} install"
+    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux PREFIX={{ install_prefix }} install"
     chdir: "{{ libpasastro_build }}"
   become: yes
 
