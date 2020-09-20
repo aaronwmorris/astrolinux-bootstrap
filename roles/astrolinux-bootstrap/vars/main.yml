@@ -6,6 +6,9 @@ indihub_arch:
   x86_64:
     build_target: build-linux64
     folder: indihub-agent-linux64
+  armv7l:
+    build_target: build-raspberrypi
+    folder: indihub-agent-raspberrypi
 firewall_ports:
   - name: xrdp
     port: 3389
