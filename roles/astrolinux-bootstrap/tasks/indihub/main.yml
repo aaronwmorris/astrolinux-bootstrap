@@ -45,7 +45,7 @@
 
 - name: Build indihub
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} {{ indihub_arch[ansible_facts['architecture']]['build_target'] }}"
+    cmd: "make -j {{ parallel_processes }} {{ indihub_arch[ansible_facts['architecture']]['build_target'] }}"
     chdir: "{{ indihub_build }}"
 
 

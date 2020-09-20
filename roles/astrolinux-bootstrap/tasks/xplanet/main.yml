@@ -41,7 +41,7 @@
 
 - name: Build xplanet
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ xplanet_build }}"
 
 

@@ -1,6 +1,7 @@
 ---
 # defaults file for astrolinux-bootstrap
 projects_folder: "{{ lookup('env','HOME') }}/Projects"
+parallel_processes: "{{ ansible_facts['processor_vcpus'] }}"
 virtualenv_folder: "{{ projects_folder }}/virtualenv"
 install_prefix: /usr/local
 indi_core_git_repo: https://github.com/indilib/indi.git

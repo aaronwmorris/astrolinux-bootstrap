@@ -72,7 +72,7 @@
 
 - name: Build lin_guider
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ lin_guider_build }}/lin_guider_pack/lin_guider"
 
 

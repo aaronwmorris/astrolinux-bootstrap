@@ -26,7 +26,7 @@
 
 - name: "Build indi-3rdparty {{ local_driver }}"
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ local_indi_3rdparty_driver_build }}"
 
 

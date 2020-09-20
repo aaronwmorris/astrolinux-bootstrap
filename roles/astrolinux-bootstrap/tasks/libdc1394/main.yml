@@ -57,7 +57,7 @@
 
 - name: Build libdc1394
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ libdc1394_build }}"
 
 

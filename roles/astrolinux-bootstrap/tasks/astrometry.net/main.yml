@@ -46,19 +46,19 @@
 
 - name: Build astrometry.net base
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ astrometrydotnet_build }}"
 
 
 - name: Build astrometry.net py
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} py"
+    cmd: "make -j {{ parallel_processes }} py"
     chdir: "{{ astrometrydotnet_build }}"
 
 
 - name: Build astrometry.net extra
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }} extra"
+    cmd: "make -j {{ parallel_processes }} extra"
     chdir: "{{ astrometrydotnet_build }}"
 
 

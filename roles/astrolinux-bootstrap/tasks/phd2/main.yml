@@ -50,7 +50,7 @@
 
 - name: Build phd2
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ phd2_build }}"
 
 

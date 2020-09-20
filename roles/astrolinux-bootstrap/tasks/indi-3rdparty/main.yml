@@ -86,7 +86,7 @@
 
 - name: Build indi-3rdparty libs
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ indi_3rdparty_libs_build }}"
   when:
     - indi_3rdparty_build_libs| length == 0
@@ -124,7 +124,7 @@
 
 - name: Build indi-3rdparty drivers
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ indi_3rdparty_drivers_build }}"
   when:
     - indi_3rdparty_build_drivers | length == 0

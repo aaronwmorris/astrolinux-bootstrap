@@ -58,7 +58,7 @@
 
 - name: Build kstars
   command:
-    cmd: "make -j {{ ansible_facts['processor_vcpus'] }}"
+    cmd: "make -j {{ parallel_processes }}"
     chdir: "{{ kstars_build }}"
 
 
