@@ -13,7 +13,8 @@ blocking_packages:
   - python3-astrometry
   - ccdciel
   - phd2
-common_packages: []
+common_packages:
+  - python3-apt
 indi_packages:
   - libnova-dev 
   - libcfitsio-dev

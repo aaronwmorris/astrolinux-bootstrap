@@ -11,6 +11,15 @@
 #    var: ansible_facts.services
 
 
+- name: Gather package facts
+  package_facts:
+    manager: auto
+
+
+#- debug:
+#    var: ansible_facts.packages
+
+
 - name: Setup additional library paths (RedHat)
   copy:
     src: ld.so.conf.d/local.conf
