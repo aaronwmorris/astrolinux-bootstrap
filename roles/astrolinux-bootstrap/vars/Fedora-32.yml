@@ -3,6 +3,18 @@ ansible_python_interpreter: python3
 qmake_bin: qmake-qt5
 group_membership:
   - dialout
+blocking_packages:
+  - kstars
+  - libindi
+  - libindi-static
+  - libindi-devel
+  - astrometry
+  - astrometry-data
+  - astrometry-devel
+  - astrometry-libs
+  - python3-astrometry
+  - ccdciel
+  - phd2
 common_packages:
   - python3-libselinux
 indi_packages:

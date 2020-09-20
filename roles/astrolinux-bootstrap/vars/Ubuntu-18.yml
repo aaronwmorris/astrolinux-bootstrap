@@ -2,6 +2,17 @@
 ansible_python_interpreter: python3
 group_membership:
   - dialout
+blocking_packages:
+  - kstars
+  - kstars-data
+  - libindi-data
+  - libindi-dev
+  - libindi-plugins
+  - libastrometry0
+  - libastrometry-dev
+  - python3-astrometry
+  - ccdciel
+  - phd2
 common_packages: []
 indi_packages:
   - libnova-dev 

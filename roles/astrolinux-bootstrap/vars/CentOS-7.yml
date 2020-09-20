@@ -2,6 +2,18 @@
 ansible_python_interpreter: python2
 cmake_bin: cmake3
 qmake_bin: qmake-qt5
+blocking_packages:
+  - kstars
+  - libindi
+  - libindi-static
+  - libindi-devel
+  - astrometry
+  - astrometry-data
+  - astrometry-devel
+  - astrometry-libs
+  - python3-astrometry
+  - ccdciel
+  - phd2
 group_membership:
   - dialout
 common_packages:
