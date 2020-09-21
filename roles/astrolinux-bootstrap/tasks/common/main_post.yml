@@ -3,6 +3,62 @@
 - include: "common/install/main.yml"
 
 
+- name: "Find binaries in {{ install_prefix }}"
+  find:
+    paths: "{{ install_prefix }}/bin"
+    recurse: no
+    file_type: file
+  register: install_prefix_bin_files
+  when:
+    - install_prefix != '/usr'
+
+
+- debug:
+    var: install_prefix_bin_files
+
+
+- name: "Find symlinks in {{ install_prefix }}"
+  find:
+    paths: "{{ install_prefix }}/bin"
+    recurse: no
+    file_type: link
+  register: install_prefix_bin_symlinks
+  when:
+    - install_prefix != '/usr'
+
+
+- debug:
+    var: install_prefix_bin_symlinks
+
+
+- name: Create symbolic links in /usr/bin
+  file:
+    src:  "{{ item.path }}"
+    dest: "/usr/bin/{{ item.path | basename }}"
+    owner: root
+    group: root
+    state: link
+    force: no
+  become: true
+  when:
+    - install_prefix != '/usr'
+  with_items: "{{ install_prefix_bin_files.files }}"
+
+
+- name: Create symbolic links in /usr/bin
+  file:
+    src:  "{{ item.path }}"
+    dest: "/usr/bin/{{ item.path | basename }}"
+    owner: root
+    group: root
+    state: link
+    force: no
+  become: true
+  when:
+    - install_prefix != '/usr'
+  with_items: "{{ install_prefix_bin_symlinks.files }}"
+
+
 - name: Add user to groups for device access
   user:
     name: "{{ ansible_user }}"
