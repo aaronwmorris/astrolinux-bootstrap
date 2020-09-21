@@ -55,6 +55,17 @@
     chdir: "{{ libpasastro_build }}"
 
 
+- name: Remove previous symbolic links (workaround)
+  file:
+    path: "{{ install_prefix }}/lib/{{ item }}"
+    state: absent
+  become: yes
+  with_items:
+    - libpasgetdss.so.1
+    - libpasplan404.so.1
+    - libpaswcs.so.1
+
+
 - name: Install libpasastro
   command:
     cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux PREFIX={{ install_prefix }} install"
