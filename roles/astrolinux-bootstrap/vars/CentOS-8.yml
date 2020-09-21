@@ -149,6 +149,9 @@ libpasastro_packages:
   - '@Development tools'
 ccdciel_packages:
   - '@Development tools'
+  - fpc
+  - lazarus
+lazarus_lib: /usr/lib64/lazarus
 libdc1394_packages:
   - m4
   - SDL-devel

@@ -145,3 +145,6 @@ libpasastro_packages:
   - build-essential
 ccdciel_packages:
   - build-essential
+  - fpc
+  - lazarus
+lazarus_lib: /usr/lib/lazarus/2.0.6

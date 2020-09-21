@@ -45,7 +45,7 @@
 
 - name: Configure ccdciel build
   command:
-    cmd: "./configure prefix={{ install_prefix }} target={{ ccdciel_arch[ansible_facts['architecture']]['config_target'] }}"
+    cmd: "./configure prefix={{ install_prefix }} target={{ ccdciel_arch[ansible_facts['architecture']]['config_target'] }} lazarus={{ lazarus_lib }}"
     chdir: "{{ ccdciel_build }}"
 
 
@@ -57,7 +57,8 @@
 
 - name: Build ccdciel
   command:
-    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux -j {{ parallel_processes }}"
+    ### -j will cause compile to fail
+    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux"
     chdir: "{{ ccdciel_build }}"
 
 
