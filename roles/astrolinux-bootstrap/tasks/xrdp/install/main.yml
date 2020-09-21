@@ -1,4 +1,8 @@
 ---
 
+- debug:
+    msg: "Desktop environment: {{ xrdp_desktop }}"
+
+
 - include: "xrdp/install/{{ ansible_facts['os_family'] }}.yml"
 

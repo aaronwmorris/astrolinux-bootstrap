@@ -134,6 +134,11 @@ xrdp_desktops:
     packages:
       - xfce4
     start: startxfce4
+  blackbox:
+    packages:
+      - blackbox
+      - xterm
+    start: blackbox
 lin_guider_packages:
   - bzip2
   - tar

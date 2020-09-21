@@ -139,6 +139,11 @@ xrdp_desktops:
     packages:
       - kde-plasma-desktop
     start: startkde
+  blackbox:
+    packages:
+      - blackbox
+      - xterm
+    start: blackbox
 lin_guider_packages:
   - bzip2
   - tar
