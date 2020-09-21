@@ -152,4 +152,4 @@ ccdciel_packages:
   - build-essential
   - fpc
   - lazarus
-lazarus_lib: /usr/lib/lazarus/2.0.6
+lazarus_lib: /usr/lib/lazarus/default
