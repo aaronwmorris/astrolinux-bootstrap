@@ -13,8 +13,8 @@
     - install_prefix != '/usr'
 
 
-- debug:
-    var: install_prefix_bin_files
+#- debug:
+#    var: install_prefix_bin_files
 
 
 - name: "Find symlinks in {{ install_prefix }}"
@@ -27,8 +27,8 @@
     - install_prefix != '/usr'
 
 
-- debug:
-    var: install_prefix_bin_symlinks
+#- debug:
+#    var: install_prefix_bin_symlinks
 
 
 - name: Create symbolic links in /usr/bin
