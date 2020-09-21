@@ -1,0 +1,27 @@
+---
+
+- include: "astap/install/main.yml"
+
+
+- debug:
+    msg:
+      - "astap url: {{ astap_url[ansible_facts['os_family']][ansible_facts['architecture']] }}"
+
+
+- name: Install astap package (RedHat family)
+  dnf:
+    name: "{{ astap_url[ansible_facts['os_family']][ansible_facts['architecture']] }}"
+    state: present
+  become: yes
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
+
+
+- name: Install astap package (Debian family)
+  apt:
+    deb: "{{ astap_url[ansible_facts['os_family']][ansible_facts['architecture']] }}"
+    state: present
+  become: yes
+  when:
+    - ansible_facts['os_family'] == 'Debian'
+

@@ -1,0 +1,9 @@
+---
+
+
+- name: Install astap development packages
+  package:
+    name: "{{ astap_packages }}"
+    state: present
+  become: yes
+

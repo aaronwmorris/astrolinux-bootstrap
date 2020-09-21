@@ -59,6 +59,11 @@
     - astrometry.net
 
 
+- include: "astap/main.yml"
+  tags:
+    - astap
+
+
 - include: "kstars/main.yml"
   tags:
     - kstars
