@@ -20,6 +20,16 @@
 #    var: ansible_facts.packages
 
 
+- set_fact:
+    remove_packages:  "{{ blocking_packages | intersect(ansible_facts.packages) }}"
+
+
+- fail:
+    msg: "The following packages need to be removed before continuing: {{ remove_packages | join(', ')}}"
+  when:
+    - remove_packages | length > 0
+
+
 - name: Setup additional library paths (RedHat)
   copy:
     src: ld.so.conf.d/local.conf
