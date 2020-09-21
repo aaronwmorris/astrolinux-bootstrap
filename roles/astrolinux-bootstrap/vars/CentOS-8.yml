@@ -152,6 +152,7 @@ ccdciel_packages:
   - fpc
   - lazarus
 lazarus_lib: /usr/lib64/lazarus
+astap_packages: []
 libdc1394_packages:
   - m4
   - SDL-devel

@@ -153,3 +153,4 @@ ccdciel_packages:
   - fpc
   - lazarus
 lazarus_lib: /usr/lib/lazarus/default
+astap_packages: []
