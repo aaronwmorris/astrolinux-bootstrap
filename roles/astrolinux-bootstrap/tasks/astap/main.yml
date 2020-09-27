@@ -91,3 +91,7 @@
     - cleanup
 
 
+- include: "astap/download_indexes.yml"
+  tags:
+    - download
+

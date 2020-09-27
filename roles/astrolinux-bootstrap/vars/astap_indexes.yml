@@ -1,6 +1,12 @@
 ---
-astap_star_db:
-  g16: https://sourceforge.net/projects/astap-program/files/star_databases/v16_star_database_mag16_astap.deb/download
-  g17: https://sourceforge.net/projects/astap-program/files/star_databases/g17_star_database_mag17_astap.deb/download
-  g16_zip: https://sourceforge.net/projects/hnsky/files/star_databases/v16_star_database_mag16.zip/download
-  g17_zip: https://sourceforge.net/projects/hnsky/files/star_databases/g17_star_database_mag17.zip/download
+astap_star_data:
+  - filename: v16_star_database_mag16.zip
+    url: https://sourceforge.net/projects/hnsky/files/star_databases/v16_star_database_mag16.zip/download
+    checksum: md5:ceeb89611ba76af1d8beb07b0cb4117d
+  - filename: g17_star_database_mag17.zip
+    url: https://sourceforge.net/projects/hnsky/files/star_databases/g17_star_database_mag17.zip/download
+    checksum: md5:3c47291fdc029b1385627291ad7e1738
+astap_star_data_extra:
+  - filename: g18_star_database_mag18.zip
+    url: https://sourceforge.net/projects/astap-program/files/star_databases/g18_star_database_mag18.zip/download
+    checksum: md5:9006fd4924d0642723ec3757b0b2f10a

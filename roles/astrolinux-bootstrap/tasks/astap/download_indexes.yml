@@ -1,0 +1,53 @@
+---
+
+- name: Include astap data vars
+  include_vars: astap_indexes.yml
+
+
+- name: Download astap index files
+  get_url:
+    url: "{{ item.url }}"
+    dest: "/tmp/{{ item.filename }}"
+    mode: '0644'
+    checksum: "{{ item.checksum }}"
+    force: no
+  with_items: "{{ astap_star_data }}"
+
+
+- name: Unzip astap index data files
+  unarchive:
+    src: "/tmp/{{ item.filename }}"
+    dest: "{{ astap_install }}"
+    owner: root
+    group: root
+    mode: '0644'
+    remote_src: yes
+  become: yes
+  with_items: "{{ astap_star_data }}"
+
+
+#- name: Download extra astap index files
+#  get_url:
+#    url: "{{ item.url }}"
+#    dest: "/tmp/{{ item.filename }}"
+#    mode: '0644'
+#    checksum: "{{ item.checksum }}"
+#    force: no
+#  with_items: "{{ astap_star_data_extra }}"
+#  tags:
+#    - never
+
+
+#- name: Unzip extra astap index data files
+#  unarchive:
+#    src: "/tmp/{{ item.filename }}"
+#    dest: "{{ astap_install }}"
+#    owner: root
+#    group: root
+#    mode: '0644'
+#    remote_src: yes
+#  become: yes
+#  with_items: "{{ astap_star_data_extra }}"
+#  tags:
+#    - never
+
