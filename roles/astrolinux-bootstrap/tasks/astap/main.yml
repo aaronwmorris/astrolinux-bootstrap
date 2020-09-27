@@ -32,7 +32,7 @@
 - debug:
     msg:
       - "astap hg repo: {{ astap_hg_repo }}"
-      - "astap hg tag: {{ astap_hg_version }}"
+      - "astap hg tag: {{ astap_hg_revision }}"
 
 
 - name: Mecurial checkout of astap
