@@ -154,4 +154,9 @@ ccdciel_packages:
   - lazarus
 lazarus_lib: /usr/lib/lazarus/default
 astap_packages:
+  - build-essential
   - python3-apt
+  - fpc
+  - lazarus
+  - dcraw
+  - mercurial

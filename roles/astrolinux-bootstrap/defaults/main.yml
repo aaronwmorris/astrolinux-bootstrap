@@ -31,12 +31,8 @@ libpasastro_git_repo: https://github.com/pchev/libpasastro.git
 libpasastro_git_version: 'v1.3.0'
 ccdciel_git_repo: https://github.com/pchev/ccdciel.git
 ccdciel_git_version: 'v0.9.72'
-astap_url:
-  RedHat:
-    x86_64: https://sourceforge.net/projects/astap-program/files/linux_installer/astap_amd64.rpm/download
-  Debian:
-    x86_64: https://sourceforge.net/projects/astap-program/files/linux_installer/astap_amd64.deb/download
-    armv7l: https://sourceforge.net/projects/astap-program/files/linux_installer/astap_armhf.deb/download
+astap_hg_repo: https://hg.code.sf.net/p/astap-program/code
+astap_hg_revision: 'tip'
 # Misc for CentOS 8
 libnova_git_repo: https://git.code.sf.net/p/libnova/libnova
 libnova_git_version: 'HEAD'

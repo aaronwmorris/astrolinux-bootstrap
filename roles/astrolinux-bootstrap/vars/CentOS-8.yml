@@ -153,7 +153,12 @@ ccdciel_packages:
   - lazarus
 lazarus_lib: /usr/lib64/lazarus
 astap_packages:
+  - '@Development tools'
   - python3-dnf
+  - fpc
+  - lazarus
+  - dcraw
+  - mercurial
 libdc1394_packages:
   - m4
   - SDL-devel
