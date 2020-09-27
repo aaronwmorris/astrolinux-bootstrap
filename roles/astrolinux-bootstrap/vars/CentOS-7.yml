@@ -14,6 +14,7 @@ blocking_packages:
   - python3-astrometry
   - ccdciel
   - phd2
+  - astap
 group_membership:
   - dialout
 common_packages:

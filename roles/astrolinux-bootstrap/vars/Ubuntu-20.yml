@@ -13,6 +13,7 @@ blocking_packages:
   - python3-astrometry
   - ccdciel
   - phd2
+  - astap
 common_packages:
   - python3-apt
 indi_packages:
