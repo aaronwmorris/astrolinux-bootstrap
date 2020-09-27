@@ -34,3 +34,10 @@ firewall_ports:
   - name: indihub agent
     port: 2020
     proto: tcp
+### Astap sources need to be modified for the following distros
+astap_threaded_workaround:
+  - Debian9
+  - Debian10
+  - Ubuntu16
+  - Ubuntu18
+  - Ubuntu20

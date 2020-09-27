@@ -43,6 +43,15 @@
     #force: yes
 
 
+- name: Modify astap sources to remove Threaded statement (workaround)
+  lineinfile:
+    path: "{{ astap_build }}/astap_main.lfm"
+    regexp: '^.*Threaded *='
+    state: absent
+  when:
+    - dist_ver in astap_threaded_workaround
+
+
 - name: Build astap
   command:
     cmd: "lazbuild astap_linux.lpi"

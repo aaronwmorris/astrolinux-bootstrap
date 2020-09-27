@@ -1,6 +1,21 @@
 ---
 # tasks file for astrolinux-bootstrap
 
+- set_fact:
+    dist_ver: "{{ dist_ver_list | join('') }}"
+  vars:
+    dist_ver_list:
+      - "{{ ansible_facts['distribution'] }}"
+      - "{{ ansible_facts['distribution_major_version'] }}"
+  tags:
+    - always
+
+
+#- debug:
+#    var: dist_ver
+#  tags:
+#    - always
+
 
 - debug:
     msg: "Detected: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_major_version'] }} ({{ ansible_facts['architecture'] }})"
