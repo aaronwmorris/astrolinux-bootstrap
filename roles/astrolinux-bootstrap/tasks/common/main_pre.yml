@@ -14,6 +14,8 @@
 - name: Gather package facts
   package_facts:
     manager: auto
+  tags:
+    - always
 
 
 #- debug:
@@ -22,12 +24,16 @@
 
 - set_fact:
     remove_packages:  "{{ blocking_packages | intersect(ansible_facts.packages) }}"
+  tags:
+    - always
 
 
 - fail:
     msg: "The following packages need to be removed before continuing: {{ remove_packages | join(', ')}}"
   when:
     - remove_packages | length > 0
+  tags:
+    - always
 
 
 - name: Setup additional library paths (RedHat)
