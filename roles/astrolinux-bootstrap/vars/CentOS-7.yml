@@ -130,6 +130,16 @@ xrdp_desktops:
     packages:
       - "@Xfce"
     start: startxfce4
+  blackbox:
+    packages:
+      - fluxbox
+      - xterm
+    start: fluxbox
+  fluxbox:
+    packages:
+      - fluxbox
+      - xterm
+    start: fluxbox
 lin_guider_packages:
   - bzip2
   - tar

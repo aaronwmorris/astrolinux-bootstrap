@@ -131,6 +131,16 @@ xrdp_desktops:
     packages:
       - "@Xfce"
     start: startxfce4
+  blackbox:
+    packages:
+      - fluxbox
+      - xterm
+    start: fluxbox
+  fluxbox:
+    packages:
+      - fluxbox
+      - xterm
+    start: fluxbox
   ### KDE packages appear to need EPEL-testing
   #kde:
   #  packages:
