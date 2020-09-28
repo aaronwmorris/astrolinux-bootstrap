@@ -1,0 +1,4 @@
+---
+
+- include: "oacapture/install/{{ ansible_facts['os_family'] }}.yml"
+

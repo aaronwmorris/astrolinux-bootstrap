@@ -94,6 +94,11 @@
     - lin_guider
 
 
+- include: "oacapture/main.yml"
+  tags:
+    - oacapture
+
+
 - include: "libpasastro/main.yml"
   tags:
     - libpasastro

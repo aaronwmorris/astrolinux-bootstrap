@@ -165,3 +165,4 @@ astap_packages:
   - lazarus
   - dcraw
   - mercurial
+oacapture_packages: []

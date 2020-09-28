@@ -170,6 +170,7 @@ astap_packages:
   - lazarus
   - dcraw
   - mercurial
+oacapture_packages: []
 libdc1394_packages:
   - m4
   - SDL-devel

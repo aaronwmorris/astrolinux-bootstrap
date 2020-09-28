@@ -1,0 +1,9 @@
+---
+
+
+- name: Install oacapture development packages
+  package:
+    name: "{{ oacapture_packages }}"
+    state: present
+  become: yes
+
