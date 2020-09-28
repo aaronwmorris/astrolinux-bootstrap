@@ -34,6 +34,12 @@ firewall_ports:
   - name: indihub agent
     port: 2020
     proto: tcp
+  - name: phd2
+    port: 4400
+    proto: tcp
+  - name: linguider
+    port: 5656
+    proto: tcp
 ### Astap sources need to be modified for the following distros
 astap_threaded_workaround:
   - Debian9
