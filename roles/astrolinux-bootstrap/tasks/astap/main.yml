@@ -95,3 +95,17 @@
   tags:
     - download
 
+
+- name: Create symbolic links in /usr/bin
+  file:
+    src:  "{{ item }}"
+    dest: "/usr/bin/{{ item | basename }}"
+    owner: root
+    group: root
+    state: link
+    force: no
+  become: true
+  with_items:
+    - "{{ astap_install }}/astap"
+
+
