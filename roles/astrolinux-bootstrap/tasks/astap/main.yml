@@ -109,3 +109,15 @@
     - "{{ astap_install }}/astap"
 
 
+- name: Create symbolic link for default install location
+  file:
+    src: "{{ astap_install }}"
+    dest: "/opt/astap"
+    owner: root
+    group: root
+    state: link
+    force: no
+  become: yes
+  when:
+    - astap_install != '/opt/astap'
+
