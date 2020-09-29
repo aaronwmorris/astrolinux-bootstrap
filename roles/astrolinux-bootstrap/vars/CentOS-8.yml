@@ -173,6 +173,8 @@ astap_packages:
   - dcraw
   - mercurial
 oacapture_packages: []
+oacapture_package_urls:
+  x86_64: []
 libdc1394_packages:
   - m4
   - SDL-devel

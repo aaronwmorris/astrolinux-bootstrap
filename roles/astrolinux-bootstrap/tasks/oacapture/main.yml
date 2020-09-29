@@ -5,7 +5,7 @@
 
 - name: Install precompiled oacapture packages
   package:
-    name: "{{ oacapture_package_urls[dist_ver][ansible_facts['architecture']] }}"
+    name: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
     state: present
   become: yes
 

@@ -168,3 +168,8 @@ astap_packages:
   - dcraw
   - mercurial
 oacapture_packages: []
+oacapture_package_urls:
+  x86_64: []
+  armv7l:
+    - http://www.openastroproject.org/wp-content/uploads/2020/06/raspbian-10/libuvc_0.0.6-2openastro4_armhf.deb
+    - http://www.openastroproject.org/wp-content/uploads/2020/06/raspbian-10/oacapture_1.7.0-1_armhf.deb

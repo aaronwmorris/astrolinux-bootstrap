@@ -166,3 +166,7 @@ astap_packages:
   - dcraw
   - mercurial
 oacapture_packages: []
+oacapture_package_urls:
+  x86_64:
+    - http://www.openastroproject.org/wp-content/uploads/2020/06/fedora-32/libuvc-0.0.6-2.x86_64.rpm
+    - http://www.openastroproject.org/wp-content/uploads/2020/06/fedora-32/oacapture-1.7.0-1.x86_64.rpm

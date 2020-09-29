@@ -163,3 +163,7 @@ astap_packages:
   - dcraw
   - mercurial
 oacapture_packages: []
+oacapture_package_urls:
+  x86_64:
+    - http://www.openastroproject.org/wp-content/uploads/2020/06/ubuntu-16.04-amd64/libuvc_0.0.6-2openastro3_amd64.deb
+    - http://www.openastroproject.org/wp-content/uploads/2020/06/ubuntu-16.04-amd64/oacapture_1.7.0-1_amd64.deb
