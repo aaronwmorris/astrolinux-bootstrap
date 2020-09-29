@@ -19,6 +19,7 @@ group_membership:
   - dialout
 common_packages:
   - python-libselinux
+  - python-yum
 indi_packages:
   - git
   - cmake3

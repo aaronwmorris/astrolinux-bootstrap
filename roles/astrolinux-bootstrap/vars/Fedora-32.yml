@@ -18,6 +18,8 @@ blocking_packages:
   - astap
 common_packages:
   - python3-libselinux
+  - python3-yum
+  - python3-dnf
 indi_packages:
   - git
   - cmake3
