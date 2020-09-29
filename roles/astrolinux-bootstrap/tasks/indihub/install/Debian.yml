@@ -1,6 +1,13 @@
 ---
 
 
+- name: Add additional repos for indihub
+  apt_repository:
+    repo: "{{ item }}"
+  become: yes
+  with_items: "{{ indihub_repos }}"
+
+
 - name: Update repositories cache
   become: yes
   apt:

@@ -61,6 +61,7 @@ indiweb_packages:
   - python3-pip
   - virtualenv
   - python3-virtualenv
+indihub_repos: []
 indihub_packages:
   - build-essential
   - golang
