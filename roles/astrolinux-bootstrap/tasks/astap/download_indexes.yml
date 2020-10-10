@@ -5,7 +5,7 @@
 
 
 - set_fact:
-    astap_install_data: "{{ astap_install }}/share/data"
+    astap_install_data: "{{ astap_install }}/share/astap/data"
   tags:
     - always
 
