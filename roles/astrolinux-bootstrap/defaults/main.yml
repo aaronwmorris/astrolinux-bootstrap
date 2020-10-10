@@ -17,7 +17,7 @@ indihub_git_version: 'v1.0.6'
 kstars_git_repo: https://invent.kde.org/education/kstars.git
 kstars_git_version: '3.4.3'
 astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net
-astrometrydotnet_git_version: '0.82'
+astrometrydotnet_git_version: '0.83'
 astrometrydotnet_4100index_url: http://broiler.astrometry.net/~dstn/4100/
 astrometrydotnet_4200index_url: http://broiler.astrometry.net/~dstn/4200/
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
