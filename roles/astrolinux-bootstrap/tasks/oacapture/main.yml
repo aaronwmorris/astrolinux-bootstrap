@@ -3,9 +3,58 @@
 - include: "oacapture/install/main.yml"
 
 
-- name: Install precompiled oacapture packages
-  package:
-    name: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
+- name: Create temp download folder
+  tempfile:
+    state: directory
+    suffix: oacapture
+  register: oacapture_tempdir
+
+
+- name: Download oacapture packages
+  get_url:
+    url: "{{ item }}"
+    dest: "{{ oacapture_tempdir.path }}/{{ item | basename }}"
+    mode: '0644'
+  with_items: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
+
+
+#- name: Find package files to install
+#  find:
+#    paths: "{{ oacapture_tempdir.path }}"
+#    recurse: no
+#    file_type: file
+#  register: oacapture_install_files
+
+
+#- debug:
+#  var: oacapture_install_files
+
+
+### Installing packages in the order listed in the config
+- name: Install precompiled oacapture packages (Debian family)
+  apt:
+    deb: "{{ oacapture_tempdir.path }}/{{ item | basename }}"
     state: present
   become: yes
+  with_items: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
+  when:
+    - ansible_facts['os_family'] == 'Debian'
+
+
+- name: Install precompiled oacapture packages (RedHat family)
+  dnf:
+    name: "{{ oacapture_tempdir.path }}/{{ item | basename }}"
+    state: present
+  become: yes
+  with_items: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
+
+
+- name: Delete temp download folder
+  file:
+    path: "{{ oacapture_tempdir.path }}"
+    state: absent
+  tags:
+    - cleanup
 
