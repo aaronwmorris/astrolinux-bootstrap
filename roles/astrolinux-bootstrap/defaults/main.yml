@@ -1,6 +1,7 @@
 ---
 # defaults file for astrolinux-bootstrap
 projects_folder: "{{ lookup('env','HOME') }}/Projects"
+downloads_folder: "{{ projects_folder }}/downloads"
 parallel_processes: "{{ ansible_facts['processor_vcpus'] }}"
 virtualenv_folder: "{{ projects_folder }}/virtualenv"
 install_prefix: /usr/local

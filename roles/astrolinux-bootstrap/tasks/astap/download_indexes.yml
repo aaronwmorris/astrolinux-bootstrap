@@ -6,7 +6,13 @@
 
 - debug:
     msg:
+      - "astap downloads folder: {{ astap_downloads_folder }}"
       - "astap data folder: {{ astap_install_data }}"
+
+
+- name: Create astap downloads folder
+  file:
+    path: "{{ astap_downloads_folder }}"
 
 
 - name: Create astap data folder
@@ -21,7 +27,7 @@
 - name: Download astap index files
   get_url:
     url: "{{ item.url }}"
-    dest: "/tmp/{{ item.filename }}"
+    dest: "{{ astap_downloads_folder }}/{{ item.filename }}"
     mode: '0644'
     checksum: "{{ item.checksum }}"
     force: no
@@ -30,7 +36,7 @@
 
 - name: Unzip astap index data files
   unarchive:
-    src: "/tmp/{{ item.filename }}"
+    src: "{{ astap_downloads_folder }}/{{ item.filename }}"
     dest: "{{ astap_install_data }}"
     owner: root
     group: root
@@ -43,7 +49,7 @@
 #- name: Download extra astap index files
 #  get_url:
 #    url: "{{ item.url }}"
-#    dest: "/tmp/{{ item.filename }}"
+#    dest: "{{ astap_downloads_folder }}/{{ item.filename }}"
 #    mode: '0644'
 #    checksum: "{{ item.checksum }}"
 #    force: no
@@ -54,7 +60,7 @@
 
 #- name: Unzip extra astap index data files
 #  unarchive:
-#    src: "/tmp/{{ item.filename }}"
+#    src: "{{ astap_downloads_folder }}/{{ item.filename }}"
 #    dest: "{{ astap_install_data }}"
 #    owner: root
 #    group: root

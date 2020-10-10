@@ -8,6 +8,7 @@
     astap_build: "{{ projects_folder }}/build/astap"
     astap_install: "{{ install_prefix }}/astap"
     astap_install_data: "{{ astap_install }}/share/astap/data"
+    astap_downloads_folder: "{{ downloads_folder }}/astap"
   tags:
     - always
 

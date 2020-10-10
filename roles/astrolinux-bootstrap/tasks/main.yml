@@ -45,6 +45,14 @@
     - always
 
 
+- name: Create downloads folder
+  file:
+    path: "{{ downloads_folder }}"
+    state: directory
+  tags:
+    - always
+
+
 - include: "common/main_pre.yml"
   tags:
     - common
