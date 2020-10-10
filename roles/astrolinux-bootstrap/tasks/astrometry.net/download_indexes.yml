@@ -4,10 +4,24 @@
   include_vars: astrometry_indexes.yml
 
 
+- debug:
+    msg:
+      - "astap data folder: {{ astrometrydotnet_install_data }}"
+
+
+- name: Create astrometry.net data folder
+  file:
+    path: "{{ astrometrydotnet_install_data }}"
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+
 - name: Download astrometry.net 4100 data index files
   get_url:
     url: "{{ astrometrydotnet_4100index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
-    dest: "{{ astrometrydotnet_install }}/share/{{ item.filename }}"
+    dest: "{{ astrometrydotnet_install_data }}/{{ item.filename }}"
     owner: root
     group: root
     mode: '0644'
@@ -21,7 +35,7 @@
 - name: Download astrometry.net 4200 data index files
   get_url:
     url: "{{ astrometrydotnet_4200index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
-    dest: "{{ astrometrydotnet_install }}/share/{{ item.filename }}"
+    dest: "{{ astrometrydotnet_install_data }}/{{ item.filename }}"
     owner: root
     group: root
     mode: '0644'
@@ -34,7 +48,7 @@
 #- name: Download astrometry.net extra data index files
 #  get_url:
 #    url: "{{ astrometrydotnet_4200index_url }}/{{ item.dir | default('') }}/{{ item.filename }}"
-#    dest: "{{ astrometrydotnet_install }}/share/{{ item.filename }}"
+#    dest: "{{ astrometrydotnet_install_data }}/{{ item.filename }}"
 #    owner: root
 #    group: root
 #    mode: '0644'

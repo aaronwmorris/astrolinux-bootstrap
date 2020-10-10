@@ -4,12 +4,6 @@
   include_vars: astap_indexes.yml
 
 
-- set_fact:
-    astap_install_data: "{{ astap_install }}/share/astap/data"
-  tags:
-    - always
-
-
 - debug:
     msg:
       - "astap data folder: {{ astap_install_data }}"

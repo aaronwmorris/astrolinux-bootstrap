@@ -7,6 +7,7 @@
     #astrometrydotnet_src: "{{ projects_folder }}/src/astrometry.net"
     astrometrydotnet_build: "{{ projects_folder }}/build/astrometry.net"
     astrometrydotnet_install: "{{ install_prefix }}/astrometry"
+    astrometrydotnet_install_data: "{{ astrometrydotnet_install }}/data"
   tags:
     - always
 
@@ -147,4 +148,12 @@
     - astrometrydotnet_install != '/usr'
   with_items: "{{ astrometrydotnet_install_prefix_bin_symlinks.files }}"
 
+
+- name: Create system default astrometry.cfg
+  template:
+    src:  "astrometry.net/etc/astrometry.cfg"
+    dest: /etc/astrometry.cfg
+    owner: root
+    group: root
+  become: true
 
