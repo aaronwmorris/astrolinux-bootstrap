@@ -4,6 +4,26 @@
   include_vars: astap_indexes.yml
 
 
+- set_fact:
+    astap_install_data: "{{ astap_install }}/share/data"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      - "astap data folder: {{ astap_install_data }}"
+
+
+- name: Create astap data folder
+  file:
+    path: "{{ astap_install_data }}"
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+
 - name: Download astap index files
   get_url:
     url: "{{ item.url }}"
@@ -17,7 +37,7 @@
 - name: Unzip astap index data files
   unarchive:
     src: "/tmp/{{ item.filename }}"
-    dest: "{{ astap_install }}"
+    dest: "{{ astap_install_data }}"
     owner: root
     group: root
     mode: '0644'
@@ -41,7 +61,7 @@
 #- name: Unzip extra astap index data files
 #  unarchive:
 #    src: "/tmp/{{ item.filename }}"
-#    dest: "{{ astap_install }}"
+#    dest: "{{ astap_install_data }}"
 #    owner: root
 #    group: root
 #    mode: '0644'
