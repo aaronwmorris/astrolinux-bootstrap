@@ -87,6 +87,12 @@
     - astap
 
 
+- include: "astap_indexes/main.yml"
+  tags:
+    - never
+    - astap_indexes
+
+
 - include: "kstars/main.yml"
   tags:
     - kstars
