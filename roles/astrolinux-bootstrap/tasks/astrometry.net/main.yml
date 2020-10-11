@@ -7,6 +7,11 @@
     #astrometrydotnet_src: "{{ projects_folder }}/src/astrometry.net"
     astrometrydotnet_build: "{{ projects_folder }}/build/astrometry.net"
     astrometrydotnet_install: "{{ install_prefix }}/astrometry"
+  tags:
+    - always
+
+
+- set_fact:
     astrometrydotnet_install_data: "{{ astrometrydotnet_install }}/data"
   tags:
     - always
@@ -85,11 +90,6 @@
     state: absent
   tags:
     - cleanup
-
-
-- include: "astrometry.net/download_indexes.yml"
-  tags:
-    - download
 
 
 ### Create symlinks to /usr/bin

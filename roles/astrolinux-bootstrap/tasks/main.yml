@@ -82,6 +82,13 @@
     - astrometry.net
 
 
+- include: "astrometry.net_indexes/main.yml"
+  tags:
+    - never
+    - astrometry.net_indexes
+    - download
+
+
 - include: "astap/main.yml"
   tags:
     - astap
@@ -91,6 +98,7 @@
   tags:
     - never
     - astap_indexes
+    - download
 
 
 - include: "kstars/main.yml"
