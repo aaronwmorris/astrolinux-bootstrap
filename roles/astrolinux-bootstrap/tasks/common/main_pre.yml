@@ -36,24 +36,34 @@
     - always
 
 
+- name: Create install path
+  file:
+    path: "{{ install_prefix }}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+  become: true
+  when:
+    - install_prefix != '/usr'
+
+
 - name: Setup additional library paths (RedHat)
-  copy:
-    src: ld.so.conf.d/local.conf
-    dest: /etc/ld.so.conf.d/local.conf
+  template:
+    src: ld.so.conf.d/astro.conf.j2
+    dest: /etc/ld.so.conf.d/astro.conf
     owner: root
     group: root
     mode: '0644'
   become: true
   when:
-    - ansible_facts['os_family'] == 'RedHat'
+    - install_prefix != '/usr'
 
 
-- name: Reload ldconfig (RedHat)
+- name: Reload ldconfig
   command:
     cmd: "ldconfig"
   become: true
-  when:
-    - ansible_facts['os_family'] == 'RedHat'
 
 
 - name: Firewall rules (firewalld)
