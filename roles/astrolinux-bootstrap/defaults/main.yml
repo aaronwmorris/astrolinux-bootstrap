@@ -6,9 +6,9 @@ parallel_processes: "{{ ansible_facts['processor_vcpus'] }}"
 virtualenv_folder: "{{ projects_folder }}/virtualenv"
 install_prefix: /usr/local
 indi_core_git_repo: https://github.com/indilib/indi.git
-indi_core_git_version: 'v1.8.6'
+indi_core_git_version: 'v1.8.7'
 indi_3rdparty_git_repo: https://github.com/indilib/indi-3rdparty.git
-indi_3rdparty_git_version: 'v1.8.6'
+indi_3rdparty_git_version: 'v1.8.7'
 indi_3rdparty_build_libs: []
 indi_3rdparty_build_drivers: []
 indiweb_git_repo: https://github.com/knro/indiwebmanager.git
@@ -16,9 +16,9 @@ indiweb_git_repo: https://github.com/knro/indiwebmanager.git
 indihub_git_repo: https://github.com/indihub-space/agent
 indihub_git_version: 'v1.0.6'
 kstars_git_repo: https://invent.kde.org/education/kstars.git
-kstars_git_version: '3.4.3'
+kstars_git_version: '3.5.0'
 astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net
-astrometrydotnet_git_version: '0.83'
+astrometrydotnet_git_version: '0.84'
 astrometrydotnet_4100index_url: http://broiler.astrometry.net/~dstn/4100/
 astrometrydotnet_4200index_url: http://broiler.astrometry.net/~dstn/4200/
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
@@ -29,9 +29,9 @@ xrdp_privkey: /etc/xrdp/xrdp_selfsigned.key
 xrdp_csr: /etc/xrdp/xrdp_selfsigned.csr
 lin_guider_url: https://downloads.sourceforge.net/project/linguider/5.0.0/lin_guider-5.0.0.tar.bz2
 libpasastro_git_repo: https://github.com/pchev/libpasastro.git
-libpasastro_git_version: 'v1.3.0'
+libpasastro_git_version: 'v1.4.0'
 ccdciel_git_repo: https://github.com/pchev/ccdciel.git
-ccdciel_git_version: 'v0.9.72'
+ccdciel_git_version: 'v0.9.73'
 astap_hg_repo: http://hg.code.sf.net/p/astap-program/code
 astap_hg_revision: 'tip'
 # Misc for CentOS 8
