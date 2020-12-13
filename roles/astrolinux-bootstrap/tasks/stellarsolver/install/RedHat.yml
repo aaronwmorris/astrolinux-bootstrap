@@ -1,0 +1,9 @@
+---
+
+
+- name: Install StellarSolver development packages
+  become: yes
+  package:
+    name: "{{ stellarsolver_packages }}"
+    state: present
+

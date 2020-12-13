@@ -21,6 +21,8 @@ astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net
 astrometrydotnet_git_version: '0.84'
 astrometrydotnet_4100index_url: http://broiler.astrometry.net/~dstn/4100/
 astrometrydotnet_4200index_url: http://broiler.astrometry.net/~dstn/4200/
+stellarsolver_git_repo: https://github.com/rlancaste/stellarsolver.git
+stellarsolver_git_version: '1.5'
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
 phd2_git_version: 'v2.6.9'
 xrdp_desktop: xfce

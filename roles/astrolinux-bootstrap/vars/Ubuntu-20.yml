@@ -98,6 +98,7 @@ kstars_packages:
   - pkg-config
   - qml-module-qtquick-controls
   - qml-module-qtquick-layouts
+  - libqt5datavisualization5-dev
 astrometrydotnet_packages:
   - build-essential
   - libcairo2-dev
@@ -113,6 +114,14 @@ astrometrydotnet_packages:
   - swig
   - libcfitsio-dev
   - python3-dev
+stellarsolver_packages:
+  - build-essential
+  - git
+  - cmake
+  - qt5-default
+  - libcfitsio-dev
+  - libgsl-dev
+  - wcslib-dev
 phd2_packages:
   - build-essential
   - git

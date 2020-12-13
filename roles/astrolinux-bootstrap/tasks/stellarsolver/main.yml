@@ -1,0 +1,71 @@
+---
+
+- include: "stellarsolver/install/main.yml"
+
+
+- set_fact:
+    stellarsolver_src: "{{ projects_folder }}/src/stellarsolver"
+    stellarsolver_build: "{{ projects_folder }}/build/stellarsolver"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      - "stellarsolver src folder: {{ stellarsolver_src }}"
+      - "stellarsolver build folder: {{ stellarsolver_build }}"
+
+
+- name: Remove existing StellarSolver build folder
+  file:
+    path: "{{ stellarsolver_build }}"
+    state: absent
+
+
+- name: Create StellarSolver build folder
+  file:
+    path: "{{ stellarsolver_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "stellarsolver git repo: {{ stellarsolver_git_repo }}"
+      - "stellarsolver git tag: {{ stellarsolver_git_version }}"
+
+
+- name: Git checkout of StellarSolver
+  git:
+    repo: "{{ stellarsolver_git_repo }}"
+    dest: "{{ stellarsolver_src }}"
+    depth: 1
+    version: "{{ stellarsolver_git_version }}"
+    #force: yes
+
+
+- name: Setup StellarSolver build
+  command:
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTER=ON {{ stellarsolver_src }}"
+    chdir: "{{ stellarsolver_build }}"
+
+
+- name: Build StellarSolver
+  command:
+    cmd: "make -j {{ parallel_processes }}"
+    chdir: "{{ stellarsolver_build }}"
+
+
+- name: Install StellarSolver
+  command:
+    cmd: make install
+    chdir: "{{ stellarsolver_build }}"
+  become: yes
+
+
+- name: Cleanup StellarSolver build folder
+  file:
+    path: "{{ stellarsolver_build }}"
+    state: absent
+  tags:
+    - cleanup
+
