@@ -51,7 +51,7 @@
 
 - name: Build libpasastro
   command:
-    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux -j {{ parallel_processes }}"
+    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux"
     chdir: "{{ libpasastro_build }}"
 
 
