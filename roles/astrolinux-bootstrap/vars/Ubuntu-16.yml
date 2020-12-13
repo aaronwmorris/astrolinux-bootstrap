@@ -171,7 +171,13 @@ astap_packages:
   - lazarus
   - dcraw
   - mercurial
-oacapture_packages: []
+oacapture_packages:
+  - build-essential
+  - libudev-dev
+  - libv4l-dev
+  - libhidapi-dev
+  - libuvc-dev
+  - qttools5-dev-tools
 oacapture_package_urls:
   x86_64:
     - http://www.openastroproject.org/wp-content/uploads/2020/06/ubuntu-16.04-amd64/libuvc_0.0.6-2openastro3_amd64.deb

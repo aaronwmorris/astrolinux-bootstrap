@@ -171,9 +171,17 @@ astap_packages:
   - lazarus
   - dcraw
   - mercurial
-oacapture_packages: []
+oacapture_packages:
+  - build-essential
+  - libudev-dev
+  - libv4l-dev
+  - libhidapi-dev
+  - libuvc-dev
+  - qttools5-dev-tools
 oacapture_package_urls:
   x86_64:
-    - http://www.openastroproject.org/wp-content/uploads/2020/06/ubuntu-20.04-amd64/libuvc_0.0.6-2openastro4_amd64.deb
-    - http://www.openastroproject.org/wp-content/uploads/2020/06/ubuntu-20.04-amd64/oacapture_1.7.0-1_amd64.deb
-  armv7l: []
+    - http://www.openastroproject.org/wp-content/uploads/2020/12/ubuntu-20.04-amd64/libuvc_0.0.6-2openastro4_amd64.deb
+    - http://www.openastroproject.org/wp-content/uploads/2020/12/ubuntu-20.04-amd64/oacapture_1.8.0-1_amd64.deb
+  armv7l:
+    - http://www.openastroproject.org/wp-content/uploads/2020/12/ubuntu-20.04-armhf/libuvc_0.0.6-2openastro4_armhf.deb
+    - http://www.openastroproject.org/wp-content/uploads/2020/12/ubuntu-20.04-armhf/oacapture_1.8.0-1_armhf.deb

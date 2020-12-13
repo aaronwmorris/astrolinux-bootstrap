@@ -25,6 +25,8 @@ stellarsolver_git_repo: https://github.com/rlancaste/stellarsolver.git
 stellarsolver_git_version: '1.5'
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
 phd2_git_version: 'v2.6.9'
+oacapture_git_repo: https://github.com/openastroproject/openastro.git
+oacapture_git_version: 'v1.8.0'
 xrdp_desktop: xfce
 xrdp_cert: /etc/xrdp/xrdp_selfsigned.crt
 xrdp_privkey: /etc/xrdp/xrdp_selfsigned.key

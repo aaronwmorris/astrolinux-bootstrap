@@ -1,0 +1,62 @@
+---
+
+- include: "oacapture/install/main.yml"
+
+
+- set_fact:
+    oacapture_downloads_folder: "{{ downloads_folder }}/oacapture"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      - "oacapture downloads folder: {{ oacapture_downloads_folder }}"
+
+
+- name: Create oacapture download folder
+  file:
+    path: "{{ oacapture_downloads_folder }}"
+    state: directory
+
+
+- name: Download oacapture packages
+  get_url:
+    url: "{{ item }}"
+    dest: "{{ oacapture_downloads_folder }}/{{ item | basename }}"
+    mode: '0644'
+  with_items: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
+
+
+#- name: Find package files to install
+#  find:
+#    paths: "{{ oacapture_downloads_folder }}"
+#    recurse: no
+#    file_type: file
+#  register: oacapture_install_files
+
+
+#- debug:
+#  var: oacapture_install_files
+
+
+### Installing packages in the order listed in the config
+- name: Install precompiled oacapture packages (Debian family)
+  apt:
+    deb: "{{ oacapture_downloads_folder }}/{{ item | basename }}"
+    state: present
+  become: yes
+  with_items: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
+  when:
+    - ansible_facts['os_family'] == 'Debian'
+
+
+- name: Install precompiled oacapture packages (RedHat family)
+  dnf:
+    name: "{{ oacapture_downloads_folder }}/{{ item | basename }}"
+    state: present
+  become: yes
+  with_items: "{{ oacapture_package_urls[ansible_facts['architecture']] }}"
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
+

@@ -180,7 +180,11 @@ astap_packages:
   - lazarus
   - dcraw
   - mercurial
-oacapture_packages: []
+oacapture_packages:
+  - '@Development tools'
+  - libudev-devel
+  - libv4l-devel
+  - hidapi-devel
 oacapture_package_urls:
   x86_64: []
 libdc1394_packages:
