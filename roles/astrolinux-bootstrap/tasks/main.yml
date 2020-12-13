@@ -59,22 +59,27 @@
 
 
 - include: "indi-core/main.yml"
-  tags: indi_core
+  tags:
+    - indi_core
+    - indi
 
 
 - include: "indi-3rdparty/main.yml"
   tags:
     - indi_3rdparty
+    - indi
 
 
 - include: "indiweb/main.yml"
   tags:
     - indiweb
+    - indi
 
 
 - include: "indihub/main.yml"
   tags:
     - indihub
+    - indi
 
 
 - include: "astrometry.net/main.yml"
