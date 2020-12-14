@@ -46,6 +46,9 @@ indi_packages:
   - fftw3-devel 
   - pkgconfig
   - '@Development tools'
+  - libtheora-devel
+  - gmock-devel
+  - gtest-devel
 indi_3rdparty_packages:
   - git
   - cmake3

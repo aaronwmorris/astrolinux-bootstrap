@@ -45,6 +45,9 @@ indi_packages:
   - fftw3-devel 
   - pkgconfig
   - '@Development tools'
+  - libtheora-devel
+  - gmock-devel
+  - gtest-devel
 indi_3rdparty_packages:
   - git
   - cmake3
@@ -191,6 +194,9 @@ libdc1394_packages:
   - m4
   - SDL-devel
   - libraw1394-devel
+  - doxygen
+  - libXv-devel
+  - libv4l-devel
 xplanet_packages:
   - libjpeg-turbo-devel
   - libtiff-devel

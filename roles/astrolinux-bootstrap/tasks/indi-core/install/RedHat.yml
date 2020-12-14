@@ -16,4 +16,5 @@
   package:
     name: "{{ indi_packages }}"
     state: present
+    enablerepo: PowerTools
 
