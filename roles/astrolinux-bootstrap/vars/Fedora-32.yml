@@ -60,6 +60,7 @@ indi_3rdparty_packages:
   - libtiff-devel
   - gpsd-devel
   - libdc1394-devel
+  - ffmpeg-devel
 indiweb_packages:
   - '@Development tools'
   - python3-devel
