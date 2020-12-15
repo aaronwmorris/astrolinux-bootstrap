@@ -37,22 +37,22 @@
     - ansible_facts['distribution_major_version'] in ['32', '31', '30']
 
 
-#- name: Copy rpmfusion free gpg key (CentOS)
-#  copy:
-#    src: gpg/RPM-GPG-KEY-rpmfusion-free-el-{{ ansible_facts['distribution_major_version'] }}
-#    dest: "{{ rpmfusion_free_gpg_tempfile.path }}"
-#  when:
-#    - ansible_facts['distribution'] == 'CentOS'
-#    - ansible_facts['distribution_major_version'] in ['8']
+- name: Copy rpmfusion free gpg key (CentOS)
+  copy:
+    src: gpg/RPM-GPG-KEY-rpmfusion-free-el-{{ ansible_facts['distribution_major_version'] }}
+    dest: "{{ rpmfusion_free_gpg_tempfile.path }}"
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+    - ansible_facts['distribution_major_version'] in ['8']
 
 
-#- name: Copy rpmfusion nonfree gpg key (CentOS)
-#  copy:
-#    src: gpg/RPM-GPG-KEY-rpmfusion-nonfree-el-{{ ansible_facts['distribution_major_version'] }}
-#    dest: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
-#  when:
-#    - ansible_facts['distribution'] == 'CentOS'
-#    - ansible_facts['distribution_major_version'] in ['8']
+- name: Copy rpmfusion nonfree gpg key (CentOS)
+  copy:
+    src: gpg/RPM-GPG-KEY-rpmfusion-nonfree-el-{{ ansible_facts['distribution_major_version'] }}
+    dest: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+    - ansible_facts['distribution_major_version'] in ['8']
 
 
 - name: Import rpmfusion free gpg key (Fedora)
@@ -75,24 +75,24 @@
     - ansible_facts['distribution_major_version'] in ['30', '31', '32']
 
 
-#- name: Import rpmfusion free gpg key (CentOS)
-#  rpm_key:
-#    state: present
-#    key: "{{ rpmfusion_free_gpg_tempfile.path }}"
-#  become: yes
-#  when:
-#    - ansible_facts['distribution'] == 'CentOS'
-#    - ansible_facts['distribution_major_version'] in ['8']
+- name: Import rpmfusion free gpg key (CentOS)
+  rpm_key:
+    state: present
+    key: "{{ rpmfusion_free_gpg_tempfile.path }}"
+  become: yes
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+    - ansible_facts['distribution_major_version'] in ['8']
 
 
-#- name: Import rpmfusion nonfree gpg key (CentOS)
-#  rpm_key:
-#    state: present
-#    key: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
-#  become: yes
-#  when:
-#    - ansible_facts['distribution'] == 'CentOS'
-#    - ansible_facts['distribution_major_version'] in ['8']
+- name: Import rpmfusion nonfree gpg key (CentOS)
+  rpm_key:
+    state: present
+    key: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
+  become: yes
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+    - ansible_facts['distribution_major_version'] in ['8']
 
 
 - name: Enable the RPM Fusion free repository (Fedora)
@@ -113,13 +113,13 @@
 #    - ansible_facts['distribution'] == 'Fedora'
 
 
-#- name: Enable the RPM Fusion free repository (CentOS)
-#  dnf:
-#    name: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
-#    state: present
-#  become: yes
-#  when:
-#    - ansible_facts['distribution'] == 'CentOS'
+- name: Enable the RPM Fusion free repository (CentOS)
+  dnf:
+    name: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+    state: present
+  become: yes
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
 
 
 #- name: Enable the RPM Fusion nonfree repository (CentOS)

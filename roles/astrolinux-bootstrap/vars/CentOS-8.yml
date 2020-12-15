@@ -58,6 +58,7 @@ indi_3rdparty_packages:
   - libgphoto2-devel
   - libtiff-devel
   - gpsd-devel
+  - ffmpeg-devel
 indiweb_packages:
   - '@Development tools'
   - python3-pip
@@ -192,6 +193,7 @@ oacapture_packages:
   - SDL-devel
   - xz-devel
   - libXv-devel
+  - ffmpeg-devel
 oacapture_package_urls:
   x86_64: []
 libdc1394_packages:

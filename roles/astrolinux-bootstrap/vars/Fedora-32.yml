@@ -188,6 +188,7 @@ oacapture_packages:
   - SDL-devel
   - xz-devel
   - libXv-devel
+  - ffmpeg-devel
 oacapture_package_urls:
   x86_64:
     - http://www.openastroproject.org/wp-content/uploads/2020/06/fedora-32/libuvc-0.0.6-2.x86_64.rpm
