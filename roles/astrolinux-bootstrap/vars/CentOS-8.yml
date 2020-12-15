@@ -118,7 +118,7 @@ stellarsolver_packages:
   - '@Development tools'
   - git
   - cmake3
-  - qt5
+  - qt5-qtbase-devel
   - cfitsio-devel
   - gsl-devel
   - wcslib-devel
