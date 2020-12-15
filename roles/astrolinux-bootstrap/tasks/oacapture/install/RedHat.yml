@@ -10,6 +10,9 @@
     - ansible_facts['distribution'] == 'CentOS'
 
 
+- include: rpmfusion/main.yml
+
+
 - name: Install oacapture development packages
   package:
     name: "{{ oacapture_packages }}"

@@ -1,0 +1,60 @@
+---
+
+- name: Install distribution-gpg-keys
+  package:
+    name: distribution-gpg-keys
+    state: present
+  become: yes
+
+
+- name: Create rpmfusion free gpg key tempfile
+  tempfile:
+    state: file
+  register: rpmfusion_free_gpg_tempfile
+
+
+- name: Create rpmfusion nonfree gpg key tempfile
+  tempfile:
+    state: file
+  register: rpmfusion_nonfree_gpg_tempfile
+
+
+- name: Copy rpmfusion free gpg key
+  copy:
+    src: gpg/RPM-GPG-KEY-rpmfusion-free-el-{{ ansible_facts['distribution_major_version'] }}
+    dest: "{{ rpmfusion_free_gpg_tempfile.path }}"
+
+
+- name: Copy rpmfusion nonfree gpg key
+  copy:
+    src: gpg/RPM-GPG-KEY-rpmfusion-nonfree-el-{{ ansible_facts['distribution_major_version'] }}
+    dest: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
+
+
+- name: Import rpmfusion free gpg key
+  rpm_key:
+    state: present
+    key: "{{ rpmfusion_free_gpg_tempfile.path }}"
+  become: yes
+
+
+- name: Import rpmfusion nonfree gpg key
+  rpm_key:
+    state: present
+    key: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
+  become: yes
+
+
+- name: Enable the RPM Fusion free repository
+  dnf:
+    name: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+    state: present
+  become: yes
+
+
+#- name: Enable the RPM Fusion nonfree repository
+#  dnf:
+#    name: "https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm
+#    state: present
+#  become: yes
+
