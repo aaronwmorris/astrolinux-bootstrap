@@ -178,5 +178,9 @@ oacapture_packages:
   - libudev-devel
   - libv4l-devel
   - hidapi-devel
+  - libtool
+  - SDL-devel
+  - xz-devel
+  - libXv-devel
 oacapture_package_urls:
   x86_64: []
