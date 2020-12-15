@@ -1,12 +1,10 @@
 ---
 
-- name: Install distribution-gpg-keys (Fedora)
+- name: Install distribution-gpg-keys
   package:
     name: distribution-gpg-keys
     state: present
   become: yes
-  when:
-    - ansible_facts['distribution'] == 'Fedora'
 
 
 - name: Create rpmfusion free gpg key tempfile
@@ -27,7 +25,7 @@
     dest: "{{ rpmfusion_free_gpg_tempfile.path }}"
   when:
     - ansible_facts['distribution'] == 'Fedora'
-    - ansible_facts['distribution_major_version'] in ['32']
+    - ansible_facts['distribution_major_version'] in ['32', '31', '30']
 
 
 - name: Copy rpmfusion nonfree gpg key (Fedora)
@@ -36,7 +34,25 @@
     dest: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
   when:
     - ansible_facts['distribution'] == 'Fedora'
-    - ansible_facts['distribution_major_version'] in ['32']
+    - ansible_facts['distribution_major_version'] in ['32', '31', '30']
+
+
+#- name: Copy rpmfusion free gpg key (CentOS)
+#  copy:
+#    src: gpg/RPM-GPG-KEY-rpmfusion-free-el-{{ ansible_facts['distribution_major_version'] }}
+#    dest: "{{ rpmfusion_free_gpg_tempfile.path }}"
+#  when:
+#    - ansible_facts['distribution'] == 'CentOS'
+#    - ansible_facts['distribution_major_version'] in ['8']
+
+
+#- name: Copy rpmfusion nonfree gpg key (CentOS)
+#  copy:
+#    src: gpg/RPM-GPG-KEY-rpmfusion-nonfree-el-{{ ansible_facts['distribution_major_version'] }}
+#    dest: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
+#  when:
+#    - ansible_facts['distribution'] == 'CentOS'
+#    - ansible_facts['distribution_major_version'] in ['8']
 
 
 - name: Import rpmfusion free gpg key (Fedora)
@@ -59,13 +75,42 @@
     - ansible_facts['distribution_major_version'] in ['30', '31', '32']
 
 
-- name: Enable the RPM Fusion repository
+#- name: Import rpmfusion free gpg key (CentOS)
+#  rpm_key:
+#    state: present
+#    key: "{{ rpmfusion_free_gpg_tempfile.path }}"
+#  become: yes
+#  when:
+#    - ansible_facts['distribution'] == 'CentOS'
+#    - ansible_facts['distribution_major_version'] in ['8']
+
+
+#- name: Import rpmfusion nonfree gpg key (CentOS)
+#  rpm_key:
+#    state: present
+#    key: "{{ rpmfusion_nonfree_gpg_tempfile.path }}"
+#  become: yes
+#  when:
+#    - ansible_facts['distribution'] == 'CentOS'
+#    - ansible_facts['distribution_major_version'] in ['8']
+
+
+- name: Enable the RPM Fusion repository (Fedora)
   dnf:
     name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
     state: present
   become: yes
   when:
     - ansible_facts['distribution'] == 'Fedora'
+
+
+#- name: Enable the RPM Fusion repository (CentOS)
+#  dnf:
+#    name: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+#    state: present
+#  become: yes
+#  when:
+#    - ansible_facts['distribution'] == 'CentOS'
 
 
 - name: Install indi-3rdparty development packages
