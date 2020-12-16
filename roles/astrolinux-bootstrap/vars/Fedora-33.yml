@@ -1,0 +1,194 @@
+---
+ansible_python_interpreter: python3
+qmake_bin: qmake-qt5
+group_membership:
+  - dialout
+blocking_packages:
+  - kstars
+  - libindi
+  - libindi-static
+  - libindi-devel
+  - astrometry
+  - astrometry-data
+  - astrometry-devel
+  - astrometry-libs
+  - python3-astrometry
+  - ccdciel
+  - phd2
+  - astap
+  - oacapture
+common_packages:
+  - python3-libselinux
+  - python3-dnf
+indi_packages:
+  - git
+  - cmake3
+  - libnova
+  - libnova-devel
+  - libusb
+  - libusb-devel
+  - cfitsio
+  - cfitsio-devel
+  - cfitsio-static
+  - gtest
+  - gtest-devel
+  - gmock
+  - gmock-devel
+  - zlib-devel
+  - zlib-static
+  - libusbx
+  - libusbx-devel
+  - libcurl-devel
+  - gsl-devel
+  - libjpeg-turbo
+  - libjpeg-turbo-devel
+  - fftw3-devel 
+  - pkgconfig
+  - '@Development tools'
+  - gcc-c++
+  - libtheora-devel
+  - gmock-devel
+  - gtest-devel
+indi_3rdparty_packages:
+  - git
+  - cmake3
+  - pkgconfig
+  - '@Development tools'
+  - libftdi-devel
+  - LibRaw-devel
+  - libgphoto2-devel
+  - libtiff-devel
+  - gpsd-devel
+  - libdc1394-devel
+  - ffmpeg-devel
+indiweb_packages:
+  - '@Development tools'
+  - python3-devel
+  - python3-pip
+  - python3-virtualenv
+indihub_packages:
+  - '@Development tools'
+  - golang
+kstars_packages:
+  - git
+  - cfitsio
+  - cfitsio-static
+  - cfitsio-devel
+  - eigen3-devel
+  - cmake3
+  - extra-cmake-modules.noarch
+  - kf5-kconfig-devel
+  - kf5-kdbusaddons-devel
+  - kf5-kdoctools-devel
+  - kf5-kguiaddons-devel
+  - kf5-ki18n-devel
+  - kf5-kiconthemes-devel
+  - kf5-kinit-devel
+  - kf5-kio-devel
+  - kf5-kjobwidgets-devel
+  - kf5-knewstuff-devel
+  - kf5-kplotting-devel
+  - kf5-ktexteditor-devel
+  - kf5-kwidgetsaddons-devel
+  - kf5-kwindowsystem-devel
+  - kf5-kxmlgui-devel
+  - kf5-knotifications-devel
+  - kf5-kcrash-devel
+  - kf5-knotifyconfig-devel
+  - qt5-qtdeclarative-devel
+  - qt5-qtmultimedia-devel
+  - qt5-qtsvg-devel
+  - qt5-qtwebsockets-devel
+  - qt5-qtdatavis3d-devel
+  - qt5-qtquickcontrols
+  - qtkeychain-qt5-devel
+  - wcslib-devel
+  - xplanet
+  - zlib-devel
+  - pkgconfig
+  - '@Development tools'
+astrometrydotnet_packages:
+  - '@Development tools'
+  - python3-devel
+  - python3-numpy
+  - cfitsio
+  - cfitsio-static
+  - cfitsio-devel
+  - libjpeg-turbo
+  - libjpeg-turbo-devel
+  - swig
+  - cairo-devel
+stellarsolver_packages:
+  - '@Development tools'
+  - git
+  - cmake3
+  - qt5-qtbase-devel
+  - cfitsio-devel
+  - gsl-devel
+  - wcslib-devel
+phd2_packages:
+  - git
+  - cmake3
+  - pkgconfig
+  - wxGTK3-devel
+  - libnova-devel
+  - zlib-devel
+  - libusb-devel
+  - libcurl-devel
+  - '@Development tools'
+xrdp_packages:
+  - xrdp
+  - xorgxrdp
+  - tigervnc-server
+  - python3-cryptography
+xrdp_desktops:
+  xfce:
+    packages:
+      - "@Xfce"
+    start: startxfce4
+  kde:
+    packages:
+      - "@KDE"
+    start: startplasma-x11
+  blackbox:
+    packages:
+      - blackbox
+      - xterm
+    start: blackbox
+lin_guider_packages:
+  - bzip2
+  - tar
+  - fxload
+  - '@Development tools'
+  - libusb
+  - libusb-devel
+  - qt5-qtbase
+  - qt5-qtbase-devel
+libpasastro_packages:
+  - '@Development tools'
+ccdciel_packages:
+  - '@Development tools'
+  - fpc
+  - lazarus
+lazarus_lib: /usr/lib64/lazarus
+astap_packages:
+  - '@Development tools'
+  - python3-dnf
+  - fpc
+  - lazarus
+  - dcraw
+  - mercurial
+oacapture_packages:
+  - '@Development tools'
+  - libudev-devel
+  - libv4l-devel
+  - hidapi-devel
+  - libtool
+  - SDL-devel
+  - xz-devel
+  - libXv-devel
+  - ffmpeg-devel
+oacapture_package_urls:
+  x86_64:
+    - http://www.openastroproject.org/wp-content/uploads/2020/06/fedora-32/libuvc-0.0.6-2.x86_64.rpm
+    - http://www.openastroproject.org/wp-content/uploads/2020/12/fedora-32/oacapture-1.8.0-1.x86_64.rpm
