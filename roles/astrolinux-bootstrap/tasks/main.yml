@@ -1,6 +1,12 @@
 ---
 # tasks file for astrolinux-bootstrap
 
+#- debug:
+#    var: ansible_facts
+#  tags:
+#    - always
+
+
 - set_fact:
     dist_ver: "{{ dist_ver_list | join('') }}"
   vars:
