@@ -5,7 +5,7 @@ After=multi-user.target
 [Service]
 Type=idle
 # MUST SET YOUR USERNAME HERE.
-User={{ ansible_user }}
+User={{ ansible_env.USER }}
 ExecStart={{ indiweb_virtualenv }}/bin/indi-web -v
 Restart=always
 RestartSec=5

@@ -61,7 +61,7 @@
 
 - name: Add user to groups for device access
   user:
-    name: "{{ ansible_user }}"
+    name: "{{ ansible_env.USER }}"
     groups: "{{ group_membership }}"
     append: yes
   become: yes
