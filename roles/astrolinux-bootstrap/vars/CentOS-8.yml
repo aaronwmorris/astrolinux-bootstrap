@@ -144,6 +144,7 @@ xrdp_desktops:
   xfce:
     packages:
       - "@Xfce"
+      - vino
     start: startxfce4
   blackbox:
     packages:
@@ -159,6 +160,7 @@ xrdp_desktops:
   #kde:
   #  packages:
   #    - "@KDE"
+  #    - krfb
   #  start: startplasma-x11
 lin_guider_packages:
   - bzip2

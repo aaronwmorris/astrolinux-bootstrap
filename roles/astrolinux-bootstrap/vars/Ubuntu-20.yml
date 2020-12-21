@@ -146,6 +146,7 @@ xrdp_desktops:
   xfce:
     packages:
       - xfce4
+      - vino
     start: startxfce4
   blackbox:
     packages:

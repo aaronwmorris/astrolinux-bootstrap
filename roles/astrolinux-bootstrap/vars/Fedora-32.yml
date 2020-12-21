@@ -146,10 +146,12 @@ xrdp_desktops:
   xfce:
     packages:
       - "@Xfce"
+      - vino
     start: startxfce4
   kde:
     packages:
       - "@KDE"
+      - krfb
     start: startplasma-x11
   blackbox:
     packages:
