@@ -162,6 +162,22 @@ xrdp_desktops:
       - kde-plasma-desktop
       - krfb
     start: startkde
+  gnome:
+    packages:
+      - gnome-session
+      - vino
+    start: gnome-session
+  gnome-classic:
+    packages:
+      - gnome-session-flashback
+      - vino
+    start: "gnome-session --session=gnome-flashback-metacity --disable-acceleration-check & gnome-panel"
+  cinnamon:
+    packages:
+      - cinnamon-session
+      - vino
+      - x11vnc
+    start: cinnamon-session
 lin_guider_packages:
   - bzip2
   - tar
