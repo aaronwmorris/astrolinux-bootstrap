@@ -1,0 +1,15 @@
+---
+
+
+- name: Update repositories cache
+  become: yes
+  apt:
+    update_cache: yes
+
+
+- name: Install indistarter development packages
+  become: yes
+  package:
+    name: "{{ indistarter_packages }}"
+    state: present
+

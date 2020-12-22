@@ -38,6 +38,8 @@ ccdciel_git_repo: https://github.com/pchev/ccdciel.git
 ccdciel_git_version: 'v0.9.73'
 eqmodgui_git_repo: https://github.com/pchev/eqmodgui.git
 eqmodgui_git_version: 'v1.7.0'
+indistarter_git_repo: https://github.com/pchev/indistarter.git
+indistarter_git_version: 'v2.2.0'
 astap_hg_repo: http://hg.code.sf.net/p/astap-program/code
 astap_hg_revision: 'tip'
 # Misc for CentOS 8

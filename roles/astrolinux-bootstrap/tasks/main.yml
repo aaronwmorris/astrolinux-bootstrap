@@ -152,6 +152,11 @@
     - eqmodgui
 
 
+- include: "indistarter/main.yml"
+  tags:
+    - indistarter
+
+
 - include: "xrdp/main.yml"
   become: yes
   tags:

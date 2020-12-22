@@ -180,6 +180,10 @@ eqmodgui_packages:
   - '@Development tools'
   - fpc
   - lazarus
+indistarter_packages:
+  - '@Development tools'
+  - fpc
+  - lazarus
 lazarus_lib: /usr/lib64/lazarus
 astap_packages:
   - '@Development tools'

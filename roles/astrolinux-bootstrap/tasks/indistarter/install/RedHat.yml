@@ -1,0 +1,9 @@
+---
+
+
+- name: Install indistarter development packages
+  package:
+    name: "{{ indistarter_packages }}"
+    state: present
+  become: yes
+

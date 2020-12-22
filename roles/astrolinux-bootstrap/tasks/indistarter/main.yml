@@ -1,0 +1,78 @@
+---
+
+- include: "indistarter/install/main.yml"
+
+
+- set_fact:
+    #indistarter_src: "{{ projects_folder }}/src/indistarter"
+    indistarter_build: "{{ projects_folder }}/build/indistarter"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "indistarter src folder: {{ indistarter_src }}"
+      - "indistarter build folder: {{ indistarter_build }}"
+
+
+- name: Remove existing indistarter build folder
+  file:
+    path: "{{ indistarter_build }}"
+    state: absent
+
+
+- name: Create indistarter build folder
+  file:
+    path: "{{ indistarter_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "indistarter git repo: {{ indistarter_git_repo }}"
+      - "indistarter git tag: {{ indistarter_git_version }}"
+
+
+- name: Git checkout of indistarter
+  git:
+    repo: "{{ indistarter_git_repo }}"
+    dest: "{{ indistarter_build }}"
+    depth: 1
+    version: "{{ indistarter_git_version }}"
+    #force: yes
+ 
+
+- name: Configure indistarter build
+  command:
+    cmd: "./configure prefix={{ install_prefix }} target={{ ccdciel_arch[ansible_facts['architecture']]['config_target'] }} lazarus={{ lazarus_lib }}"
+    chdir: "{{ indistarter_build }}"
+
+
+- name: Clean indistarter
+  command:
+    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux clean"
+    chdir: "{{ indistarter_build }}"
+
+
+- name: Build indistarter
+  command:
+    ### -j will cause compile to fail
+    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux"
+    chdir: "{{ indistarter_build }}"
+
+
+- name: Install indistarter
+  command:
+    cmd: "make install"
+    chdir: "{{ indistarter_build }}"
+  become: yes
+
+
+- name: Cleanup indistarter build folder
+  file:
+    path: "{{ indistarter_build }}"
+    state: absent
+  tags:
+    - cleanup
+
