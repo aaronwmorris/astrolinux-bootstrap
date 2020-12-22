@@ -147,12 +147,20 @@ xrdp_desktops:
     packages:
       - xfce4
       - vino
+      - x11vnc
     start: startxfce4
   blackbox:
     packages:
       - blackbox
       - xterm
+      - vino
+      - x11vnc
     start: blackbox
+  kde:
+    packages:
+      - kde-plasma-desktop
+      - krfb
+    start: startplasma-x11
 lin_guider_packages:
   - bzip2
   - tar

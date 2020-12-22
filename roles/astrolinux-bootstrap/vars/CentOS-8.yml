@@ -145,16 +145,21 @@ xrdp_desktops:
     packages:
       - "@Xfce"
       - vino
+      - x11vnc
     start: startxfce4
   blackbox:
     packages:
       - fluxbox
       - xterm
+      - vino
+      - x11vnc
     start: fluxbox
   fluxbox:
     packages:
       - fluxbox
       - xterm
+      - vino
+      - x11vnc
     start: fluxbox
   ### KDE packages appear to need EPEL-testing
   #kde:

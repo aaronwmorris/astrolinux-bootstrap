@@ -148,6 +148,7 @@ xrdp_desktops:
     packages:
       - xfce4
       - vino
+      - x11vnc
     start: startxfce4
   kde:
     packages:
@@ -158,6 +159,8 @@ xrdp_desktops:
     packages:
       - blackbox
       - xterm
+      - vino
+      - x11vnc
     start: blackbox
 lin_guider_packages:
   - bzip2
