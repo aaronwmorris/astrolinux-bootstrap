@@ -173,6 +173,7 @@ xrdp_desktops:
     start: "gnome-session --session=gnome-flashback-metacity --disable-acceleration-check & gnome-panel"
   cinnamon:
     packages:
+      - cinnamon
       - cinnamon-session
       - vino
       - x11vnc
