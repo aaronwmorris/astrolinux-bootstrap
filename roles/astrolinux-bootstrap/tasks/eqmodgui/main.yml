@@ -1,0 +1,78 @@
+---
+
+- include: "eqmodgui/install/main.yml"
+
+
+- set_fact:
+    #eqmodgui_src: "{{ projects_folder }}/src/eqmodgui"
+    eqmodgui_build: "{{ projects_folder }}/build/eqmodgui"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "eqmodgui src folder: {{ eqmodgui_src }}"
+      - "eqmodgui build folder: {{ eqmodgui_build }}"
+
+
+- name: Remove existing eqmodgui build folder
+  file:
+    path: "{{ eqmodgui_build }}"
+    state: absent
+
+
+- name: Create eqmodgui build folder
+  file:
+    path: "{{ eqmodgui_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "eqmodgui git repo: {{ eqmodgui_git_repo }}"
+      - "eqmodgui git tag: {{ eqmodgui_git_version }}"
+
+
+- name: Git checkout of eqmodgui
+  git:
+    repo: "{{ eqmodgui_git_repo }}"
+    dest: "{{ eqmodgui_build }}"
+    depth: 1
+    version: "{{ eqmodgui_git_version }}"
+    #force: yes
+ 
+
+- name: Configure eqmodgui build
+  command:
+    cmd: "./configure prefix={{ install_prefix }} target={{ ccdciel_arch[ansible_facts['architecture']]['config_target'] }} lazarus={{ lazarus_lib }}"
+    chdir: "{{ eqmodgui_build }}"
+
+
+- name: Clean eqmodgui
+  command:
+    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux clean"
+    chdir: "{{ eqmodgui_build }}"
+
+
+- name: Build eqmodgui
+  command:
+    ### -j will cause compile to fail
+    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux"
+    chdir: "{{ eqmodgui_build }}"
+
+
+- name: Install eqmodgui
+  command:
+    cmd: "make install"
+    chdir: "{{ eqmodgui_build }}"
+  become: yes
+
+
+- name: Cleanup eqmodgui build folder
+  file:
+    path: "{{ eqmodgui_build }}"
+    state: absent
+  tags:
+    - cleanup
+

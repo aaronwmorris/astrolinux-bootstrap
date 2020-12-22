@@ -1,0 +1,4 @@
+---
+
+- include: "eqmodgui/install/{{ ansible_facts['os_family'] }}.yml"
+

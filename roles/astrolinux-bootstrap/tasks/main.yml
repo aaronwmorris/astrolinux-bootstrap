@@ -147,6 +147,11 @@
     - ccdciel
 
 
+- include: "eqmodgui/main.yml"
+  tags:
+    - eqmodgui
+
+
 - include: "xrdp/main.yml"
   become: yes
   tags:

@@ -1,0 +1,9 @@
+---
+
+
+- name: Install eqmodgui development packages
+  package:
+    name: "{{ eqmodgui_packages }}"
+    state: present
+  become: yes
+
