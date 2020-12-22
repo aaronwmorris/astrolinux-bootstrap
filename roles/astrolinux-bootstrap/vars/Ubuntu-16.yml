@@ -167,7 +167,7 @@ xrdp_desktops:
       - gnome-session
       - vino
     start: gnome-session
-  gnome-classic:
+  gnome_classic:
     packages:
       - gnome-session-flashback
       - vino

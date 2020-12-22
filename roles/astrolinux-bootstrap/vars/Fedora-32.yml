@@ -161,6 +161,22 @@ xrdp_desktops:
       - vino
       - x11vnc
     start: blackbox
+  gnome:
+    packages:
+      - "@Gnome"
+      - vino
+    start: gnome-session
+  gnome_classic:
+    packages:
+      - "@Gnome"
+      - vino
+    start: "gnome-session --session=gnome-classic --disable-acceleration-check"
+  cinnamon:
+    packages:
+      - "@Cinnamon"
+      - vino
+      - x11vnc
+    start: cinnamon-session
 lin_guider_packages:
   - bzip2
   - tar
