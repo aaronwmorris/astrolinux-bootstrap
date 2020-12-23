@@ -48,3 +48,4 @@ libnova_git_version: 'HEAD'
 libdc1394_git_repo: https://git.code.sf.net/p/libdc1394/code
 libdc1394_git_version: 'HEAD'
 xplanet_svn_repo: svn://svn.code.sf.net/p/xplanet/code/trunk
+raven_repo_rpm_url: https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-1.el8.noarch.rpm

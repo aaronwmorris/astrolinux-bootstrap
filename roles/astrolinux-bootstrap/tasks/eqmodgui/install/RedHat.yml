@@ -1,9 +1,31 @@
 ---
 
+- name: Install EPEL on CentOS
+  package:
+    name:
+      - epel-release
+    state: present
+  become: yes
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+
+
+- name: Setup the Raven repository (CentOS 8)
+  dnf:
+    name: "{{ raven_repo_rpm_url }}"
+    state: present
+  become: yes
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+    - ansible_facts['distribution_major_version'] == '8'
+
 
 - name: Install eqmodgui development packages
   package:
     name: "{{ eqmodgui_packages }}"
     state: present
+    enablerepo:
+      - PowerTools
+      - raven-multimedia
   become: yes
 
