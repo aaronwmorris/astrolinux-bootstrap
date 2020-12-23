@@ -48,7 +48,7 @@
     - install_prefix != '/usr'
 
 
-- name: Setup additional library paths (RedHat)
+- name: Setup additional library paths
   template:
     src: ld.so.conf.d/astro.conf.j2
     dest: /etc/ld.so.conf.d/astro.conf
