@@ -196,6 +196,7 @@ eqmodgui_packages:
   - '@Development tools'
   - fpc
   - lazarus
+  - SDL_mixer-devel
 indistarter_packages:
   - '@Development tools'
   - fpc
