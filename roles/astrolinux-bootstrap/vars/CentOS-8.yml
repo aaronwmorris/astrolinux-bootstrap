@@ -209,6 +209,7 @@ oacapture_packages:
   - xz-devel
   - libXv-devel
   - ffmpeg-devel
+  - qt5-qttools-devel
 oacapture_package_urls:
   x86_64: []
 libdc1394_packages:
