@@ -155,6 +155,7 @@
 - include: "indistarter/main.yml"
   tags:
     - indistarter
+    - indi
 
 
 - include: "xrdp/main.yml"
