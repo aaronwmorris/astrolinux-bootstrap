@@ -1,0 +1,71 @@
+---
+
+- include: "gpredict/install/main.yml"
+
+
+- set_fact:
+    #gpredict_src: "{{ projects_folder }}/src/gpredict"
+    gpredict_build: "{{ projects_folder }}/build/gpredict"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "gpredict src folder: {{ gpredict_src }}"
+      - "gpredict build folder: {{ gpredict_build }}"
+
+
+- name: Remove existing gpredict build folder
+  file:
+    path: "{{ gpredict_build }}"
+    state: absent
+
+
+- name: Create gpredict build folder
+  file:
+    path: "{{ gpredict_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "gpredict git repo: {{ gpredict_git_repo }}"
+      - "gpredict git tag: {{ gpredict_git_version }}"
+
+
+- name: Git checkout of gpredict
+  git:
+    repo: "{{ gpredict_git_repo }}"
+    dest: "{{ gpredict_build }}"
+    depth: 1
+    version: "{{ gpredict_git_version }}"
+    #force: yes
+ 
+
+- name: Setup gpredict build
+  command:
+    cmd: "./autogen.sh --prefix={{ install_prefix }}"
+    chdir: "{{ gpredict_build }}"
+
+
+- name: Build gpredict
+  command:
+    cmd: "make -j {{ parallel_processes }}"
+    chdir: "{{ gpredict_build }}"
+
+
+- name: Install gpredict
+  command:
+    cmd: make install
+    chdir: "{{ gpredict_build }}"
+  become: yes
+
+
+- name: Cleanup gpredict build folder
+  file:
+    path: "{{ gpredict_build }}"
+    state: absent
+  tags:
+    - cleanup
+

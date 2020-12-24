@@ -236,3 +236,8 @@ stellarium_packages:
   - qt5-qtserialport-devel
   - qt5-qtlocation-devel
   #- qt5-qtpositioning-devel
+gpredict_packages:
+  - intltool
+  - goocanvas2-devel
+  - libcurl-devel
+  - libtool

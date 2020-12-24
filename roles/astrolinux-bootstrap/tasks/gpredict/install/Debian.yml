@@ -1,0 +1,15 @@
+---
+
+
+- name: Update repositories cache
+  become: yes
+  apt:
+    update_cache: yes
+
+
+- name: Install gpredict development packages
+  become: yes
+  package:
+    name: "{{ gpredict_packages }}"
+    state: present
+

@@ -1,0 +1,21 @@
+---
+
+- name: Install EPEL on CentOS
+  package:
+    name:
+      - epel-release
+    state: present
+  become: yes
+  when:
+    - ansible_facts['distribution'] == 'CentOS'
+
+
+- include: raven_repo/main.yml
+
+
+- name: Install gpredict development packages
+  package:
+    name: "{{ gpredict_packages }}"
+    state: present
+  become: yes
+
