@@ -17,6 +17,7 @@ blocking_packages:
   - phd2
   - astap
   - oacapture
+  - stellarium
 common_packages:
   - python3-libselinux
   - python3-dnf
@@ -220,3 +221,19 @@ oacapture_packages:
   - libXv-devel
   - ffmpeg-devel
   - qt5-qttools-devel
+stellarium_packages:
+  - '@Development tools'
+  - cmake
+  - gcc
+  - graphviz
+  - doxygen
+  - gettext
+  - git
+  - qt5-qtbase-devel
+  - qt5-qttools-devel
+  - qt5-qtscript-devel
+  - qt5-qtsvg-devel
+  - qt5-qtmultimedia-devel
+  - qt5-qtserialport-devel
+  - qt5-qtlocation-devel
+  #- qt5-qtpositioning-devel

@@ -1,0 +1,9 @@
+---
+
+
+- name: Install stellarium development packages
+  package:
+    name: "{{ stellarium_packages }}"
+    state: present
+  become: yes
+

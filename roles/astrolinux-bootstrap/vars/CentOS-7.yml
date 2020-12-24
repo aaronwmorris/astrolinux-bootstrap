@@ -16,6 +16,7 @@ blocking_packages:
   - phd2
   - astap
   - oacapture
+  - stellarium
 group_membership:
   - dialout
 common_packages:
@@ -198,3 +199,19 @@ oacapture_packages:
   - xz-devel
   - libXv-devel
   - qt5-qttools-devel
+stellarium_packages:
+  - '@Development tools'
+  - cmake3
+  - gcc
+  - graphviz
+  - doxygen
+  - gettext
+  - git
+  - qt5-qtbase-devel
+  - qt5-qttools-devel
+  - qt5-qtscript-devel
+  - qt5-qtsvg-devel
+  - qt5-qtmultimedia-devel
+  - qt5-qtserialport-devel
+  - qt5-qtlocation-devel
+  #- qt5-qtpositioning-devel

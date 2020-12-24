@@ -1,0 +1,71 @@
+---
+
+- include: "stellarium/install/main.yml"
+
+
+- set_fact:
+    stellarium_src: "{{ projects_folder }}/src/stellarium"
+    stellarium_build: "{{ projects_folder }}/build/stellarium"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      - "stellarium src folder: {{ stellarium_src }}"
+      - "stellarium build folder: {{ stellarium_build }}"
+
+
+- name: Remove existing stellarium build folder
+  file:
+    path: "{{ stellarium_build }}"
+    state: absent
+
+
+- name: Create stellarium build folder
+  file:
+    path: "{{ stellarium_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "stellarium git repo: {{ stellarium_git_repo }}"
+      - "stellarium git tag: {{ stellarium_git_version }}"
+
+
+- name: Git checkout of stellarium
+  git:
+    repo: "{{ stellarium_git_repo }}"
+    dest: "{{ stellarium_src }}"
+    depth: 1
+    version: "{{ stellarium_git_version }}"
+    #force: yes
+ 
+
+- name: Setup stellarium build
+  command:
+    cmd: "{{ cmake_bin }} -DCMAKE_INSTALL_PREFIX={{ install_prefix }} {{ stellarium_src }}"
+    chdir: "{{ stellarium_build }}"
+
+
+- name: Build stellarium
+  command:
+    cmd: "make -j {{ parallel_processes }}"
+    chdir: "{{ stellarium_build }}"
+
+
+- name: Install stellarium
+  command:
+    cmd: make install
+    chdir: "{{ stellarium_build }}"
+  become: yes
+
+
+- name: Cleanup stellarium build folder
+  file:
+    path: "{{ stellarium_build }}"
+    state: absent
+  tags:
+    - cleanup
+

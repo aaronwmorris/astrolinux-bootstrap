@@ -122,6 +122,11 @@
     - kstars
 
 
+- include: "stellarium/main.yml"
+  tags:
+    - stellarium
+
+
 - include: "phd2/main.yml"
   tags:
     - phd2
