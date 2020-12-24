@@ -17,5 +17,7 @@
   package:
     name: "{{ indi_3rdparty_packages }}"
     state: present
-    enablerepo: PowerTools
+    enablerepo:
+      - PowerTools
+      - powertools
   become: yes

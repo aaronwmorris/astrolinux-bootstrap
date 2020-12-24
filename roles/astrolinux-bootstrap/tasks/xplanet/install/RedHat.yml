@@ -5,6 +5,8 @@
   package:
     name: "{{ xplanet_packages }}"
     state: present
-    enablerepo: PowerTools
+    enablerepo:
+      - PowerTools
+      - powertools
   become: yes
 

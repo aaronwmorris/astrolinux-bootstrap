@@ -5,6 +5,8 @@
   package:
     name: "{{ libdc1394_packages }}"
     state: present
-    enablerepo: PowerTools
+    enablerepo:
+      - PowerTools
+      - powertools
   become: yes
 

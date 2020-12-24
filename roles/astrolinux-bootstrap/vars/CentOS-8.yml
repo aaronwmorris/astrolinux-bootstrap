@@ -22,7 +22,7 @@ common_packages:
   - python3-dnf
 indi_packages:
   - git
-  - cmake3
+  - cmake
   #- libnova
   #- libnova-devel
   - libusb
@@ -50,7 +50,7 @@ indi_packages:
   - gtest-devel
 indi_3rdparty_packages:
   - git
-  - cmake3
+  - cmake
   - pkgconfig
   - '@Development tools'
   - libftdi-devel
@@ -72,7 +72,7 @@ kstars_packages:
   - cfitsio-static
   - cfitsio-devel
   - eigen3-devel
-  - cmake3
+  - cmake
   - extra-cmake-modules.noarch
   - kf5-kconfig-devel
   - kf5-kdbusaddons-devel
@@ -118,14 +118,14 @@ astrometrydotnet_packages:
 stellarsolver_packages:
   - '@Development tools'
   - git
-  - cmake3
+  - cmake
   - qt5-qtbase-devel
   - cfitsio-devel
   - gsl-devel
   - wcslib-devel
 phd2_packages:
   - git
-  - cmake3
+  - cmake
   - pkgconfig
   - wxGTK3-devel
   #- libnova-devel
