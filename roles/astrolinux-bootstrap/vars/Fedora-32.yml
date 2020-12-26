@@ -239,7 +239,13 @@ stellarium_packages:
   - qt5-qtlocation-devel
   #- qt5-qtpositioning-devel
 gpredict_packages:
+  - '@Development tools'
   - intltool
   - goocanvas2-devel
   - libcurl-devel
+  - libtool
+sextractor_packages:
+  - '@Development tools'
+  - atlas-devel
+  - fftw-devel
   - libtool

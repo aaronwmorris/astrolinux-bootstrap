@@ -244,7 +244,13 @@ stellarium_packages:
   - libqt5positioning5
   - libqt5positioning5-plugins
 gpredict_packages:
+  - build-essential
   - intltool
   - libcurl4-gnutls-dev
   - libgoocanvas-2.0-dev
+  - libtool
+sextractor_packages:
+  - build-essential
+  - libatlas-base-dev
+  - libfftw3-dev
   - libtool

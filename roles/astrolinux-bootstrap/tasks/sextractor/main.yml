@@ -1,0 +1,90 @@
+---
+
+- include: "sextractor/install/main.yml"
+
+
+- set_fact:
+    #sextractor_src: "{{ projects_folder }}/src/sextractor"
+    sextractor_build: "{{ projects_folder }}/build/sextractor"
+  tags:
+    - always
+
+
+- debug:
+    msg:
+      #- "sextractor src folder: {{ sextractor_src }}"
+      - "sextractor build folder: {{ sextractor_build }}"
+
+
+- name: Remove existing sextractor build folder
+  file:
+    path: "{{ sextractor_build }}"
+    state: absent
+
+
+- name: Create sextractor build folder
+  file:
+    path: "{{ sextractor_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "sextractor git repo: {{ sextractor_git_repo }}"
+      - "sextractor git tag: {{ sextractor_git_version }}"
+
+
+- name: Git checkout of sextractor
+  git:
+    repo: "{{ sextractor_git_repo }}"
+    dest: "{{ sextractor_build }}"
+    depth: 1
+    version: "{{ sextractor_git_version }}"
+    #force: yes
+
+
+- name: Prepare sextractor build
+  command:
+    cmd: "./autogen.sh"
+    chdir: "{{ sextractor_build }}"
+
+
+- name: Setup sextractor build
+  command:
+    cmd: "./configure --prefix=/usr/local"
+    chdir: "{{ sextractor_build }}"
+
+
+- name: Build sextractor
+  command:
+    cmd: "make -j {{ parallel_processes }}"
+    chdir: "{{ sextractor_build }}"
+
+
+- name: Install sextractor
+  command:
+    cmd: make install
+    chdir: "{{ sextractor_build }}"
+  become: yes
+
+
+- name: Cleanup sextractor build folder
+  file:
+    path: "{{ sextractor_build }}"
+    state: absent
+  tags:
+    - cleanup
+
+
+- name: Create sextractor symbolic link
+  file:
+    src: "{{ install_prefix }}/bin/sex"
+    dest: "{{ install_prefix }}/bin/sextractor"
+    owner: root
+    group: root
+    state: link
+    force: no
+  become: yes
+  when:
+    - install_prefix != '/usr'
+

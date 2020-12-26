@@ -1,0 +1,9 @@
+---
+
+
+- name: Install sextractor development packages
+  package:
+    name: "{{ sextractor_packages }}"
+    state: present
+  become: yes
+

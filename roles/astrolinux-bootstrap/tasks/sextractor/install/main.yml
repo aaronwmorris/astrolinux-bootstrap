@@ -1,0 +1,4 @@
+---
+
+- include: "sextractor/install/{{ ansible_facts['os_family'] }}.yml"
+
