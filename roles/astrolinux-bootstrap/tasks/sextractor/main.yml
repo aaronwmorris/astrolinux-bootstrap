@@ -51,7 +51,7 @@
 
 - name: Setup sextractor build
   command:
-    cmd: "./configure --prefix=/usr/local"
+    cmd: "./configure --prefix={{ install_prefix }}"
     chdir: "{{ sextractor_build }}"
 
 
