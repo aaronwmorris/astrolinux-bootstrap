@@ -113,6 +113,7 @@ astrometrydotnet_packages:
   - libjpeg-turbo-devel
   - swig
   - cairo-devel
+python_site_dir: /usr/lib/python2.7/site-packages
 stellarsolver_packages:
   - '@Development tools'
   - git

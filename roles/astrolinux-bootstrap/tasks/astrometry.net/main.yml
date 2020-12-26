@@ -13,6 +13,7 @@
 
 - set_fact:
     astrometrydotnet_install_data: "{{ astrometrydotnet_install }}/data"
+    astrometrydotnet_python_dir: "{{ astrometrydotnet_install }}/lib/python"
   tags:
     - always
 
@@ -155,5 +156,16 @@
     dest: /etc/astrometry.cfg
     owner: root
     group: root
+    mode: '0644'
+  become: true
+
+
+- name: Add astrometry python modules to python path
+  template:
+    src: "astrometry.net/python/astrometry.pth.j2"
+    dest: "{{ python_site_dir }}/astrometry.pth"
+    owner: root
+    group: root
+    mode: '0644'
   become: true
 

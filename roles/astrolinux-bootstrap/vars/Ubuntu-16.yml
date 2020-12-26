@@ -118,6 +118,7 @@ astrometrydotnet_packages:
   - swig
   - libcfitsio-dev
   - python3-dev
+python_site_dir: /usr/local/lib/python3.5/dist-packages
 stellarsolver_packages:
   - build-essential
   - git
