@@ -17,6 +17,7 @@ blocking_packages:
   - astap
   - oacapture
   - stellarium
+  - sextractor
 group_membership:
   - dialout
 common_packages:

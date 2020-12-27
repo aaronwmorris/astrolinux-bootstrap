@@ -18,6 +18,7 @@ blocking_packages:
   - astap
   - oacapture
   - stellarium
+  #- sextractor
 common_packages:
   - python3-libselinux
   - python3-dnf
@@ -248,3 +249,4 @@ sextractor_packages:
   - atlas-devel
   - fftw-devel
   - libtool
+  - sextractor
