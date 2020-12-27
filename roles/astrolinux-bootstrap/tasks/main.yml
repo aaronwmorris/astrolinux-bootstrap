@@ -8,11 +8,7 @@
 
 
 - set_fact:
-    dist_ver: "{{ dist_ver_list | join('') }}"
-  vars:
-    dist_ver_list:
-      - "{{ ansible_facts['distribution'] }}"
-      - "{{ ansible_facts['distribution_major_version'] }}"
+    dist_ver: "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version'] }}"
   tags:
     - always
 

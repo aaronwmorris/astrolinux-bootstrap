@@ -42,8 +42,8 @@ firewall_ports:
     proto: tcp
 ### Astap sources need to be modified for the following distros
 astap_threaded_workaround:
-  - Debian9
-  - Debian10
-  - Ubuntu16
-  - Ubuntu18
-  - Ubuntu20
+  - Debian_9
+  - Debian_10
+  - Ubuntu_16
+  - Ubuntu_18
+  - Ubuntu_20
