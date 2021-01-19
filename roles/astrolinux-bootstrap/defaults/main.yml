@@ -6,9 +6,9 @@ parallel_processes: "{{ ansible_facts['processor_vcpus'] }}"
 virtualenv_folder: "{{ projects_folder }}/virtualenv"
 install_prefix: /usr/local
 indi_core_git_repo: https://github.com/indilib/indi.git
-indi_core_git_version: 'v1.8.7'
+indi_core_git_version: 'v1.8.8'
 indi_3rdparty_git_repo: https://github.com/indilib/indi-3rdparty.git
-indi_3rdparty_git_version: 'v1.8.7'
+indi_3rdparty_git_version: 'v1.8.8'
 indi_3rdparty_build_libs: []
 indi_3rdparty_build_drivers: []
 indiweb_git_repo: https://github.com/knro/indiwebmanager.git
@@ -45,7 +45,7 @@ indistarter_git_version: 'v2.2.0'
 astap_hg_repo: http://hg.code.sf.net/p/astap-program/code
 astap_hg_revision: 'tip'
 stellarium_git_repo: https://github.com/Stellarium/stellarium.git
-stellarium_git_version: 'v0.20.3'
+stellarium_git_version: 'v0.20.4'
 gpredict_git_repo: https://github.com/csete/gpredict.git
 gpredict_git_version: 'v2.2.1'
 # Misc for CentOS 8
