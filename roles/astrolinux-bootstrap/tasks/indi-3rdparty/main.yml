@@ -72,7 +72,7 @@
     local_indi_3rdparty_lib_build: "{{ indi_3rdparty_libs_build }}_{{ item }}"
   with_items: "{{ indi_3rdparty_build_libs }}"
   when:
-    - indi_3rdparty_build_libs| length < 0
+    - indi_3rdparty_build_libs| length > 0
 
 
 ### Build all libs
@@ -110,7 +110,7 @@
     local_indi_3rdparty_driver_build: "{{ indi_3rdparty_drivers_build }}_{{ item }}"
   with_items: "{{ indi_3rdparty_build_drivers }}"
   when:
-    - indi_3rdparty_build_drivers | length < 0
+    - indi_3rdparty_build_drivers | length > 0
 
 
 ### Build all drivers
