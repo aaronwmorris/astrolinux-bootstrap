@@ -2,6 +2,9 @@
 # vars file for astrolinux-bootstrap
 cmake_bin: cmake
 qmake_bin: qmake
+xrdp_cert: /etc/xrdp/xrdp_selfsigned.crt
+xrdp_privkey: /etc/xrdp/xrdp_selfsigned.key
+xrdp_csr: /etc/xrdp/xrdp_selfsigned.csr
 indihub_arch:
   x86_64:
     build_target: build-linux64
@@ -47,3 +50,28 @@ astap_threaded_workaround:
   - Ubuntu_16
   - Ubuntu_18
   - Ubuntu_20
+### Source repositories
+indi_core_git_repo: https://github.com/indilib/indi.git
+indi_3rdparty_git_repo: https://github.com/indilib/indi-3rdparty.git
+indiweb_git_repo: https://github.com/knro/indiwebmanager.git
+indihub_git_repo: https://github.com/indihub-space/agent
+kstars_git_repo: https://invent.kde.org/education/kstars.git
+astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net
+astrometrydotnet_4100index_url: http://broiler.astrometry.net/~dstn/4100/
+astrometrydotnet_4200index_url: http://broiler.astrometry.net/~dstn/4200/
+stellarsolver_git_repo: https://github.com/rlancaste/stellarsolver.git
+sextractor_git_repo: https://github.com/astromatic/sextractor.git
+phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
+oacapture_git_repo: https://github.com/openastroproject/openastro.git
+libpasastro_git_repo: https://github.com/pchev/libpasastro.git
+ccdciel_git_repo: https://github.com/pchev/ccdciel.git
+eqmodgui_git_repo: https://github.com/pchev/eqmodgui.git
+indistarter_git_repo: https://github.com/pchev/indistarter.git
+astap_hg_repo: http://hg.code.sf.net/p/astap-program/code
+stellarium_git_repo: https://github.com/Stellarium/stellarium.git
+gpredict_git_repo: https://github.com/csete/gpredict.git
+# Misc for CentOS 8
+libnova_git_repo: https://git.code.sf.net/p/libnova/libnova
+libdc1394_git_repo: https://git.code.sf.net/p/libdc1394/code
+xplanet_svn_repo: svn://svn.code.sf.net/p/xplanet/code/trunk
+raven_repo_rpm_url: https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-1.el8.noarch.rpm
