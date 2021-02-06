@@ -37,7 +37,7 @@ lin_guider_url: https://downloads.sourceforge.net/project/linguider/5.0.0/lin_gu
 libpasastro_git_repo: https://github.com/pchev/libpasastro.git
 libpasastro_git_version: 'v1.4.0'
 ccdciel_git_repo: https://github.com/pchev/ccdciel.git
-ccdciel_git_version: 'v0.9.73'
+ccdciel_git_version: 'v0.9.74'
 eqmodgui_git_repo: https://github.com/pchev/eqmodgui.git
 eqmodgui_git_version: 'v1.7.0'
 indistarter_git_repo: https://github.com/pchev/indistarter.git
