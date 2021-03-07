@@ -67,7 +67,7 @@
 
 
 - name: Firewall rules (firewalld)
-  firewalld:
+  ansible.posix.firewalld:
     port: "{{ item.port }}/{{ item.proto }}"
     permanent: yes
     immediate: yes
