@@ -56,6 +56,7 @@ indi_3rdparty_git_repo: https://github.com/indilib/indi-3rdparty.git
 indiweb_git_repo: https://github.com/knro/indiwebmanager.git
 indihub_git_repo: https://github.com/indihub-space/agent
 kstars_git_repo: https://invent.kde.org/education/kstars.git
+kstars_git_refspec: '+refs/heads/*:refs/remotes/origin/*'
 astrometrydotnet_git_repo: https://github.com/dstndstn/astrometry.net
 astrometrydotnet_4100index_url: http://broiler.astrometry.net/~dstn/4100/
 astrometrydotnet_4200index_url: http://broiler.astrometry.net/~dstn/4200/

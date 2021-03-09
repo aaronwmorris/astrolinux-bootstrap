@@ -39,14 +39,16 @@
     msg:
       - "KStars git repo: {{ kstars_git_repo }}"
       - "KStars git tag: {{ kstars_git_version }}"
+      - "KStars git refspec: {{ kstars_git_refspec }}"
 
 
 - name: Git checkout of kstars
-  git:
+  ansible.builtin.git:
     repo: "{{ kstars_git_repo }}"
     dest: "{{ kstars_src }}"
     depth: 1
     version: "{{ kstars_git_version }}"
+    refspec: "{{ kstars_git_refspec }}"
     #force: yes
  
 

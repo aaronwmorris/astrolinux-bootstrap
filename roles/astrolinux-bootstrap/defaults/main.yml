@@ -12,7 +12,7 @@ indi_3rdparty_build_libs: []
 indi_3rdparty_build_drivers: []
 #indiweb_git_version: 'HEAD'
 indihub_git_version: 'v1.0.6'
-kstars_git_version: '3.5.0'
+kstars_git_version: '2e6e42f95e0511bad3d16242f4ef487032f0740b'  # 3.5.2
 astrometrydotnet_git_version: '0.84'
 stellarsolver_git_version: '1.5'
 sextractor_git_version: '2.25.0'
