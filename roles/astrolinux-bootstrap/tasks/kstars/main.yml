@@ -46,7 +46,7 @@
   ansible.builtin.git:
     repo: "{{ kstars_git_repo }}"
     dest: "{{ kstars_src }}"
-    #depth: 1
+    depth: 1
     version: "{{ kstars_git_version }}"
     refspec: "{{ kstars_git_refspec }}"
     #force: yes
