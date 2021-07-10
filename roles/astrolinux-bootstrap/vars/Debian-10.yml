@@ -193,24 +193,26 @@ libpasastro_packages:
   - build-essential
 ccdciel_packages:
   - build-essential
-  - fpc
-  - lazarus
+  #- fpc
+  #- lazarus
 eqmodgui_packages:
   - build-essential
-  - fpc
-  - lazarus
+  - libsdl-mixer1.2-dev
+  #- fpc
+  #- lazarus
 indistarter_packages:
   - build-essential
-  - fpc
-  - lazarus
-lazarus_lib: /usr/lib/lazarus/default
+  #- fpc
+  #- lazarus
+lazarus_lib: /usr/share/lazarus/2.0.12
 astap_packages:
   - build-essential
   - python3-apt
-  - fpc
-  - lazarus
   - dcraw
   - mercurial
+  - libgtk2.0-dev
+  #- fpc
+  #- lazarus
 oacapture_packages:
   - build-essential
   - libudev-dev
