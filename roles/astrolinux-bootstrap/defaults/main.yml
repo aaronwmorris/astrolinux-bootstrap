@@ -6,8 +6,8 @@ parallel_processes: "{{ ansible_facts['processor_vcpus'] }}"
 virtualenv_folder: "{{ projects_folder }}/virtualenv"
 install_prefix: /usr/local
 xrdp_desktop: xfce
-indi_core_git_version: 'v1.9.0'
-indi_3rdparty_git_version: 'v1.9.0'
+indi_core_git_version: 'v1.9.1'
+indi_3rdparty_git_version: 'v1.9.1'
 indi_3rdparty_build_libs: []
 indi_3rdparty_build_drivers: []
 #indiweb_git_version: 'HEAD'
