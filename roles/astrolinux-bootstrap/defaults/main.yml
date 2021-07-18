@@ -18,7 +18,10 @@ stellarsolver_git_version: '1.5'
 sextractor_git_version: '2.25.0'
 phd2_git_version: 'v2.6.9'
 oacapture_git_version: 'v1.8.0'
-lin_guider_url: https://downloads.sourceforge.net/project/linguider/5.0.1/lin_guider-5.0.1.tar.bz2
+lin_guider_download:
+  url: https://downloads.sourceforge.net/project/linguider/5.0.1/lin_guider-5.0.1.tar.bz2
+  filename: lin_guider-5.0.1.tar.bz2
+  checksum: sha256:e0a21c7b009cbf7b617f4231fdb03a7f581b5c5306e5c6e1ca23e8b6dc62f4fd
 libpasastro_git_version: 'v1.4.1'
 ccdciel_git_version: 'v0.9.75.1'
 eqmodgui_git_version: 'v1.7.0'

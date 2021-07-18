@@ -30,19 +30,20 @@
 
 - debug:
     msg:
-      - "lin_guider url: {{ lin_guider_url }}"
-      - "lin_guider download: {{ downloads_folder }}/{{ lin_guider_url | basename }}"
+      - "lin_guider url: {{ lin_guider_download.url }}"
+      - "lin_guider download: {{ downloads_folder }}/{{ lin_guider_download.filename }}"
 
 
 - name: Download lin_guider source
   get_url:
-    url: "{{ lin_guider_url }}"
-    dest: "{{ downloads_folder }}/{{ lin_guider_url | basename }}"
+    url: "{{ lin_guider_download.url }}"
+    dest: "{{ downloads_folder }}/{{ lin_guider_download.filename }}"
+    checksum: "{{ lin_guider_download.checksum }}"
 
 
 - name: Extract lin_guider source
   unarchive:
-    src: "{{ downloads_folder }}/{{ lin_guider_url | basename }}"
+    src: "{{ downloads_folder }}/{{ lin_guider_download.filename }}"
     dest: "{{ lin_guider_build }}"
 
 
