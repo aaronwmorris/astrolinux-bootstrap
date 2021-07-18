@@ -16,7 +16,7 @@ kstars_git_version: 'stable-3.5.4'
 astrometrydotnet_git_version: '0.86'
 stellarsolver_git_version: '1.5'
 sextractor_git_version: '2.25.0'
-phd2_git_version: 'v2.6.9'
+phd2_git_version: 'v2.6.10'
 oacapture_git_version: 'v1.8.0'
 lin_guider_download:
   url: https://downloads.sourceforge.net/project/linguider/5.0.1/lin_guider-5.0.1.tar.bz2
