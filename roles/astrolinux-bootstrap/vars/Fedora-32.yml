@@ -250,3 +250,5 @@ sextractor_packages:
   - atlas-devel
   - fftw-devel
   - libtool
+lazarus_packages: []
+lazarus_downloads: []

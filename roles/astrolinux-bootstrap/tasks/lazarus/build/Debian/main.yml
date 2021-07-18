@@ -1,0 +1,16 @@
+---
+
+
+- name: Download lazarus packages
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ downloads_folder }}/{{ item.filename }}"
+    checksum: "{{ item.checksum }}"
+  with_items: "{{ lazarus_downloads }}"
+
+
+- name: Install lazarus packages
+  apt:
+    deb: "{{ downloads_folder }}/{{ item.filename }}"
+  with_items: "{{ lazarus_downloads }}"
+

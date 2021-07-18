@@ -1,0 +1,6 @@
+---
+
+- include: "install/main.yml"
+
+- include: "build/main.yml"
+

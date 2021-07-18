@@ -1,5 +1,9 @@
 ---
 
+# Install Lazarus
+- include: "lazarus/main.yml"
+
+
 - include: "eqmodgui/install/main.yml"
 
 

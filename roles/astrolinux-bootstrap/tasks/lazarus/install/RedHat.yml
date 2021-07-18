@@ -1,0 +1,9 @@
+---
+
+
+- name: Install lazarus development packages
+  package:
+    name: "{{ lazarus_packages }}"
+    state: present
+  become: yes
+
