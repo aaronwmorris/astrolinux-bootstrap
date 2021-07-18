@@ -12,5 +12,6 @@
 - name: Install lazarus packages
   apt:
     deb: "{{ downloads_folder }}/{{ item.filename }}"
+  become: yes
   with_items: "{{ lazarus_downloads }}"
 
