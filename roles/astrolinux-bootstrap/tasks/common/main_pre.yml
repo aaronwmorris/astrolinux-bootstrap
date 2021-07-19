@@ -74,6 +74,8 @@
     state: enabled
   with_items: "{{ firewall_ports }}"
   become: yes
+  tags:
+    - firewall
   when:
     - ansible_facts.services['firewalld.service'] is defined
     - ansible_facts.services['firewalld.service']['state'] == 'running'
@@ -88,6 +90,8 @@
     log: yes
   with_items: "{{ firewall_ports }}"
   become: yes
+  tags:
+    - firewall
   when:
     - ansible_facts.services['ufw.service'] is defined
     #- ansible_facts.services['ufw.service']['state'] == 'running'
