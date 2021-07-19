@@ -56,7 +56,7 @@
 
 - name: Build astap
   command:
-    cmd: "lazbuild astap_linux.lpi"
+    cmd: "lazbuild astap_linux.lpi --lazarusdir={{ lazarus_lib }}"
     chdir: "{{ astap_build }}"
 
 
