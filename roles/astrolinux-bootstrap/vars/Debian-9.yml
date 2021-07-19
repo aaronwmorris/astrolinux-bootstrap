@@ -263,12 +263,12 @@ sextractor_packages:
 lazarus_packages:
   - xz-utils
 lazarus_downloads:
-  - url: https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/lazarus-project_2.0.12-0_amd64.deb/download
-    filename: lazarus-project_2.0.12-0_amd64.deb
-    checksum: sha256:306014d4e06dc1c6b95c84284682bb4535a9a33a0a94508acde2b5035b86f8fc
   - url: https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/fpc-laz_3.2.0-1_amd64.deb/download
     filename: fpc-laz_3.2.0-1_amd64.deb
     checksum: sha256:768dc9a549ef482447d4cb93ce9b7a4d8378b8a1929cc65b91c457425ffd5c8c
   - url: https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/fpc-src_3.2.0-1_amd64.deb/download
     filename: fpc-src_3.2.0-1_amd64.deb
     checksum: sha256:ac23d850808b5128143c58c327bafcfb300db0deff9ba9efc8f6d750e0a01c1e
+  - url: https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%202.0.12/lazarus-project_2.0.12-0_amd64.deb/download
+    filename: lazarus-project_2.0.12-0_amd64.deb
+    checksum: sha256:306014d4e06dc1c6b95c84284682bb4535a9a33a0a94508acde2b5035b86f8fc
