@@ -32,6 +32,7 @@
     msg:
       - "oacapture git repo: {{ oacapture_git_repo }}"
       - "oacapture git tag: {{ oacapture_git_version }}"
+      - "oacapture git refspec: {{ oacapture_git_refspec }}"
 
 
 - name: Git checkout of oacapture
@@ -40,6 +41,7 @@
     dest: "{{ oacapture_build }}"
     depth: 1
     version: "{{ oacapture_git_version }}"
+    refspec: "{{ oacapture_git_refspec }}"
     #force: yes
 
 

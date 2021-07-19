@@ -32,6 +32,7 @@
     msg:
       - "stellarium git repo: {{ stellarium_git_repo }}"
       - "stellarium git tag: {{ stellarium_git_version }}"
+      - "stellarium git refspec: {{ stellarium_git_refspec }}"
 
 
 - name: Git checkout of stellarium
@@ -40,6 +41,7 @@
     dest: "{{ stellarium_src }}"
     depth: 1
     version: "{{ stellarium_git_version }}"
+    refspec: "{{ stellarium_git_refspec }}"
     #force: yes
  
 

@@ -36,6 +36,7 @@
     msg:
       - "ccdciel git repo: {{ ccdciel_git_repo }}"
       - "ccdciel git tag: {{ ccdciel_git_version }}"
+      - "ccdciel git refspec: {{ ccdciel_git_refspec }}"
 
 
 - name: Git checkout of ccdciel
@@ -44,6 +45,7 @@
     dest: "{{ ccdciel_build }}"
     depth: 1
     version: "{{ ccdciel_git_version }}"
+    refspec: "{{ ccdciel_git_refspec }}"
     #force: yes
  
 

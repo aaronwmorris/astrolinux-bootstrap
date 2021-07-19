@@ -32,6 +32,7 @@
     msg:
       - "libdc1394 git repo: {{ libdc1394_git_repo }}"
       - "libdc1394 git tag: {{ libdc1394_git_version }}"
+      - "libdc1394 git refspec: {{ libdc1394_git_refspec }}"
 
 
 - name: Git checkout of libdc1394
@@ -40,6 +41,7 @@
     dest: "{{ libdc1394_build }}"
     depth: 1
     version: "{{ libdc1394_git_version }}"
+    refspec: "{{ libdc1394_git_refspec }}"
     #force: yes
  
 

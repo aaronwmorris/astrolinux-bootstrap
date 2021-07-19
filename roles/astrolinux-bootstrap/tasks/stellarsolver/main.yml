@@ -32,6 +32,7 @@
     msg:
       - "stellarsolver git repo: {{ stellarsolver_git_repo }}"
       - "stellarsolver git tag: {{ stellarsolver_git_version }}"
+      - "stellarsolver git refspec: {{ stellarsolver_git_refspec }}"
 
 
 - name: Git checkout of StellarSolver
@@ -40,6 +41,7 @@
     dest: "{{ stellarsolver_src }}"
     depth: 1
     version: "{{ stellarsolver_git_version }}"
+    refspec: "{{ stellarsolver_git_refspec }}"
     #force: yes
 
 

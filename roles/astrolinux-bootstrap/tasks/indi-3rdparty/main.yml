@@ -53,6 +53,7 @@
     msg:
       - "INDI 3rdparty git repo: {{ indi_3rdparty_git_repo }}"
       - "INDI 3rdparty git tag: {{ indi_3rdparty_git_version }}"
+      - "INDI 3rdparty git refspec: {{ indi_3rdparty_git_refspec }}"
 
 
 - name: Git checkout of indi-3rdparty
@@ -61,6 +62,7 @@
     dest: "{{ indi_3rdparty_src }}"
     depth: 1
     version: "{{ indi_3rdparty_git_version }}"
+    refspec: "{{ indi_3rdparty_git_refspec }}"
 
 
 ### Build individual 3rdparty libs

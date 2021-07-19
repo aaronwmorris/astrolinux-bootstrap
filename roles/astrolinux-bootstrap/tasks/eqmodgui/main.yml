@@ -36,6 +36,7 @@
     msg:
       - "eqmodgui git repo: {{ eqmodgui_git_repo }}"
       - "eqmodgui git tag: {{ eqmodgui_git_version }}"
+      - "eqmodgui git refspec: {{ eqmodgui_git_refspec }}"
 
 
 - name: Git checkout of eqmodgui
@@ -44,6 +45,7 @@
     dest: "{{ eqmodgui_build }}"
     depth: 1
     version: "{{ eqmodgui_git_version }}"
+    refspec: "{{ eqmodgui_git_refspec }}"
     #force: yes
  
 

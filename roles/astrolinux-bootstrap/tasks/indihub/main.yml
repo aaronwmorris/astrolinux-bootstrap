@@ -32,6 +32,7 @@
     msg:
       - "indihub git repo: {{ indihub_git_repo }}"
       - "indihub git tag: {{ indihub_git_version }}"
+      - "indihub git refspec: {{ indihub_git_refspec }}"
 
 
 - name: Git checkout of indihub
@@ -40,6 +41,7 @@
     dest: "{{ indihub_build }}"
     depth: 1
     version: "{{ indihub_git_version }}"
+    refspec: "{{ indihub_git_refspec }}"
     #force: yes
  
 

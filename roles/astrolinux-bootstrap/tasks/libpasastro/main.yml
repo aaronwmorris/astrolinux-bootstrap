@@ -32,6 +32,7 @@
     msg:
       - "libpasastro git repo: {{ libpasastro_git_repo }}"
       - "libpasastro git tag: {{ libpasastro_git_version }}"
+      - "libpasastro git refspec: {{ libpasastro_git_refspec }}"
 
 
 - name: Git checkout of libpasastro
@@ -40,6 +41,7 @@
     dest: "{{ libpasastro_build }}"
     depth: 1
     version: "{{ libpasastro_git_version }}"
+    refspec: "{{ libpasastro_git_refspec }}"
     #force: yes
  
 

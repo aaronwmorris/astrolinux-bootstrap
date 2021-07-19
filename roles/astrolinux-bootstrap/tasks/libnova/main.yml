@@ -29,6 +29,7 @@
     msg:
       - "libnova git repo: {{ libnova_git_repo }}"
       - "libnova git tag: {{ libnova_git_version }}"
+      - "libnova git refspec: {{ libnova_git_refspec }}"
 
 
 - name: Git checkout of libnova
@@ -37,6 +38,7 @@
     dest: "{{ libnova_build }}"
     depth: 1
     version: "{{ libnova_git_version }}"
+    refspec: "{{ libnova_git_refspec }}"
     #force: yes
  
 

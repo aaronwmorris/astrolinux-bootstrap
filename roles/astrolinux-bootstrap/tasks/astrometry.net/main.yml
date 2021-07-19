@@ -40,6 +40,7 @@
     msg:
       - "astrometry.net git repo: {{ astrometrydotnet_git_repo }}"
       - "astrometry.net git tag: {{ astrometrydotnet_git_version }}"
+      - "astrometry.net git refspec: {{ astrometrydotnet_git_refspec }}"
 
 
 - name: Git checkout of astrometry.net
@@ -48,6 +49,7 @@
     dest: "{{ astrometrydotnet_build }}"
     depth: 1
     version: "{{ astrometrydotnet_git_version }}"
+    refspec: "{{ astrometrydotnet_git_refspec }}"
     #force: yes
 
 

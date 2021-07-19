@@ -36,6 +36,7 @@
     msg:
       - "indistarter git repo: {{ indistarter_git_repo }}"
       - "indistarter git tag: {{ indistarter_git_version }}"
+      - "indistarter git refspec: {{ indistarter_git_refspec }}"
 
 
 - name: Git checkout of indistarter
@@ -44,6 +45,7 @@
     dest: "{{ indistarter_build }}"
     depth: 1
     version: "{{ indistarter_git_version }}"
+    refspec: "{{ indistarter_git_refspec }}"
     #force: yes
  
 

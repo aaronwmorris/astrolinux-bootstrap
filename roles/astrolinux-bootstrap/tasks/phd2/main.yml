@@ -32,6 +32,7 @@
     msg:
       - "PHD2 git repo: {{ phd2_git_repo }}"
       - "PHD2 git tag: {{ phd2_git_version }}"
+      - "PHD2 git refspec: {{ phd2_git_refspec }}"
 
 
 - name: Git checkout of phd2
@@ -40,6 +41,7 @@
     dest: "{{ phd2_src }}"
     depth: 1
     version: "{{ phd2_git_version }}"
+    refspec: "{{ phd2_git_refspec }}"
  
 
 - name: Setup phd2 build

@@ -39,6 +39,7 @@
     msg:
       - "INDI core git repo: {{ indi_core_git_repo }}"
       - "INDI core git tag: {{ indi_core_git_version }}"
+      - "INDI core git refspec: {{ indi_core_git_refspec }}"
 
 
 - name: Git checkout of indi-core
@@ -47,6 +48,7 @@
     dest: "{{ indi_core_src }}"
     depth: 1
     version: "{{ indi_core_git_version }}"
+    refspec: "{{ indi_core_git_refspec }}"
  
 
 - name: Setup indi-core build

@@ -32,6 +32,7 @@
     msg:
       - "gpredict git repo: {{ gpredict_git_repo }}"
       - "gpredict git tag: {{ gpredict_git_version }}"
+      - "gpredict git refspec: {{ gpredict_git_refspec }}"
 
 
 - name: Git checkout of gpredict
@@ -40,6 +41,7 @@
     dest: "{{ gpredict_build }}"
     depth: 1
     version: "{{ gpredict_git_version }}"
+    refspec: "{{ gpredict_git_refspec }}"
     #force: yes
  
 
