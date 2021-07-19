@@ -80,7 +80,7 @@ ccdciel_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 eqmodgui_git_repo: https://github.com/pchev/eqmodgui.git
 eqmodgui_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 indistarter_git_repo: https://github.com/pchev/indistarter.git
-indistarger_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
+indistarter_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 astap_hg_repo: http://hg.code.sf.net/p/astap-program/code
 stellarium_git_repo: https://github.com/Stellarium/stellarium.git
 stellarium_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
