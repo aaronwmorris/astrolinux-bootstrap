@@ -18,6 +18,8 @@ blocking_packages:
   - oacapture
   - stellarium
   - sextractor
+  - lazarus-1.6
+  - fpc-3.0.0
 common_packages:
   - python3-apt
 indi_packages:
