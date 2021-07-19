@@ -1,13 +1,6 @@
 ---
 
 
-- set_fact:
-    #sextractor_src: "{{ projects_folder }}/src/sextractor"
-    sextractor_build: "{{ projects_folder }}/build/sextractor"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "sextractor src folder: {{ sextractor_src }}"

@@ -3,13 +3,6 @@
 - include: "indihub/install/main.yml"
 
 
-- set_fact:
-    #indihub_src: "{{ projects_folder }}/src/indihub"
-    indihub_build: "{{ projects_folder }}/build/indihub"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "indihub src folder: {{ indihub_src }}"

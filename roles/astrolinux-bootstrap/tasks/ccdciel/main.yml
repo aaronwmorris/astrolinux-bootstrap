@@ -7,13 +7,6 @@
 - include: "ccdciel/install/main.yml"
 
 
-- set_fact:
-    #ccdciel_src: "{{ projects_folder }}/src/ccdciel"
-    ccdciel_build: "{{ projects_folder }}/build/ccdciel"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "ccdciel src folder: {{ ccdciel_src }}"

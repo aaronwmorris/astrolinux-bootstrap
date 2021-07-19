@@ -3,13 +3,6 @@
 - include: "xplanet/install/main.yml"
 
 
-- set_fact:
-    #xplanet_src: "{{ projects_folder }}/src/xplanet"
-    xplanet_build: "{{ projects_folder }}/build/xplanet"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "xplanet src folder: {{ xplanet_src }}"

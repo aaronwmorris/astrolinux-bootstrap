@@ -1,12 +1,5 @@
 ---
 
-- set_fact:
-    #libnova_src: "{{ projects_folder }}/src/libnova"
-    libnova_build: "{{ projects_folder }}/build/libnova"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "libnova src folder: {{ libnova_src }}"

@@ -7,13 +7,6 @@
 - include: "eqmodgui/install/main.yml"
 
 
-- set_fact:
-    #eqmodgui_src: "{{ projects_folder }}/src/eqmodgui"
-    eqmodgui_build: "{{ projects_folder }}/build/eqmodgui"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "eqmodgui src folder: {{ eqmodgui_src }}"

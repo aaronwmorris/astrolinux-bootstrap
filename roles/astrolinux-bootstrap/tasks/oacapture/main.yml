@@ -3,13 +3,6 @@
 - include: "oacapture/install/main.yml"
 
 
-- set_fact:
-    #oacapture_src: "{{ projects_folder }}/src/oacapture"
-    oacapture_build: "{{ projects_folder }}/build/oacapture"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "oacapture src folder: {{ oacapture_src }}"

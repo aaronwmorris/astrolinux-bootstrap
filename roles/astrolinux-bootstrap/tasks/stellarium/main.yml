@@ -3,13 +3,6 @@
 - include: "stellarium/install/main.yml"
 
 
-- set_fact:
-    stellarium_src: "{{ projects_folder }}/src/stellarium"
-    stellarium_build: "{{ projects_folder }}/build/stellarium"
-  tags:
-    - always
-
-
 - debug:
     msg:
       - "stellarium src folder: {{ stellarium_src }}"

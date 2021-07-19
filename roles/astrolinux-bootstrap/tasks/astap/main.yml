@@ -8,15 +8,6 @@
 
 
 - set_fact:
-    #astap_src: "{{ projects_folder }}/src/astap"
-    astap_build: "{{ projects_folder }}/build/astap"
-    astap_install: "{{ install_prefix }}/astap"
-    astap_downloads_folder: "{{ downloads_folder }}/astap"
-  tags:
-    - always
-
-
-- set_fact:
     astap_install_data: "{{ astap_install }}/share/astap/data"
   tags:
     - always

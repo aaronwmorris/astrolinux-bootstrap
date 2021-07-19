@@ -31,6 +31,76 @@
     - always
 
 
+- set_fact:
+    indi_core_src: "{{ projects_folder }}/src/indi-core"
+    indi_core_build: "{{ projects_folder }}/build/indi-core"
+
+    indi_3rdparty_src: "{{ projects_folder }}/src/indi-3rdparty"
+    indi_3rdparty_libs_build: "{{ projects_folder }}/build/indi-3rdparty_libs"
+    indi_3rdparty_drivers_build: "{{ projects_folder }}/build/indi-3rdparty_drivers"
+
+    indiweb_virtualenv: "{{ virtualenv_folder }}/indiweb"
+
+    #indihub_src: "{{ projects_folder }}/src/indihub"
+    indihub_build: "{{ projects_folder }}/build/indihub"
+
+    #astrometrydotnet_src: "{{ projects_folder }}/src/astrometry.net"
+    astrometrydotnet_build: "{{ projects_folder }}/build/astrometry.net"
+    astrometrydotnet_install: "{{ install_prefix }}/astrometry"
+
+    #astap_src: "{{ projects_folder }}/src/astap"
+    astap_build: "{{ projects_folder }}/build/astap"
+    astap_install: "{{ install_prefix }}/astap"
+    astap_downloads_folder: "{{ downloads_folder }}/astap"
+
+    stellarsolver_src: "{{ projects_folder }}/src/stellarsolver"
+    stellarsolver_build: "{{ projects_folder }}/build/stellarsolver"
+
+    #sextractor_src: "{{ projects_folder }}/src/sextractor"
+    sextractor_build: "{{ projects_folder }}/build/sextractor"
+
+    kstars_src: "{{ projects_folder }}/src/kstars"
+    kstars_build: "{{ projects_folder }}/build/kstars"
+
+    stellarium_src: "{{ projects_folder }}/src/stellarium"
+    stellarium_build: "{{ projects_folder }}/build/stellarium"
+
+    phd2_src: "{{ projects_folder }}/src/phd2"
+    phd2_build: "{{ projects_folder }}/build/phd2"
+
+    #lin_guider_src: "{{ projects_folder }}/src/lin_guider"
+    lin_guider_build: "{{ projects_folder }}/build/lin_guider"
+
+    #oacapture_src: "{{ projects_folder }}/src/oacapture"
+    oacapture_build: "{{ projects_folder }}/build/oacapture"
+
+    #libpasastro_src: "{{ projects_folder }}/src/libpasastro"
+    libpasastro_build: "{{ projects_folder }}/build/libpasastro"
+
+    #ccdciel_src: "{{ projects_folder }}/src/ccdciel"
+    ccdciel_build: "{{ projects_folder }}/build/ccdciel"
+
+    #eqmodgui_src: "{{ projects_folder }}/src/eqmodgui"
+    eqmodgui_build: "{{ projects_folder }}/build/eqmodgui"
+
+    #indistarter_src: "{{ projects_folder }}/src/indistarter"
+    indistarter_build: "{{ projects_folder }}/build/indistarter"
+
+    #gpredict_src: "{{ projects_folder }}/src/gpredict"
+    gpredict_build: "{{ projects_folder }}/build/gpredict"
+
+    #xplanet_src: "{{ projects_folder }}/src/xplanet"
+    xplanet_build: "{{ projects_folder }}/build/xplanet"
+
+    #libdc1394_src: "{{ projects_folder }}/src/libdc1394"
+    libdc1394_build: "{{ projects_folder }}/build/libdc1394"
+
+    #libnova_src: "{{ projects_folder }}/src/libnova"
+    libnova_build: "{{ projects_folder }}/build/libnova"
+  tags:
+    - always
+
+
 - name: Create Projects build folder
   file:
     path: "{{ projects_folder }}/build"

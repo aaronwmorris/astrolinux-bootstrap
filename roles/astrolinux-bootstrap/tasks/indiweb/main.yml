@@ -3,12 +3,6 @@
 - include: "indiweb/install/main.yml"
 
 
-- set_fact:
-    indiweb_virtualenv: "{{ virtualenv_folder }}/indiweb"
-  tags:
-    - always
-
-
 - debug:
     msg:
       - "INDI web virtualenv folder: {{ indiweb_virtualenv }}"

@@ -7,13 +7,6 @@
 - include: "indistarter/install/main.yml"
 
 
-- set_fact:
-    #indistarter_src: "{{ projects_folder }}/src/indistarter"
-    indistarter_build: "{{ projects_folder }}/build/indistarter"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "indistarter src folder: {{ indistarter_src }}"

@@ -3,13 +3,6 @@
 - include: "libpasastro/install/main.yml"
 
 
-- set_fact:
-    #libpasastro_src: "{{ projects_folder }}/src/libpasastro"
-    libpasastro_build: "{{ projects_folder }}/build/libpasastro"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "libpasastro src folder: {{ libpasastro_src }}"

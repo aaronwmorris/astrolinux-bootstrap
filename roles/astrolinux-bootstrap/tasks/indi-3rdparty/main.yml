@@ -10,14 +10,6 @@
     - ansible_facts['distribution_major_version'] == '8'
 
 
-- set_fact:
-    indi_3rdparty_src: "{{ projects_folder }}/src/indi-3rdparty"
-    indi_3rdparty_libs_build: "{{ projects_folder }}/build/indi-3rdparty_libs"
-    indi_3rdparty_drivers_build: "{{ projects_folder }}/build/indi-3rdparty_drivers"
-  tags:
-    - always
-
-
 - debug:
     msg:
       - "INDI 3rdparty src folder: {{ indi_3rdparty_src }}"

@@ -3,13 +3,6 @@
 - include: "gpredict/install/main.yml"
 
 
-- set_fact:
-    #gpredict_src: "{{ projects_folder }}/src/gpredict"
-    gpredict_build: "{{ projects_folder }}/build/gpredict"
-  tags:
-    - always
-
-
 - debug:
     msg:
       #- "gpredict src folder: {{ gpredict_src }}"

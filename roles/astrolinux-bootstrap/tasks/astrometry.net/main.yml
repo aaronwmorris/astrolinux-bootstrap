@@ -4,14 +4,6 @@
 
 
 - set_fact:
-    #astrometrydotnet_src: "{{ projects_folder }}/src/astrometry.net"
-    astrometrydotnet_build: "{{ projects_folder }}/build/astrometry.net"
-    astrometrydotnet_install: "{{ install_prefix }}/astrometry"
-  tags:
-    - always
-
-
-- set_fact:
     astrometrydotnet_install_data: "{{ astrometrydotnet_install }}/data"
     astrometrydotnet_python_dir: "{{ astrometrydotnet_install }}/lib/python"
   tags:

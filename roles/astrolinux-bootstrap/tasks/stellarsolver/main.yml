@@ -3,13 +3,6 @@
 - include: "stellarsolver/install/main.yml"
 
 
-- set_fact:
-    stellarsolver_src: "{{ projects_folder }}/src/stellarsolver"
-    stellarsolver_build: "{{ projects_folder }}/build/stellarsolver"
-  tags:
-    - always
-
-
 - debug:
     msg:
       - "stellarsolver src folder: {{ stellarsolver_src }}"
