@@ -44,8 +44,9 @@
  
 
 - name: Build indihub
-  command:
-    cmd: "make -j {{ parallel_processes }} {{ indihub_arch[ansible_facts['architecture']]['build_target'] }}"
+  community.general.make:
+    target: "{{ indihub_arch[ansible_facts['architecture']]['build_target'] }}"
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ indihub_build }}"
 
 

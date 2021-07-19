@@ -56,14 +56,14 @@
 
 
 - name: Build indi-core
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ indi_core_build }}"
 
 
 - name: Install indi-core
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ indi_core_build }}"
   become: yes
 

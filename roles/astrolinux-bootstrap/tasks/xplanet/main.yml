@@ -40,14 +40,14 @@
 
 
 - name: Build xplanet
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ xplanet_build }}"
 
 
 - name: Install xplanet
-  command:
-    cmd: "make install"
+  community.general.make:
+    target: install
     chdir: "{{ xplanet_build }}"
   become: yes
 

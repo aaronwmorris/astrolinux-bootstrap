@@ -54,14 +54,14 @@
 
 
 - name: Build sextractor
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ sextractor_build }}"
 
 
 - name: Install sextractor
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ sextractor_build }}"
   become: yes
 

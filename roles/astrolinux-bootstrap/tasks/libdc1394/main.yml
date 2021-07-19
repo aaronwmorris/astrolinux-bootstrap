@@ -56,14 +56,14 @@
 
 
 - name: Build libdc1394
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ libdc1394_build }}"
 
 
 - name: Install libdc1394
-  command:
-    cmd: "make install"
+  community.general.make:
+    target: install
     chdir: "{{ libdc1394_build }}"
   become: yes
 

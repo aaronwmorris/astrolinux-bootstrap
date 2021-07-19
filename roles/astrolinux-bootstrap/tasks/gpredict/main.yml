@@ -50,14 +50,14 @@
 
 
 - name: Build gpredict
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ gpredict_build }}"
 
 
 - name: Install gpredict
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ gpredict_build }}"
   become: yes
 

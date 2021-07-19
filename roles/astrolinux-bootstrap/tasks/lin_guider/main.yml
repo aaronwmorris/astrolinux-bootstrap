@@ -65,8 +65,8 @@
 
 
 - name: Build lin_guider
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ lin_guider_build }}/lin_guider_pack/lin_guider"
 
 

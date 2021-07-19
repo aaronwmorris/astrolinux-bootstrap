@@ -56,14 +56,14 @@
 
 
 - name: Build oacapture
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ oacapture_build }}"
 
 
 - name: Install oacapture
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ oacapture_build }}"
   become: yes
 

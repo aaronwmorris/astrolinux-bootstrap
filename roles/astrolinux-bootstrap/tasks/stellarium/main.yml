@@ -50,14 +50,14 @@
 
 
 - name: Build stellarium
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ stellarium_build }}"
 
 
 - name: Install stellarium
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ stellarium_build }}"
   become: yes
 

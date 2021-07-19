@@ -85,16 +85,16 @@
 
 
 - name: Build indi-3rdparty libs
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ indi_3rdparty_libs_build }}"
   when:
     - indi_3rdparty_build_libs| length == 0
 
 
 - name: Install indi-3rdparty libs
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ indi_3rdparty_libs_build }}"
   become: yes
   when:
@@ -123,16 +123,16 @@
 
 
 - name: Build indi-3rdparty drivers
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ indi_3rdparty_drivers_build }}"
   when:
     - indi_3rdparty_build_drivers | length == 0
 
 
 - name: Install indi-3rdparty drivers
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ indi_3rdparty_drivers_build }}"
   become: yes
   when:

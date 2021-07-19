@@ -44,14 +44,19 @@
  
 
 - name: Setup libpasastro build
-  command:
-    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux clean"
+  community.general.make:
+    target: clean
+    params:
+      CPU_TARGET: "{{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }}"
+      OS_TARGET: linux
     chdir: "{{ libpasastro_build }}"
 
 
 - name: Build libpasastro
-  command:
-    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux"
+  community.general.make:
+    params:
+      CPU_TARGET: "{{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }}"
+      OS_TARGET: linux
     chdir: "{{ libpasastro_build }}"
 
 
@@ -67,8 +72,11 @@
 
 
 - name: Install libpasastro
-  command:
-    cmd: "make CPU_TARGET={{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux PREFIX={{ install_prefix }} install"
+  community.general.make:
+    target: install
+    params:
+      CPU_TARGET: "{{ libpasastro_arch[ansible_facts['architecture']]['cpu_target'] }}"
+      OS_TARGET: linux
     chdir: "{{ libpasastro_build }}"
   become: yes
 

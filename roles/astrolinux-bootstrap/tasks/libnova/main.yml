@@ -53,14 +53,14 @@
 
 
 - name: Build libnova
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ libnova_build }}"
 
 
 - name: Install libnova
-  command:
-    cmd: "make install"
+  community.general.make:
+    target: install
     chdir: "{{ libnova_build }}"
   become: yes
 

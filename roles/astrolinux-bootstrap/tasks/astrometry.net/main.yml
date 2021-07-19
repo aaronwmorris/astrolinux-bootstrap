@@ -52,23 +52,22 @@
 
 
 - name: Build astrometry.net base
-  command:
-    #cmd: "make -j {{ parallel_processes }}"
-    cmd: "make"
+  community.general.make:
+    #jobs: "{{ parallel_processes }}"
     chdir: "{{ astrometrydotnet_build }}"
 
 
 - name: Build astrometry.net py
-  command:
-    #cmd: "make -j {{ parallel_processes }} py"
-    cmd: "make py"
+  community.general.make:
+    target: py
+    #jobs: "{{ parallel_processes }}"
     chdir: "{{ astrometrydotnet_build }}"
 
 
 - name: Build astrometry.net extra
-  command:
-    #cmd: "make -j {{ parallel_processes }} extra"
-    cmd: "make extra"
+  community.general.make:
+    target: "extra"
+    #jobs: "{{ parallel_processes }}"
     chdir: "{{ astrometrydotnet_build }}"
 
 
@@ -77,8 +76,8 @@
 
 
 - name: Install astrometry.net
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ astrometrydotnet_build }}"
   environment:
     INSTALL_DIR: "{{ astrometrydotnet_install }}"

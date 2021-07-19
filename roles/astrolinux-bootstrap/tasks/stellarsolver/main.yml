@@ -50,14 +50,14 @@
 
 
 - name: Build StellarSolver
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ stellarsolver_build }}"
 
 
 - name: Install StellarSolver
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ stellarsolver_build }}"
   become: yes
 

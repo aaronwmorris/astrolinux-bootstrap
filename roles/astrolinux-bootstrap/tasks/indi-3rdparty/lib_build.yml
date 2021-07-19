@@ -25,14 +25,14 @@
 
 
 - name: "Build indi-3rdparty {{ local_lib }}"
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ local_indi_3rdparty_lib_build }}"
 
 
 - name: "Install indi-3rdparty {{ local_lib }}"
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ local_indi_3rdparty_lib_build }}"
   become: yes
 

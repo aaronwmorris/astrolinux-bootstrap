@@ -54,21 +54,26 @@
 
 
 - name: Clean indistarter
-  command:
-    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux clean"
+  community.general.make:
+    target: clean
+    params:
+      CPU_TARGET: "{{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }}"
+      OS_TARGET: linux
     chdir: "{{ indistarter_build }}"
 
 
 - name: Build indistarter
-  command:
-    ### -j will cause compile to fail
-    cmd: "make CPU_TARGET={{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }} OS_TARGET=linux"
+  community.general.make:
+    #jobs: X
+    params:
+      CPU_TARGET: "{{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }}"
+      OS_TARGET: linux
     chdir: "{{ indistarter_build }}"
 
 
 - name: Install indistarter
-  command:
-    cmd: "make install"
+  community.general.make:
+    target: install
     chdir: "{{ indistarter_build }}"
   become: yes
 

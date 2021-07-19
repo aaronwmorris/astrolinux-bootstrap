@@ -59,14 +59,14 @@
 
 
 - name: Build kstars
-  command:
-    cmd: "make -j {{ parallel_processes }}"
+  community.general.make:
+    jobs: "{{ parallel_processes }}"
     chdir: "{{ kstars_build }}"
 
 
 - name: Install kstars
-  command:
-    cmd: make install
+  community.general.make:
+    target: install
     chdir: "{{ kstars_build }}"
   become: yes
 
