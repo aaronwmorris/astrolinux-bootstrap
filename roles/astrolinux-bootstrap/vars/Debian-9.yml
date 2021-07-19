@@ -223,6 +223,7 @@ oacapture_packages:
   - libhidapi-dev
   - libuvc-dev
   - qttools5-dev-tools
+  - libsdl1.2-dev
 stellarium_packages:
   - build-essential
   - cmake
