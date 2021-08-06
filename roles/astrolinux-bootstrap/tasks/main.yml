@@ -77,6 +77,9 @@
     #libpasastro_src: "{{ projects_folder }}/src/libpasastro"
     libpasastro_build: "{{ projects_folder }}/build/libpasastro"
 
+    #skychart_src: "{{ projects_folder }}/src/skychart"
+    skychart_build: "{{ projects_folder }}/build/skychart"
+
     #ccdciel_src: "{{ projects_folder }}/src/ccdciel"
     ccdciel_build: "{{ projects_folder }}/build/ccdciel"
 
@@ -216,6 +219,11 @@
 - include: "libpasastro/main.yml"
   tags:
     - libpasastro
+
+
+- include: "skychart/main.yml"
+  tags:
+    - skychart
 
 
 - include: "ccdciel/main.yml"

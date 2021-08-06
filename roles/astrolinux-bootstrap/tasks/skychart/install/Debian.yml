@@ -1,0 +1,15 @@
+---
+
+
+- name: Update repositories cache
+  become: yes
+  apt:
+    update_cache: yes
+
+
+- name: Install skychart development packages
+  become: yes
+  package:
+    name: "{{ skychart_packages }}"
+    state: present
+

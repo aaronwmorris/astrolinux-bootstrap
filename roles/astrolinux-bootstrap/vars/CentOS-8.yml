@@ -13,6 +13,7 @@ blocking_packages:
   - astrometry-devel
   - astrometry-libs
   - python3-astrometry
+  - skychart
   - ccdciel
   - phd2
   - astap
@@ -182,6 +183,10 @@ lin_guider_packages:
   - libusbx-devel
 libpasastro_packages:
   - '@Development tools'
+skychart_packages:
+  - '@Development tools'
+  - fpc
+  - lazarus
 ccdciel_packages:
   - '@Development tools'
   - fpc

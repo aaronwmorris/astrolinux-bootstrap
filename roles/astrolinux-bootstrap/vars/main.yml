@@ -75,6 +75,8 @@ oacapture_git_repo: https://github.com/openastroproject/openastro.git
 oacapture_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 libpasastro_git_repo: https://github.com/pchev/libpasastro.git
 libpasastro_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
+skychart_git_repo: https://github.com/pchev/skychart.git
+skychart_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 ccdciel_git_repo: https://github.com/pchev/ccdciel.git
 ccdciel_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 eqmodgui_git_repo: https://github.com/pchev/eqmodgui.git

@@ -1,0 +1,82 @@
+---
+
+# Install Lazarus
+- include: "lazarus/main.yml"
+
+
+- include: "skychart/install/main.yml"
+
+
+- debug:
+    msg:
+      #- "skychart src folder: {{ skychart_src }}"
+      - "skychart build folder: {{ skychart_build }}"
+
+
+- name: Remove existing skychart build folder
+  file:
+    path: "{{ skychart_build }}"
+    state: absent
+
+
+- name: Create skychart build folder
+  file:
+    path: "{{ skychart_build }}"
+    state: directory
+
+
+- debug:
+    msg:
+      - "skychart git repo: {{ skychart_git_repo }}"
+      - "skychart git tag: {{ skychart_git_version }}"
+      - "skychart git refspec: {{ skychart_git_refspec }}"
+
+
+- name: Git checkout of skychart
+  git:
+    repo: "{{ skychart_git_repo }}"
+    dest: "{{ skychart_build }}"
+    depth: 1
+    version: "{{ skychart_git_version }}"
+    refspec: "{{ skychart_git_refspec }}"
+    #force: yes
+ 
+
+- name: Configure skychart build
+  command:
+    cmd: "./configure prefix={{ install_prefix }} target={{ ccdciel_arch[ansible_facts['architecture']]['config_target'] }} lazarus={{ lazarus_lib }}"
+    chdir: "{{ skychart_build }}"
+
+
+- name: Clean skychart
+  community.general.make:
+    target: clean
+    params:
+      CPU_TARGET: "{{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }}"
+      OS_TARGET: linux
+    chdir: "{{ skychart_build }}"
+
+
+- name: Build skychart
+  community.general.make:
+    #jobs: X
+    params:
+      CPU_TARGET: "{{ ccdciel_arch[ansible_facts['architecture']]['cpu_target'] }}"
+      OS_TARGET: linux
+    chdir: "{{ skychart_build }}"
+
+
+- name: Install skychart
+  community.general.make:
+    target: install
+    chdir: "{{ skychart_build }}"
+  become: yes
+
+
+- name: Cleanup skychart build folder
+  file:
+    path: "{{ skychart_build }}"
+    state: absent
+  tags:
+    - cleanup
+

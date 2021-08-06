@@ -1,0 +1,9 @@
+---
+
+
+- name: Install skychart development packages
+  package:
+    name: "{{ skychart_packages }}"
+    state: present
+  become: yes
+

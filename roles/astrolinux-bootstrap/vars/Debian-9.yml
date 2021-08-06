@@ -12,6 +12,7 @@ blocking_packages:
   - libastrometry0
   - libastrometry-dev
   - python3-astrometry
+  - skychart
   - ccdciel
   - phd2
   - astap
@@ -194,6 +195,10 @@ lin_guider_packages:
   - qt5-default
 libpasastro_packages:
   - build-essential
+skychart_packages:
+  - build-essential
+  #- fpc
+  #- lazarus
 ccdciel_packages:
   - build-essential
   #- fpc
