@@ -7,6 +7,12 @@
 - include: "skychart/install/main.yml"
 
 
+- set_fact:
+    skychart_install_data: "{{ install_prefix }}/share/skychart"
+  tags:
+    - always
+
+
 - debug:
     msg:
       #- "skychart src folder: {{ skychart_src }}"

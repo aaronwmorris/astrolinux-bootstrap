@@ -1,0 +1,54 @@
+---
+skychart_data:
+  - filename: data_jpleph.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/data_jpleph.tgz
+    checksum: sha256:8145dfe4608b3d97357b5ee1a2849c5c6ee7b47dab0cc416277e82fbe86a1e54
+  - filename: catalog_gcvs.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_gcvs.tgz
+    checksum: sha256:c5de89a1b2d1ba7c5f4fa9bf5ffa8b456c2fdc7e00d48db440f4a1dcff230044
+  - filename: catalog_idx.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_idx.tgz
+    checksum: sha256:fcf3475da1469e060d6126f14adad230d77c8829730477569f50ce0ddc7b96cc
+  - filename: catalog_tycho2.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_tycho2.tgz
+    checksum: sha256:1591660c87eeec7ea3f34c24727c9a2958aa1493cb877d4c89c6101f60c0550e
+  - filename: catalog_wds.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_wds.tgz
+    checksum: sha256:1ad81c3749ec6820a2375c2da3567e7dbbd9f4ec1d8a144683d077f7a3790fc0
+  - filename: catalog_gcm.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_gcm.tgz
+    checksum: sha256:6a71a6d424b4718eaa700009e5ea904117b93807a0d50d0e495ca11373948af7
+  - filename: catalog_gpn.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_gpn.tgz
+    checksum: sha256:e0d9dc7c131ff581b90d64f2e1ca25b0d7b3cdb40b81319e6c225a43d7cd100c
+  - filename: catalog_lbn.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_lbn.tgz
+    checksum: sha256:4f3c944dd18a814a48720d064362eb4065153acef3a90c3750e365b89cec7e75
+  - filename: catalog_ocl.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_ocl.tgz
+    checksum: sha256:1123be350a193a7b3209625ef1cb56868884af4f594e89150819743ddc9610f7
+  - filename: catalog_leda.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_leda.tgz
+    checksum: sha256:e55598d3630ae6105c1bff93ee4f0e4fa544e2e8b695b18f82d08e55f4ca84c4
+  - filename: catalog_barnard.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_barnard.tgz
+    checksum: sha256:a42b2d3d3b4b937ed3429f7ee9d98448344b4342eb491fc72414885cb71dc93e
+  - filename: catalog_sh2.tgz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/catalog_sh2.tgz
+    checksum: sha256:45c890e182d387c0e1af986d7b8a441168c9341fd66dfe00542c79b1834b0c52
+  - filename: pictures_ongc_4.3.tar.xz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/pictures_ongc_4.3.tar.xz
+    checksum: sha256:32d4455acfdc3cbf172248c6fbf76dc9669d424d25f9c7545534688209354b80
+  - filename: pictures_sh2_4.3.tar.xz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/pictures_sh2_4.3.tar.xz
+    checksum: sha256:8160bf4a85af4349215cb80ddf84510e3a01b33836d4457aa608a521b220d2e6
+  - filename: pictures_ongc_4.3.tar.xz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/pictures_ongc_4.3.tar.xz
+    checksum: sha256:32d4455acfdc3cbf172248c6fbf76dc9669d424d25f9c7545534688209354b80
+  - filename: data_spicebase.tar.xz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/data_spicebase.tar.xz
+    checksum: sha256:81bcb25b859805fe875e69df30a0a297c0aa7ed992ea7184a1b3483ddcb0c22e
+skychart_data_extra:
+  - filename: data_spiceext.tar.xz
+    url: https://sourceforge.net/projects/skychart/files/4-source_data/data_spiceext.tar.xz
+    checksum: sha256:bd99476a4d5394a2041d04da1141ed6a4a307da6eac6edf573885d97bc675d99

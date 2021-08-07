@@ -79,6 +79,7 @@
 
     #skychart_src: "{{ projects_folder }}/src/skychart"
     skychart_build: "{{ projects_folder }}/build/skychart"
+    skychart_downloads_folder: "{{ downloads_folder }}/skychart"
 
     #ccdciel_src: "{{ projects_folder }}/src/ccdciel"
     ccdciel_build: "{{ projects_folder }}/build/ccdciel"
@@ -224,6 +225,13 @@
 - include: "skychart/main.yml"
   tags:
     - skychart
+
+
+- include: "skychart_indexes/main.yml"
+  tags:
+    - never
+    - skychart_indexes
+    - download
 
 
 - include: "ccdciel/main.yml"

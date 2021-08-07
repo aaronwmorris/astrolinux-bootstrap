@@ -30,7 +30,6 @@
   get_url:
     url: "{{ item.url }}"
     dest: "{{ astap_downloads_folder }}/{{ item.filename }}"
-    mode: '0644'
     checksum: "{{ item.checksum }}"
     force: no
   with_items: "{{ astap_star_data }}"

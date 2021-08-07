@@ -1,0 +1,79 @@
+---
+
+- name: Include skychart data vars
+  include_vars: skychart_indexes.yml
+
+
+- debug:
+    msg:
+      - "skychart data folder: {{ skychart_install_data }}"
+
+
+- name: Create skychart downloads folder
+  file:
+    path: "{{ skychart_downloads_folder }}"
+    state: directory
+
+
+- name: Create skychart data folder
+  file:
+    path: "{{ skychart_install_data }}"
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+  become: yes
+
+
+- name: Download skychart data index files
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ skychart_downloads_folder }}/{{ item.filename }}"
+    checksum: "{{ item.checksum }}"
+    force: no
+  with_items: "{{ skychart_data }}"
+
+
+- name: Unzip skychart index data files
+  unarchive:
+    src: "{{ skychart_downloads_folder }}/{{ item.filename }}"
+    dest: "{{ skychart_install_data }}"
+    owner: root
+    group: root
+    mode: '0755'
+    remote_src: yes
+  become: yes
+  with_items: "{{ skychart_data }}"
+
+
+#- name: Download skychart extra data index files
+#  get_url:
+#    url: "{{ item.url }}"
+#    dest: "{{ skychart_downloads_folder }}/{{ item.filename }}"
+#    checksum: "{{ item.checksum }}"
+#    force: no
+#  with_items: "{{ skychart_data_extra }}"
+
+
+#- name: Unzip skychart extra index data files
+#  unarchive:
+#    src: "{{ skychart_downloads_folder }}/{{ item.filename }}"
+#    dest: "{{ skychart_install_data }}"
+#    owner: root
+#    group: root
+#    mode: '0755'
+#    remote_src: yes
+#  become: yes
+#  with_items: "{{ skychart_data_extra }}"
+
+
+- name: Create symbolic links for skychart data files in /usr/share
+  file:
+    src: "{{ skychart_install_data }}"
+    dest: /usr/share/skychart
+    owner: root
+    group: root
+    state: link
+    force: no
+  become: true
+
