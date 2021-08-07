@@ -23,6 +23,7 @@
   file:
     path: "{{ skychart_build }}"
     state: absent
+  become: yes  # install leaves files owned by root
 
 
 - name: Create skychart build folder
@@ -79,10 +80,25 @@
   become: yes
 
 
+- name: Install skychart data
+  command:
+    cmd: "./install_data.sh {{ install_prefix }}"
+    chdir: "{{ skychart_build }}/tools"
+  become: yes
+
+
+#- name: Install skychart docs
+#  command:
+#    cmd: "./install_doc.sh {{ install_prefix }}"
+#    chdir: "{{ skychart_build }}/tools"
+#  become: yes
+
+
 - name: Cleanup skychart build folder
   file:
     path: "{{ skychart_build }}"
     state: absent
+  become: yes  # install leaves files owned by root
   tags:
     - cleanup
 
