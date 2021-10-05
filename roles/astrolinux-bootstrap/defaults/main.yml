@@ -24,7 +24,7 @@ lin_guider_download:
   checksum: sha256:e0a21c7b009cbf7b617f4231fdb03a7f581b5c5306e5c6e1ca23e8b6dc62f4fd
 libpasastro_git_version: 'v1.4.1'
 skychart_git_version: 'V42'
-ccdciel_git_version: 'v0.9.75.1'
+ccdciel_git_version: 'v0.9.76'
 eqmodgui_git_version: 'v1.7.0'
 indistarter_git_version: 'v2.2.0'
 astap_hg_revision: 'tip'
