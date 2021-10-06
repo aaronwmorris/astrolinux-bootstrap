@@ -69,7 +69,7 @@ echo "Python virtualenv setup"
 if [ ! -d "${BOOTSTRAP_DIRECTORY}/virtualenv/astrolinux-bootstrap" ]; then
     virtualenv -p python3 --system-site-packages ${BOOTSTRAP_DIRECTORY}/virtualenv/astrolinux-bootstrap
 fi
-source ${BOOTSTRAP_DIRECTORY}/virtualenv/indi-allsky/bin/activate
+source ${BOOTSTRAP_DIRECTORY}/virtualenv/astrolinux-bootstrap/bin/activate
 pip3 install -r requirements.txt
 
 
