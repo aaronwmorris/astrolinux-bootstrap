@@ -61,23 +61,23 @@ In no particular order...
 
 | Package          | Current Tag     | 
 | ---------------- | --------------- |
-| INDI             | v1.9.1          |
+| INDI             | v1.9.2          |
 | INDIHub          | v1.0.6          |
 | INDI Web Manager | HEAD            |
 | astrometry.net   | 0.86            |
 | ASTAP            | tip             |
-| SExtractor       | 2.25.0          |
-| StellarSolver    | 1.5             |
-| KStars           | stable-3.5.4    |
+| SExtractor       | HEAD            |
+| StellarSolver    | 1.8             |
+| KStars           | stable-3.5.5    |
 | PHD2             | v2.6.10         |
 | lin_guider       | 5.0.1           |
-| Stellarium       | v0.21.1         |
+| Stellarium       | v0.21.2         |
 | oaCapture        | v1.8.0          |
 | SkyChart / Cartes du Ciel | V42    |
-| CCDciel          | v0.9.75.1       |
+| CCDciel          | v0.9.76         |
 | EqmodGui         | v1.7.0          |
 | indistarter      | v2.2.0          |
-| Gpredict         | v2.2.1          |
+| Gpredict         | HEAD            |
 
 
 ### Services Installed
