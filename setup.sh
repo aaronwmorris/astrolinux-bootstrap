@@ -33,6 +33,16 @@ sleep 10
 sudo true
 
 if [[ "$DISTRO_NAME" == "Raspbian" || "$DISTRO_NAME" == "Debian" || "$DISTRO_NAME" == "Ubuntu" ]]; then
+    ANSIBLE_PACKAGE_COUNT=$(dpkg -l | grep "^ansible" | wc -l)
+    if [[ "$ANSIBLE_PACKAGE_COUNT" -ne 0 ]]; then
+        echo "Please remove the OS ansible package before continuing..."
+        echo
+        echo "sudo apt-get remove ansible"
+
+        exit 1
+    fi
+
+
     sudo apt-get update
     sudo apt-get -y install \
         build-essential \
@@ -43,6 +53,16 @@ if [[ "$DISTRO_NAME" == "Raspbian" || "$DISTRO_NAME" == "Debian" || "$DISTRO_NAM
         git
 
 elif [[ "$DISTRO_NAME" == "CentOS" || "$DISTRO_NAME" == "Fedora" ]]; then
+    ANSIBLE_PACKAGE_COUNT=$(rpm -qa | grep "^ansible" | wc -l)
+    if [[ "$ANSIBLE_PACKAGE_COUNT" -ne 0 ]]; then
+        echo "Please remove the OS ansible package before continuing..."
+        echo
+        echo "sudo dnf remove ansible"
+
+        exit 1
+    fi
+
+
     sudo dnf -y install \
         '@Development tools' \
         python3 \
