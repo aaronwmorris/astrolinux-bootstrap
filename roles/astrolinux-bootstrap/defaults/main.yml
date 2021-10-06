@@ -15,7 +15,7 @@ indihub_git_version: 'v1.0.6'
 kstars_git_version: 'stable-3.5.5'
 astrometrydotnet_git_version: '0.86'
 stellarsolver_git_version: '1.8'
-sextractor_git_version: '2.25.0'
+sextractor_git_version: 'HEAD'
 phd2_git_version: 'v2.6.10'
 oacapture_git_version: 'v1.8.0'
 lin_guider_download:

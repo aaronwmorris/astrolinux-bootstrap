@@ -68,7 +68,7 @@ astrometrydotnet_4200index_url: http://broiler.astrometry.net/~dstn/4200/
 stellarsolver_git_repo: https://github.com/rlancaste/stellarsolver.git
 stellarsolver_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 sextractor_git_repo: https://github.com/astromatic/sextractor.git
-sextractor_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
+sextractor_git_refspec: '+refs/heads/*:refs/remotes/origin/*'
 phd2_git_repo: https://github.com/OpenPHDGuiding/phd2.git
 phd2_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 oacapture_git_repo: https://github.com/openastroproject/openastro.git

@@ -4,8 +4,9 @@
 
 
 - include: "build.yml"
-  when:
-    - dist_ver not in ['Fedora_33', 'Fedora_34']
+  #when:
+  #   - dist_ver not in ['Fedora_33', 'Fedora_34']
 
-### Sextractor will not build with gcc10 (Fedora 33)
+### Sextractor tag 2.25.0 will not build with gcc10 (Fedora 33)
 ### https://github.com/astromatic/sextractor/issues/12
+### Update:  HEAD will build
