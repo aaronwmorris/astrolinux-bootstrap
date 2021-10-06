@@ -87,7 +87,7 @@ astap_hg_repo: http://hg.code.sf.net/p/astap-program/code
 stellarium_git_repo: https://github.com/Stellarium/stellarium.git
 stellarium_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
 gpredict_git_repo: https://github.com/csete/gpredict.git
-gpredict_git_refspec: '+refs/tags/*:refs/remotes/origin/*'
+gpredict_git_refspec: '+refs/heads/*:refs/remotes/origin/*'
 # Misc for CentOS 8
 libnova_git_repo: https://git.code.sf.net/p/libnova/libnova
 libnova_git_refspec: '+refs/heads/*:refs/remotes/origin/*'
