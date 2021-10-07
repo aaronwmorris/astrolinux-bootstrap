@@ -47,13 +47,15 @@ ansible-playbook -i hosts site.yml
 
 
 ## Linux Distributions
-| Distribution | Version |
-| ------------ | ------- |
-| Ubuntu       | 20.04   |
-| Debian       | 10      |
-| Raspian      | 10      |
-| CentOS       | 8       |
-| Fedora       | 34      |
+| Distribution | Primary | Legacy   |
+| ------------ | ------- | -------- |
+| Ubuntu       | 20.04   | 18.04    |
+| Debian       | 11      | 10, 9    |
+| Raspian      | 11      | 10       |
+| CentOS       | 8       | 7        |
+| Fedora       | 34      | 33, 32   |
+
+* Variables for legacy OSs are defined, but packages may no longer build properly
 
 
 ## Software

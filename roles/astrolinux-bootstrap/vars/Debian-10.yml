@@ -115,6 +115,7 @@ astrometrydotnet_packages:
   - libpng-dev
   - libjpeg-dev
   - python-numpy
+  - python3-numpy
   - astropy-utils
   - python-dev
   - zlib1g-dev

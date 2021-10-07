@@ -87,7 +87,7 @@ kstars_packages:
   - libkf5kio-dev
   - kinit-dev
   - libkf5newstuff-dev
-  - kdoctools-dev
+  - libkf5doctools-dev
   - libkf5notifications-dev
   - qtdeclarative5-dev
   - libkf5crash-dev
@@ -114,21 +114,21 @@ astrometrydotnet_packages:
   - netpbm
   - libpng-dev
   - libjpeg-dev
-  - python-numpy
   - python3-numpy
   - astropy-utils
-  - python-dev
   - zlib1g-dev
   - libbz2-dev
   - swig
   - libcfitsio-dev
   - python3-dev
-python_site_dir: /usr/local/lib/python3.8/dist-packages
+python_site_dir: /usr/local/lib/python3.9/dist-packages
 stellarsolver_packages:
   - build-essential
   - git
   - cmake
-  - qt5-default
+  - qtbase5-dev
+  - qt5-qmake
+  - qtbase5-dev-tools
   - libcfitsio-dev
   - libgsl-dev
   - wcslib-dev
@@ -148,8 +148,8 @@ phd2_packages:
 xrdp_packages:
   - xrdp
   - xorgxrdp
-  - tightvncserver
   - python3-cryptography
+  - python3-openssl
 xrdp_desktops:
   xfce:
     packages:
@@ -157,6 +157,11 @@ xrdp_desktops:
       - vino
       - x11vnc
     start: startxfce4
+  kde:
+    packages:
+      - kde-plasma-desktop
+      - krfb
+    start: startkde
   blackbox:
     packages:
       - blackbox
@@ -164,11 +169,6 @@ xrdp_desktops:
       - vino
       - x11vnc
     start: blackbox
-  kde:
-    packages:
-      - kde-plasma-desktop
-      - krfb
-    start: startplasma-x11
   gnome:
     packages:
       - gnome-session
@@ -192,7 +192,9 @@ lin_guider_packages:
   - fxload
   - build-essential
   - libusb-1.0-0-dev
-  - qt5-default
+  - qtbase5-dev
+  - qt5-qmake
+  - qtbase5-dev-tools
 libpasastro_packages:
   - build-essential
 skychart_packages:
